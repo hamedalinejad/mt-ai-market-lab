@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-OPS-004
 title: installation
 status: draft
 version: 0.1

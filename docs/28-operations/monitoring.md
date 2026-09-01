@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-OPS-006
 title: monitoring
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-OPS-007
 title: recovery operations
 status: draft
 version: 0.1
