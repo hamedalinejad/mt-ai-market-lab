@@ -1,75 +1,69 @@
 ---
-id: DOC-DATA-004
-title: candle model
+id: DOC-DATA-003
+title: Candle Model
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 03-market-data
 created: 2026-09-01
 updated: 2026-09-01
-depends_on: []
-related: []
+depends_on: [DOC-DATA-001, DOC-DATA-025]
+related: [DOC-STOR-009, DOC-REPR-002]
 ---
 
-# candle model
+# Candle Model
 
 ## Purpose
 
-Specification for **candle model** within the 03-market-data domain.
+Formalize the canonical **Candle / Bar** contract after ingestion.
 
-## Scope
+## Identity
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+```text
+(instrument_id, timeframe, timestamp_utc)
+```
 
-## Definitions
+`timestamp_utc` = bar **open** time in UTC.
 
-TBD
+## Fields
 
-## Requirements
+| Field | Required | Description |
+|-------|----------|-------------|
+| timestamp_utc | yes | Open time UTC |
+| instrument_id | yes | Internal instrument key |
+| timeframe | yes | Canonical timeframe code |
+| open | yes | |
+| high | yes | |
+| low | yes | |
+| close | yes | |
+| tick_volume | yes | Broker tick volume |
+| real_volume | no | If available |
+| spread | no | Representative spread for bar if provided |
+| source | yes | mt5, import, … |
+| quality_status | yes | ok \| suspect \| gap_filled \| rejected |
+| schema_version | yes | Contract version |
 
-TBD — to be refined from Master Blueprint.
+## Invariants
 
-## Architecture
+1. `high >= max(open, close)` and `high >= low`
+2. `low <= min(open, close)`
+3. `timestamp_utc` aligned to timeframe grid per session policy (documented exceptions for gaps)
+4. Prices quantized to instrument `price_precision`
 
-TBD
+## Quality Status
 
-## Inputs
+| Status | Meaning |
+|--------|---------|
+| ok | Passed validation |
+| suspect | Anomaly flags; usable with caution |
+| gap_filled | Synthetic or interpolated — **must not** train as native without flag |
+| rejected | Must not enter analysis |
 
-TBD
+## Storage Projection
 
-## Outputs
-
-TBD
+See `docs/04-storage/market-data-storage.md` (Parquet partitions candidate).
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- No consumer may invent OHLC from incomplete ticks without recording method in lineage.
+- Resampling from lower timeframes is a **derived** process with its own definition version.

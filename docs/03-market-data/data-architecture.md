@@ -1,75 +1,66 @@
 ---
-id: DOC-DATA-006
-title: data architecture
+id: DOC-DATA-001
+title: Data Architecture
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 03-market-data
 created: 2026-09-01
 updated: 2026-09-01
-depends_on: []
-related: []
+depends_on: [DOC-MASTER-001, DOC-STOR-014]
+related: [DOC-DATA-003, DOC-DATA-011, DOC-SYNC-001]
 ---
 
-# data architecture
+# Data Architecture
 
 ## Purpose
 
-Specification for **data architecture** within the 03-market-data domain.
+Define how market data moves from sources into **Canonical** models used by Representation, Analysis, AI and Discovery.
 
-## Scope
+## Principles
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+- **Data First** — no valid learning without healthy, traceable data.
+- **Source diversity, single canonical interface.**
+- **Raw retained; Canonical consumed.**
+- **Quality before promotion into analysis.**
 
-## Definitions
+## Sources
 
-TBD
+1. MetaTrader 5 (live + historical)
+2. External files (Parquet, CSV) via ingestion pipeline
 
-## Requirements
+## Layers
 
-TBD — to be refined from Master Blueprint.
+```text
+Source
+  → Ingestion Adapter
+  → Raw Store
+  → Normalization (timezone, symbol map, units)
+  → Data Quality / Gap / Dedup
+  → Canonical Store
+  → Derived (Features, Labels)
+  → Consumers (Analysis, AI, Discovery, Validation)
+```
 
-## Architecture
+## Canonical Entities
 
-TBD
+| Entity | Doc |
+|--------|-----|
+| Instrument | instrument-model.md |
+| Tick | tick-model.md |
+| Candle | candle-model.md |
+| Quote | quote-model.md |
+| Timeframe | timeframe-model.md |
+| Derived Feature | feature docs / derived-data-model.md |
 
-## Inputs
+## Cross-Cutting
 
-TBD
-
-## Outputs
-
-TBD
+- **Lineage:** every canonical batch links to source + sync_run / import_run.
+- **Versioning:** schema_version on partitions; instrument metadata_version.
+- **Timezone:** all canonical timestamps UTC (`timezone-policy.md`).
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Consumers below Representation **must not** parse MT5-specific structures.
+- Incomplete quality_status must not silently enter training datasets.
+- Discovery and Prediction read Canonical or Feature stores only.

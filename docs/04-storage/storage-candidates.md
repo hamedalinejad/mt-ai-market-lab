@@ -1,75 +1,64 @@
 ---
-id: DOC-STOR-016
-title: storage candidates
+id: DOC-STOR-015
+title: Storage Candidates
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 04-storage
 created: 2026-09-01
 updated: 2026-09-01
-depends_on: []
-related: []
+depends_on: [DOC-STOR-016, ADR-0004]
+related: [DOC-STOR-014, DOC-STOR-017]
 ---
 
-# storage candidates
+# Storage Candidates
 
 ## Purpose
 
-Specification for **storage candidates** within the 04-storage domain.
+List technology candidates and evaluation dimensions. **No final lock without Benchmark + ADR.**
 
-## Scope
+## Preferred Hybrid Candidate
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+| Layer | Candidate | Role |
+|-------|-----------|------|
+| Metadata / state | SQLite + WAL | Instruments, sync, registries |
+| Historical bulk | Parquet (partitioned) | Canonical bars/ticks, features, labels |
+| Analytics | DuckDB | SQL over Parquet; optional SQLite attach |
 
-## Definitions
+### Why this hybrid
 
-TBD
+- Laptop-friendly, file-based, minimal ops.
+- Columnar compression for multi-year bars.
+- DuckDB pushdown on Parquet reduces RAM pressure vs loading full frames.
+- Clear separation: transactional control plane vs append-oriented data plane.
 
-## Requirements
+### Risks
 
-TBD — to be refined from Master Blueprint.
+- Operational discipline required for partition manifests and atomic publish.
+- Too many tiny Parquet files harm performance (compaction policy needed).
+- User must not treat DuckDB as the only copy of data.
 
-## Architecture
+## Alternative Candidates (to benchmark)
 
-TBD
+| Area | Alternatives |
+|------|----------------|
+| Metadata | SQLite, LanceDB (if vector needs dominate — unlikely for Phase 1), pure JSON files (weak) |
+| Bulk series | Parquet, Arrow IPC, HDF5, SQLite-only (discouraged for multi-year) |
+| Analytics | DuckDB, Polars scan, Pandas (dev only), SQLite views over CSV (weak) |
 
-## Inputs
+## Evaluation Dimensions
 
-TBD
+1. Ingest throughput (bars/s, ticks/s) on laptop SSD
+2. Range-query latency for 1 symbol × 1 year M1
+3. Disk footprint after compression
+4. Crash safety of sync cursor + last batch
+5. Concurrent live read during backfill
+6. Operational complexity
 
-## Outputs
+## Decision Path
 
-TBD
+```text
+Requirements → Candidate List → Benchmark → Operational Fit → Resource Fit → Decision → ADR
+```
 
-## Rules
-
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+See ADR-0004.

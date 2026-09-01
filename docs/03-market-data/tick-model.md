@@ -1,75 +1,61 @@
 ---
-id: DOC-DATA-022
-title: tick model
+id: DOC-DATA-024
+title: Tick Model
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 03-market-data
 created: 2026-09-01
 updated: 2026-09-01
-depends_on: []
-related: []
+depends_on: [DOC-DATA-001]
+related: [DOC-STOR-009, DOC-MT5-016]
 ---
 
-# tick model
+# Tick Model
 
 ## Purpose
 
-Specification for **tick model** within the 03-market-data domain.
+Canonical tick contract for live and historical tick streams.
 
-## Scope
+## Identity
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+```text
+(instrument_id, timestamp_utc, sequence?)
+```
 
-## Definitions
+If broker does not provide unique sequence, ingestion assigns monotonic `ingestion_seq` per instrument within a run.
 
-TBD
+## Fields
 
-## Requirements
+| Field | Required | Description |
+|-------|----------|-------------|
+| timestamp_utc | yes | Event time UTC |
+| instrument_id | yes | |
+| bid | yes | |
+| ask | yes | |
+| last | no | |
+| volume | no | |
+| flags | no | Source-specific packed flags |
+| source | yes | |
+| source_timestamp | no | Original clock if available |
+| ingestion_timestamp | yes | Receive time |
+| quality_status | yes | |
 
-TBD — to be refined from Master Blueprint.
+## Invariants
 
-## Architecture
+1. `ask >= bid` when both present (otherwise mark suspect)
+2. Timestamps not in the future beyond configured skew tolerance
 
-TBD
+## Retention Policy (Candidate)
 
-## Inputs
+Ticks are high volume. Candidates:
 
-TBD
+- Full retention for selected symbols only
+- Rolling window + aggregated bars always retained
+- On-demand re-download from MT5 when broker allows
 
-## Outputs
-
-TBD
+Final policy = Benchmark + ADR.
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Building bars from ticks must be deterministic given the same tick set and session calendar.

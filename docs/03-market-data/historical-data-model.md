@@ -1,75 +1,57 @@
 ---
-id: DOC-DATA-014
-title: historical data model
+id: DOC-DATA-012
+title: Historical Data Model
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 03-market-data
 created: 2026-09-01
 updated: 2026-09-01
-depends_on: []
-related: []
+depends_on: [DOC-DATA-001, DOC-STOR-009]
+related: [DOC-SYNC-005, DOC-ING-001]
 ---
 
-# historical data model
+# Historical Data Model
 
 ## Purpose
 
-Specification for **historical data model** within the 03-market-data domain.
+Describe historical series as first-class datasets: coverage, continuity, and reproducibility.
 
-## Scope
+## Concepts
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+### Series
 
-## Definitions
+One `(instrument_id, timeframe)` history.
 
-TBD
+### Coverage Interval
 
-## Requirements
+`[coverage_start_utc, coverage_end_utc]` stored in sync_state / catalog.
 
-TBD — to be refined from Master Blueprint.
+### Gap
 
-## Architecture
+Missing expected bars on the timeframe grid (see gap-model). Gaps are classified; not all gaps are errors (market closed).
 
-TBD
+### Snapshot / Dataset
 
-## Inputs
+Immutable set of partitions + manifest used for an experiment or training run.
 
-TBD
+## Historical Load Paths
 
-## Outputs
+1. MT5 historical retrieval → raw → canonical
+2. External Parquet/CSV → map → canonical
+3. Resample from lower timeframe (derived series; new lineage)
 
-TBD
+## Continuity Rules
 
-## Rules
+- After sync, catalog must answer: “Do we have continuous ok-quality bars from A to B excluding classified closures?”
+- Training dataset builder must exclude `rejected` and optionally exclude `gap_filled` unless experiment opts in.
 
-TBD
+## Reproducibility
 
-## Dependencies
+A historical dataset reference includes:
 
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- partition URIs
+- schema_version
+- quality filter
+- code/version of builder
+- checksums
