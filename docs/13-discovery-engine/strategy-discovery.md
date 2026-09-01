@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-019
 title: strategy discovery
 status: draft
 version: 0.1

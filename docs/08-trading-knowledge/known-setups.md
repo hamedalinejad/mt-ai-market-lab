@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-TKNW-008
 title: known setups
 status: draft
 version: 0.1

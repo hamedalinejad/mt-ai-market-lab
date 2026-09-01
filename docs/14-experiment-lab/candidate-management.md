@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-EXPL-002
 title: candidate management
 status: draft
 version: 0.1

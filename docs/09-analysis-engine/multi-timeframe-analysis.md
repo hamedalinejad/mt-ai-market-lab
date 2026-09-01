@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ANLY-007
 title: multi timeframe analysis
 status: draft
 version: 0.1

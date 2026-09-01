@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DATA-010
 title: derived data model
 status: draft
 version: 0.1

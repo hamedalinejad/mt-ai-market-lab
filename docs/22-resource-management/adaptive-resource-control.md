@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RES-002
 title: adaptive resource control
 status: draft
 version: 0.1

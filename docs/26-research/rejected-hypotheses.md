@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RSH-006
 title: rejected hypotheses
 status: draft
 version: 0.1

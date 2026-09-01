@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-KNOW-004
 title: degraded knowledge
 status: draft
 version: 0.1

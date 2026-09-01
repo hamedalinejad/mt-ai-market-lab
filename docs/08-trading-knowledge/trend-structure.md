@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-TKNW-015
 title: trend structure
 status: draft
 version: 0.1

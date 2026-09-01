@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-KNOW-005
 title: discovered knowledge
 status: draft
 version: 0.1

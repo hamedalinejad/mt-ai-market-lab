@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STRAT-004
 title: strategy decay
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-014
 title: storage architecture
 status: draft
 version: 0.1

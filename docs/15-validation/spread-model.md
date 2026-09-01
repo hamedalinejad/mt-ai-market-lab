@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-VAL-018
 title: spread model
 status: draft
 version: 0.1

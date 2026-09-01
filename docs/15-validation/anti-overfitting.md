@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-VAL-003
 title: anti overfitting
 status: draft
 version: 0.1

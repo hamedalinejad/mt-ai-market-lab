@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STRAT-007
 title: strategy lifecycle
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-CFG-010
 title: symbol configuration
 status: draft
 version: 0.1

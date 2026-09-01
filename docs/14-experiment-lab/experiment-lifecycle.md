@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-EXPL-005
 title: experiment lifecycle
 status: draft
 version: 0.1

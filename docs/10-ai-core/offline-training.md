@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-AI-016
 title: offline training
 status: draft
 version: 0.1

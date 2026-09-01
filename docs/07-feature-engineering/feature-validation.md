@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-FEAT-008
 title: feature validation
 status: draft
 version: 0.1

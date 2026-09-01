@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-OBS-009
 title: performance monitoring
 status: draft
 version: 0.1

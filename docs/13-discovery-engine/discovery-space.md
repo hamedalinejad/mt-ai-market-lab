@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-006
 title: discovery space
 status: draft
 version: 0.1

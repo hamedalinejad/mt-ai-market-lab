@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-018
 title: signal discovery
 status: draft
 version: 0.1

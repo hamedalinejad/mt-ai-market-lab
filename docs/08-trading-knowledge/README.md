@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-TKNW-001
 title: Trading Knowledge Overview
 status: draft
 version: 0.1

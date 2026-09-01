@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-EXPL-008
 title: failed experiment memory
 status: draft
 version: 0.1

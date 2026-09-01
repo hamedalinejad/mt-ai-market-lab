@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-EXPL-012
 title: research tracking
 status: draft
 version: 0.1

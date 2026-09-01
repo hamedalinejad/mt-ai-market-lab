@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-AI-003
 title: ai objectives
 status: draft
 version: 0.1

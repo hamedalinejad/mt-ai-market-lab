@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STRAT-006
 title: strategy generation
 status: draft
 version: 0.1

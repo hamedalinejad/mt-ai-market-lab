@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ANLY-010
 title: regime analysis
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-022
 title: unknown structure discovery
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-EXPL-001
 title: Experiment Lab Overview
 status: draft
 version: 0.1

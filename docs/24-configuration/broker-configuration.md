@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-CFG-002
 title: broker configuration
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-EXPL-010
 title: hypothesis registry
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-REPR-009
 title: structure representation
 status: draft
 version: 0.1

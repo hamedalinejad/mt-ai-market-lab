@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-003
 title: backup
 status: draft
 version: 0.1

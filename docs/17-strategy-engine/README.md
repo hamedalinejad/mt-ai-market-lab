@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STRAT-001
 title: Strategy Engine Overview
 status: draft
 version: 0.1

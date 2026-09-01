@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-LEARN-008
 title: failed strategy memory
 status: draft
 version: 0.1

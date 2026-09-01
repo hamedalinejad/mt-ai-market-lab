@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SYNC-002
 title: conflict resolution
 status: draft
 version: 0.1

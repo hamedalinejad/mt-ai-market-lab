@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-KNOW-013
 title: retired knowledge
 status: draft
 version: 0.1

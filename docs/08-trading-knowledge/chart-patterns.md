@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-TKNW-004
 title: chart patterns
 status: draft
 version: 0.1

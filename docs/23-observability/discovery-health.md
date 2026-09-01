@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-OBS-003
 title: discovery health
 status: draft
 version: 0.1

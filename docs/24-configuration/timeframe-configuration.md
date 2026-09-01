@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-CFG-012
 title: timeframe configuration
 status: draft
 version: 0.1

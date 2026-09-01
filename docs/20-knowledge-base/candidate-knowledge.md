@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-KNOW-003
 title: candidate knowledge
 status: draft
 version: 0.1

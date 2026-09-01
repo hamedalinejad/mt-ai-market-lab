@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DATA-006
 title: data architecture
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-MT5-007
 title: Error Handling
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RES-006
 title: hardware profiles
 status: draft
 version: 0.1

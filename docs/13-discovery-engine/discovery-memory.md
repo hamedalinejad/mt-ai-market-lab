@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-004
 title: discovery memory
 status: draft
 version: 0.1

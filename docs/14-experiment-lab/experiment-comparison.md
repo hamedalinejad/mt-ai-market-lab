@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-EXPL-004
 title: experiment comparison
 status: draft
 version: 0.1

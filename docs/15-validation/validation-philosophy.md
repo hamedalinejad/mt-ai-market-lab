@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-VAL-023
 title: validation philosophy
 status: draft
 version: 0.1

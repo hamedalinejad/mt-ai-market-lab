@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-002
 title: anomaly discovery
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-REPR-007
 title: price action representation
 status: draft
 version: 0.1

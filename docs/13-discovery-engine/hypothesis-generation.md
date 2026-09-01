@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-010
 title: hypothesis generation
 status: draft
 version: 0.1

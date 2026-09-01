@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-EXPL-007
 title: experiment registry
 status: draft
 version: 0.1

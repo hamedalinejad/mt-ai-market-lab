@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-FEAT-002
 title: candle features
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SYNC-004
 title: gap classification
 status: draft
 version: 0.1

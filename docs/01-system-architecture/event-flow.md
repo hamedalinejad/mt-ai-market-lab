@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ARCH-008
 title: Event Flow
 status: draft
 version: 0.1

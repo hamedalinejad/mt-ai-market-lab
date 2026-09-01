@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SAFE-010
 title: operational risk
 status: draft
 version: 0.1

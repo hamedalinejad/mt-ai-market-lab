@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-PROJ-006
 title: Non Goals
 status: draft
 version: 0.1

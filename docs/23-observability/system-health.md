@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-OBS-015
 title: system health
 status: draft
 version: 0.1

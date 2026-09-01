@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-003
 title: discovery architecture
 status: draft
 version: 0.1

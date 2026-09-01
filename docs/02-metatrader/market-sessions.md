@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-MT5-012
 title: Market Sessions
 status: draft
 version: 0.1

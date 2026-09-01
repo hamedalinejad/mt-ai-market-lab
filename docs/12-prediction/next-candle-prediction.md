@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-PRED-006
 title: next candle prediction
 status: draft
 version: 0.1

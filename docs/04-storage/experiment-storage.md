@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-006
 title: experiment storage
 status: draft
 version: 0.1

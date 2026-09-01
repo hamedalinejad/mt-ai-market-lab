@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-VAL-001
 title: Validation Overview
 status: draft
 version: 0.1

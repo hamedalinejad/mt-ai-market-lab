@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-MT5-006
 title: Data Availability
 status: draft
 version: 0.1

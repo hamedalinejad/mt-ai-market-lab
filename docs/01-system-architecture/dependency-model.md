@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ARCH-005
 title: Dependency Model
 status: draft
 version: 0.1

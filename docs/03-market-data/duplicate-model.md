@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DATA-011
 title: duplicate model
 status: draft
 version: 0.1

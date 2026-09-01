@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SAFE-008
 title: false discovery risk
 status: draft
 version: 0.1

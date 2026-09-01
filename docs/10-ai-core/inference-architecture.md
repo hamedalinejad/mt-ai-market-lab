@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-AI-007
 title: inference architecture
 status: draft
 version: 0.1

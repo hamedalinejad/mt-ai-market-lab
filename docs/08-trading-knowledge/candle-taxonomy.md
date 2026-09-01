@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-TKNW-002
 title: candle taxonomy
 status: draft
 version: 0.1

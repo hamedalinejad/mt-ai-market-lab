@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-MT5-001
 title: MetaTrader Integration Overview
 status: draft
 version: 0.1

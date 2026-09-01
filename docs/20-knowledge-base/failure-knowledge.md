@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-KNOW-006
 title: failure knowledge
 status: draft
 version: 0.1

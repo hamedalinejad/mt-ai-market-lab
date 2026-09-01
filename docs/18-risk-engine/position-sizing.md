@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RISK-010
 title: position sizing
 status: draft
 version: 0.1

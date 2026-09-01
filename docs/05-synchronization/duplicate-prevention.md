@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SYNC-003
 title: duplicate prevention
 status: draft
 version: 0.1

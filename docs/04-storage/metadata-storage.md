@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-011
 title: metadata storage
 status: draft
 version: 0.1

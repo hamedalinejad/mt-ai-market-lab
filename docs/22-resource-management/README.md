@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RES-001
 title: Resource Management Overview
 status: draft
 version: 0.1

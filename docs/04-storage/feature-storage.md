@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-007
 title: feature storage
 status: draft
 version: 0.1

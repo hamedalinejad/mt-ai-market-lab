@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-021
 title: technical discovery
 status: draft
 version: 0.1

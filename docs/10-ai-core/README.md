@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-AI-001
 title: AI Core Overview
 status: draft
 version: 0.1

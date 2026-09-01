@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-EXPL-003
 title: experiment architecture
 status: draft
 version: 0.1

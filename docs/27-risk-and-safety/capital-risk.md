@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SAFE-004
 title: capital risk
 status: draft
 version: 0.1

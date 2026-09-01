@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RUN-006
 title: paper trading mode
 status: draft
 version: 0.1

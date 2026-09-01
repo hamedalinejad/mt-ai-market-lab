@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SIG-008
 title: signal expiration
 status: draft
 version: 0.1

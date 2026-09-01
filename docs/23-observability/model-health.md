@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-OBS-007
 title: model health
 status: draft
 version: 0.1

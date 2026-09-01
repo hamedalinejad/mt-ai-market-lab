@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-017
 title: search strategy
 status: draft
 version: 0.1

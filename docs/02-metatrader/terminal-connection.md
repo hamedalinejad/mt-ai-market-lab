@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-MT5-016
 title: Terminal Connection
 status: draft
 version: 0.1

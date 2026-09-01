@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SIG-011
 title: signal model
 status: draft
 version: 0.1

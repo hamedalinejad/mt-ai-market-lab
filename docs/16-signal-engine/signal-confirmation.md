@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SIG-005
 title: signal confirmation
 status: draft
 version: 0.1

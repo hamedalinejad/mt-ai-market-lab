@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-VAL-021
 title: transaction costs
 status: draft
 version: 0.1

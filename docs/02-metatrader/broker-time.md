@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-MT5-004
 title: Broker Time
 status: draft
 version: 0.1

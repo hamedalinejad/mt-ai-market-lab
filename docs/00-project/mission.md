@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-PROJ-005
 title: Mission
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-002
 title: archival
 status: draft
 version: 0.1

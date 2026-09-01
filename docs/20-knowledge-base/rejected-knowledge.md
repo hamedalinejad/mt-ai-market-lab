@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-KNOW-012
 title: rejected knowledge
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-CFG-011
 title: system configuration
 status: draft
 version: 0.1

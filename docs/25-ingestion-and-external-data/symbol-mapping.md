@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ING-009
 title: symbol mapping
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-005
 title: discovery objectives
 status: draft
 version: 0.1

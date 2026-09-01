@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-CFG-006
 title: learning configuration
 status: draft
 version: 0.1

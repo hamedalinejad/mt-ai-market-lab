@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ARCH-013
 title: Research Mode Flow
 status: draft
 version: 0.1

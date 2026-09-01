@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-CFG-001
 title: Configuration Overview
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RES-008
 title: resource architecture
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-015
 title: storage benchmark
 status: draft
 version: 0.1

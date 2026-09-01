@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RISK-012
 title: risk gates
 status: draft
 version: 0.1

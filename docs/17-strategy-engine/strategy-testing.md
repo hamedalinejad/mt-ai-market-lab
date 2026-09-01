@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STRAT-012
 title: strategy testing
 status: draft
 version: 0.1

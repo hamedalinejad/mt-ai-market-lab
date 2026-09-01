@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SIG-001
 title: Signal Engine Overview
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-012
 title: partitioning
 status: draft
 version: 0.1

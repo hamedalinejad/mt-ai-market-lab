@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RISK-014
 title: strategy risk
 status: draft
 version: 0.1

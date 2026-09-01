@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-MT5-014
 title: Symbol Discovery
 status: draft
 version: 0.1

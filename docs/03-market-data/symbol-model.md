@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DATA-021
 title: symbol model
 status: draft
 version: 0.1

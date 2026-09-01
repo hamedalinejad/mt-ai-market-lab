@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-KNOW-009
 title: knowledge lifecycle
 status: draft
 version: 0.1

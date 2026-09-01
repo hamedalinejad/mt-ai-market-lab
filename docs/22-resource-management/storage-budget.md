@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RES-010
 title: storage budget
 status: draft
 version: 0.1

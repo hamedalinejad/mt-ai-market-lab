@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SAFE-003
 title: automation boundaries
 status: draft
 version: 0.1

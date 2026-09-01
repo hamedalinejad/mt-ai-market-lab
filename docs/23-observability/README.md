@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-OBS-001
 title: Observability Overview
 status: draft
 version: 0.1

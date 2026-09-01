@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-AI-012
 title: model retirement
 status: draft
 version: 0.1

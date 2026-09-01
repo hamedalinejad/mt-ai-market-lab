@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STRAT-005
 title: strategy evolution
 status: draft
 version: 0.1

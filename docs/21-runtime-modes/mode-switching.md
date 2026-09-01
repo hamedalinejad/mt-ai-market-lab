@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RUN-005
 title: mode switching
 status: draft
 version: 0.1

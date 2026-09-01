@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SYNC-014
 title: sync validation
 status: draft
 version: 0.1

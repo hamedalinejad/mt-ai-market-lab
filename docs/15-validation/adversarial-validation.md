@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-VAL-002
 title: adversarial validation
 status: draft
 version: 0.1

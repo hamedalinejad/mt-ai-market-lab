@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-013
 title: novelty detection
 status: draft
 version: 0.1

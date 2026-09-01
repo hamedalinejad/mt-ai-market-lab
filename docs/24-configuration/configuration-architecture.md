@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-CFG-003
 title: configuration architecture
 status: draft
 version: 0.1

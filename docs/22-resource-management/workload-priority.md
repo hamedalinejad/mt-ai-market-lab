@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RES-011
 title: workload priority
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-012
 title: indicator discovery
 status: draft
 version: 0.1

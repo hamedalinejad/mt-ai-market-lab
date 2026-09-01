@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-OBS-013
 title: strategy health
 status: draft
 version: 0.1

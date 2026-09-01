@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-REPR-011
 title: trend representation
 status: draft
 version: 0.1

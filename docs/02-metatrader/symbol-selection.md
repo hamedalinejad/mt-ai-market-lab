@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-MT5-015
 title: Symbol Selection
 status: draft
 version: 0.1

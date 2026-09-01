@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-PROJ-004
 title: Goals
 status: draft
 version: 0.1

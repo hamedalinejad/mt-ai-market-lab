@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-KNOW-010
 title: knowledge model
 status: draft
 version: 0.1

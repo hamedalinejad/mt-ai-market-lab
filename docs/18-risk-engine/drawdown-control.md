@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RISK-005
 title: drawdown control
 status: draft
 version: 0.1

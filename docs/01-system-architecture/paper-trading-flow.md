@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ARCH-012
 title: Paper Trading Flow
 status: draft
 version: 0.1

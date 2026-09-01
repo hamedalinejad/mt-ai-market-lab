@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RSH-005
 title: open hypotheses
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SAFE-012
 title: safety architecture
 status: draft
 version: 0.1

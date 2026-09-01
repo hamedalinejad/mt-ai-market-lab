@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-LEARN-010
 title: knowledge revision
 status: draft
 version: 0.1

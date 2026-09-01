@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-OBS-005
 title: logging
 status: draft
 version: 0.1

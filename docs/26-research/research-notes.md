@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RSH-008
 title: research notes
 status: draft
 version: 0.1

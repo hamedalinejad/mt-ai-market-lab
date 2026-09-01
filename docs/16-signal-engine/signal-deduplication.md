@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SIG-007
 title: signal deduplication
 status: draft
 version: 0.1

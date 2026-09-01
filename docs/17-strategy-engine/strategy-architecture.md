@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STRAT-002
 title: strategy architecture
 status: draft
 version: 0.1

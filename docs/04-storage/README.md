@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-001
 title: Storage Overview
 status: draft
 version: 0.1

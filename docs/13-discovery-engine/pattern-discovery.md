@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-014
 title: pattern discovery
 status: draft
 version: 0.1

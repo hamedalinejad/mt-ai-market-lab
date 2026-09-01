@@ -76,3 +76,32 @@ MARKET → DATA INGESTION → SYNC → DATA QUALITY → REPRESENTATION
 - PHASE 9: Continuous Discovery + Continuous Improvement
 
 See domain folders and ADRs for full specifications.
+
+---
+
+## Roadmap numbering note (governance)
+
+Master Blueprint §51 uses **high-level PHASE 0–9**.
+
+Repository `docs/29-roadmap/` also contains **detailed phase-0 … phase-11** files for finer planning.
+
+These are **aligned**, not conflicting:
+
+- Detailed phases 1–3 map into high-level PHASE 1
+- Detailed phases 10–11 map into high-level PHASE 8–9
+
+See `docs/29-roadmap/development-phases.md` for the full mapping table.
+
+## Phase 0 honesty statement
+
+Existence of a documentation **file** does not equal a completed **Specification**.
+
+Until a document leaves `draft` and its Acceptance Criteria are met, items such as:
+
+- formal Data Contracts / Schemas
+- Main Interfaces
+- Validation Framework details
+- Safety Boundaries numeric policies
+- Resource Policy budgets
+
+remain **work in progress**, even if skeleton files and Registry entries exist.

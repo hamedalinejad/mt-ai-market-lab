@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RISK-011
 title: risk architecture
 status: draft
 version: 0.1

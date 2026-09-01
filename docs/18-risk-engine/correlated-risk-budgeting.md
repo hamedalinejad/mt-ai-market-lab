@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RISK-003
 title: correlated risk budgeting
 status: draft
 version: 0.1

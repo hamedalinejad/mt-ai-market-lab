@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STRAT-010
 title: strategy retirement
 status: draft
 version: 0.1

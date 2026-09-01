@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-VAL-009
 title: multiple testing control
 status: draft
 version: 0.1

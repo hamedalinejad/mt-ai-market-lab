@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-KNOW-014
 title: signal knowledge
 status: draft
 version: 0.1

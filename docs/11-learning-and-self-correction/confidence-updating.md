@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-LEARN-003
 title: confidence updating
 status: draft
 version: 0.1

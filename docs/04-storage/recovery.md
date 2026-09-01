@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-013
 title: recovery
 status: draft
 version: 0.1

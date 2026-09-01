@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SYNC-011
 title: restart recovery
 status: draft
 version: 0.1

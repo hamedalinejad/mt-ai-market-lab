@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-EXEC-015
 title: take profit model
 status: draft
 version: 0.1

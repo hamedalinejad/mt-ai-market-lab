@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-PRED-001
 title: Prediction Overview
 status: draft
 version: 0.1

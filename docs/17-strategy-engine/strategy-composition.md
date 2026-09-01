@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STRAT-003
 title: strategy composition
 status: draft
 version: 0.1

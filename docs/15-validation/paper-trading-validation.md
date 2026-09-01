@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-VAL-011
 title: paper trading validation
 status: draft
 version: 0.1

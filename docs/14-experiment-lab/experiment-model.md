@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-EXPL-006
 title: experiment model
 status: draft
 version: 0.1

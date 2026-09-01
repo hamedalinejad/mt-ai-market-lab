@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-FEAT-003
 title: cross timeframe features
 status: draft
 version: 0.1

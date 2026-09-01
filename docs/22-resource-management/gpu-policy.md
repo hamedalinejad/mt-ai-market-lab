@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RES-004
 title: gpu policy
 status: draft
 version: 0.1

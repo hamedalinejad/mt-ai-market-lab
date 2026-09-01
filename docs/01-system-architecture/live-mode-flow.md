@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ARCH-010
 title: Live Mode Flow
 status: draft
 version: 0.1

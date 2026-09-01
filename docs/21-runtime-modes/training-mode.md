@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RUN-009
 title: training mode
 status: draft
 version: 0.1

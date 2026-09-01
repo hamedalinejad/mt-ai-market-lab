@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DATA-025
 title: timezone policy
 status: draft
 version: 0.1

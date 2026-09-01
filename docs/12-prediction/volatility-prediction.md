@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-PRED-015
 title: volatility prediction
 status: draft
 version: 0.1

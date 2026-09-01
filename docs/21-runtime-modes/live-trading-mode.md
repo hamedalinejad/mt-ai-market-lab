@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RUN-003
 title: live trading mode
 status: draft
 version: 0.1

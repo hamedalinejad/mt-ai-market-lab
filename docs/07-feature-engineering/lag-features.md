@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-FEAT-010
 title: lag features
 status: draft
 version: 0.1

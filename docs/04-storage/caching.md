@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-004
 title: caching
 status: draft
 version: 0.1

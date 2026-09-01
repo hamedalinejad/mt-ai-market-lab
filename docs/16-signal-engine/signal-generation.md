@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SIG-009
 title: signal generation
 status: draft
 version: 0.1

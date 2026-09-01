@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-008
 title: indexing
 status: draft
 version: 0.1

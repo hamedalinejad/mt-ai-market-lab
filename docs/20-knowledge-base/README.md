@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-KNOW-001
 title: Knowledge Base Overview
 status: draft
 version: 0.1

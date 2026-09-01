@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-FEAT-006
 title: feature redundancy
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DATA-004
 title: candle model
 status: draft
 version: 0.1

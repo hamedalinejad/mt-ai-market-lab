@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-FEAT-011
 title: price features
 status: draft
 version: 0.1

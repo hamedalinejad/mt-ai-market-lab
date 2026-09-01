@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-CFG-009
 title: storage configuration
 status: draft
 version: 0.1

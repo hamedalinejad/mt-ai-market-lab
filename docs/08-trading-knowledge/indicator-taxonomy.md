@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-TKNW-005
 title: indicator taxonomy
 status: draft
 version: 0.1

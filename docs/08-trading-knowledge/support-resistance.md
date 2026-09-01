@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-TKNW-013
 title: support resistance
 status: draft
 version: 0.1

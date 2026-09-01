@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-PROJ-001
 title: Project Overview
 status: draft
 version: 0.1

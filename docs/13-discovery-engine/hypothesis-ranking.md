@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-011
 title: hypothesis ranking
 status: draft
 version: 0.1

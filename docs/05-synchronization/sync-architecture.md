@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SYNC-012
 title: sync architecture
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STRAT-011
 title: strategy selection
 status: draft
 version: 0.1

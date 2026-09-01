@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RSH-002
 title: discoveries
 status: draft
 version: 0.1

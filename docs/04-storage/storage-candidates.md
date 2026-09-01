@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-016
 title: storage candidates
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-VAL-012
 title: promotion criteria
 status: draft
 version: 0.1

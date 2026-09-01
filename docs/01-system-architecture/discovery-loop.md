@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ARCH-006
 title: Discovery Loop
 status: draft
 version: 0.1

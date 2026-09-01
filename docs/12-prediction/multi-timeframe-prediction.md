@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-PRED-005
 title: multi timeframe prediction
 status: draft
 version: 0.1

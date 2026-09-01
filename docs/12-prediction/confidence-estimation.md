@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-PRED-002
 title: confidence estimation
 status: draft
 version: 0.1

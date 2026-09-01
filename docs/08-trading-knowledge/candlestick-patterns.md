@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-TKNW-003
 title: candlestick patterns
 status: draft
 version: 0.1

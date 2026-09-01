@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-CFG-007
 title: resource configuration
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-CFG-008
 title: risk configuration
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-00-PRINCIPLES
+id: DOC-PROJ-008
 title: Principles
 status: draft
 version: 0.1

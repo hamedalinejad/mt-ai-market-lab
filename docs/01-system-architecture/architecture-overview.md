@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ARCH-002
 title: Architecture Overview
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-007
 title: feature discovery
 status: draft
 version: 0.1

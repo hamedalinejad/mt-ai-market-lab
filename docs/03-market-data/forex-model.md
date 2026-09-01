@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DATA-012
 title: forex model
 status: draft
 version: 0.1

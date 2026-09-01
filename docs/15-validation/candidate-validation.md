@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-VAL-005
 title: candidate validation
 status: draft
 version: 0.1

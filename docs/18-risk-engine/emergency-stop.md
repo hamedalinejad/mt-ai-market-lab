@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RISK-006
 title: emergency stop
 status: draft
 version: 0.1

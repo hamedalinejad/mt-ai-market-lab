@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DATA-024
 title: timestamp model
 status: draft
 version: 0.1

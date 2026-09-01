@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-005
 title: compression
 status: draft
 version: 0.1

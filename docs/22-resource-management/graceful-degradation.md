@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RES-005
 title: graceful degradation
 status: draft
 version: 0.1

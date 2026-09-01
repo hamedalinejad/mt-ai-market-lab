@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STRAT-009
 title: strategy ranking
 status: draft
 version: 0.1

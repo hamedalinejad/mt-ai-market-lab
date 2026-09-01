@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-AI-010
 title: model governance
 status: draft
 version: 0.1

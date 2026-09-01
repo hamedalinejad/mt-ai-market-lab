@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ANLY-003
 title: candle analysis
 status: draft
 version: 0.1

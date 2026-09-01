@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ARCH-011
 title: Module Map
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-AI-018
 title: training architecture
 status: draft
 version: 0.1

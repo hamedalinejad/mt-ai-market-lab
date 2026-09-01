@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-MT5-005
 title: Chart Management
 status: draft
 version: 0.1

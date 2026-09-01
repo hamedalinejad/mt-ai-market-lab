@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RISK-008
 title: exposure control
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RUN-004
 title: mode architecture
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SIG-013
 title: signal strength
 status: draft
 version: 0.1

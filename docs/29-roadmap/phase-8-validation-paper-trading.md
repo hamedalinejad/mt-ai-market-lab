@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ROAD-017
 title: phase 8 validation paper trading
 status: draft
 version: 0.1

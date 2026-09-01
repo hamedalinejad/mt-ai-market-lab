@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SIG-003
 title: signal architecture
 status: draft
 version: 0.1

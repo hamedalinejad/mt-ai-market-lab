@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-TKNW-012
 title: supply demand
 status: draft
 version: 0.1

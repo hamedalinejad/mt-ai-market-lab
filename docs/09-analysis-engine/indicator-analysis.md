@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ANLY-006
 title: indicator analysis
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-009
 title: knowledge storage
 status: draft
 version: 0.1

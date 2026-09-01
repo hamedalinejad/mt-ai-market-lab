@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-LEARN-002
 title: belief updating
 status: draft
 version: 0.1

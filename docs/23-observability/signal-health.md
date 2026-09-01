@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-OBS-012
 title: signal health
 status: draft
 version: 0.1

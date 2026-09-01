@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-REPR-004
 title: liquidity representation
 status: draft
 version: 0.1

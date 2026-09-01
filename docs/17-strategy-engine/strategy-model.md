@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STRAT-008
 title: strategy model
 status: draft
 version: 0.1

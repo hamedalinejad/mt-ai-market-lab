@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-CFG-013
 title: validation configuration
 status: draft
 version: 0.1

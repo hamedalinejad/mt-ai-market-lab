@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SAFE-006
 title: discovery risk
 status: draft
 version: 0.1

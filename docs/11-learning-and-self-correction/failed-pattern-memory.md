@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-LEARN-006
 title: failed pattern memory
 status: draft
 version: 0.1

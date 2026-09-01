@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-001
 title: Discovery Engine Overview
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-017
 title: storage requirements
 status: draft
 version: 0.1

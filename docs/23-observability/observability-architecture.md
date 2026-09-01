@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-OBS-008
 title: observability architecture
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ROAD-015
 title: phase 6 discovery
 status: draft
 version: 0.1

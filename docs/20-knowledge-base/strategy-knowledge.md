@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-KNOW-015
 title: strategy knowledge
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-KNOW-011
 title: pattern knowledge
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RES-007
 title: memory budget
 status: draft
 version: 0.1

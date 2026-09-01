@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DATA-015
 title: instrument model
 status: draft
 version: 0.1

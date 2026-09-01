@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-TKNW-014
 title: technical analysis taxonomy
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-MT5-002
 title: Bar Ingestion
 status: draft
 version: 0.1

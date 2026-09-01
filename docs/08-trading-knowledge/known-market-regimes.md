@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-TKNW-007
 title: known market regimes
 status: draft
 version: 0.1

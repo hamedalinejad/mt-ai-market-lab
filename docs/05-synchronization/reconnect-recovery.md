@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SYNC-010
 title: reconnect recovery
 status: draft
 version: 0.1

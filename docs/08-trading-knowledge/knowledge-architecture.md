@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-TKNW-006
 title: knowledge architecture
 status: draft
 version: 0.1

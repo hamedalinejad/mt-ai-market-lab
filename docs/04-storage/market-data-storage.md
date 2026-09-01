@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-STOR-010
 title: market data storage
 status: draft
 version: 0.1

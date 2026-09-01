@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SIG-012
 title: signal ranking
 status: draft
 version: 0.1

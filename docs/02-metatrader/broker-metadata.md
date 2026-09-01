@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-MT5-003
 title: Broker Metadata
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-008
 title: formula discovery
 status: draft
 version: 0.1

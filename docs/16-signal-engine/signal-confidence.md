@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SIG-004
 title: signal confidence
 status: draft
 version: 0.1

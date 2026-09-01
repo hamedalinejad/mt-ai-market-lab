@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SIG-006
 title: signal confluence
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DISC-015
 title: regime discovery
 status: draft
 version: 0.1

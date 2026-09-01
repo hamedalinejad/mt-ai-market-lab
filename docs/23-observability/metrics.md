@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-OBS-006
 title: metrics
 status: draft
 version: 0.1

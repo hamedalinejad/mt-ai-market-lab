@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-RISK-004
 title: correlation risk
 status: draft
 version: 0.1

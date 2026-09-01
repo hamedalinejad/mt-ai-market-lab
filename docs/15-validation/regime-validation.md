@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-VAL-013
 title: regime validation
 status: draft
 version: 0.1

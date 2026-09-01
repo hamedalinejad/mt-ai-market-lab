@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-PRED-007
 title: prediction architecture
 status: draft
 version: 0.1

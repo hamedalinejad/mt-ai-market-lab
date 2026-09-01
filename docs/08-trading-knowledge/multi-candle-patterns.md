@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-TKNW-010
 title: multi candle patterns
 status: draft
 version: 0.1

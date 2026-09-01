@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-AI-004
 title: continual learning
 status: draft
 version: 0.1

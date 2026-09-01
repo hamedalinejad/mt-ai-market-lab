@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-DATA-003
 title: asset class model
 status: draft
 version: 0.1

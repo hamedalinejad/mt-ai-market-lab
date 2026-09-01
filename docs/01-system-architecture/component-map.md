@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-ARCH-003
 title: Component Map
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-PRED-009
 title: price prediction
 status: draft
 version: 0.1

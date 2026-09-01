@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-SIG-010
 title: signal history
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-PLACEHOLDER
+id: DOC-REPR-006
 title: market regime representation
 status: draft
 version: 0.1
