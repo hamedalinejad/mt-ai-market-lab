@@ -1,75 +1,36 @@
 ---
-id: DOC-MT5-018
+id: DOC-MT5-016
 title: Tick Ingestion
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 02-metatrader
 created: 2026-09-01
 updated: 2026-09-01
-depends_on: []
-related: []
+depends_on: [DOC-MT5-011, DOC-DATA-024]
+related: [DOC-STOR-009]
 ---
 
 # Tick Ingestion
 
 ## Purpose
 
-Specification for **Tick Ingestion** within the 02-metatrader domain.
+Path from MT5 tick APIs to canonical tick store.
 
-## Scope
+## Sources
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+- Live: Live Collector polling / ranged copy since cursor
+- Historical: `copy_ticks_range` (or equivalent) batches
 
-## Definitions
+## Pipeline
 
-TBD
-
-## Requirements
-
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
+```text
+MT5 tick API → Raw Tick Store → Normalize (UTC, instrument_id)
+  → Quality (bid/ask, duplicates) → Canonical Tick Store → sync_state
+```
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Tick ingestion is optional per instrument (resource-aware).
+- Canonical ticks never required for pure M1-based pipelines.
+- Bar building from ticks uses versioned definition if used as source of truth for that instrument.

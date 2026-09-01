@@ -1,75 +1,36 @@
 ---
-id: DOC-MT5-002
+id: DOC-MT5-003
 title: Bar Ingestion
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 02-metatrader
 created: 2026-09-01
 updated: 2026-09-01
-depends_on: []
-related: []
+depends_on: [DOC-MT5-008, DOC-DATA-003, DOC-DATA-023]
+related: [DOC-STOR-009]
 ---
 
 # Bar Ingestion
 
 ## Purpose
 
-Specification for **Bar Ingestion** within the 02-metatrader domain.
+Path from MT5 rates APIs to canonical candle store, respecting timeframe policy.
 
-## Scope
+## Priority
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+1. Ingest **M1** (canonical base) for selected instruments
+2. Ingest source-native higher TF only if policy exception applies
+3. Materialize derived TF as configured (from M1), not by default from redundant MT5 pulls
 
-## Definitions
+## Pipeline
 
-TBD
-
-## Requirements
-
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
+```text
+MT5 rates API → Raw Bar Store → Normalize → Quality → Canonical Bars
+  → update sync_state(instrument_id, timeframe)
+```
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Prefer one raw source of truth (M1) + derivation over N independent TF histories.
+- When source-native higher TF is stored, keep `origin=source_native` and do not overwrite derived partitions without explicit job.

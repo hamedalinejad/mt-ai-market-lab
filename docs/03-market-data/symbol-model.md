@@ -1,75 +1,46 @@
 ---
 id: DOC-DATA-021
-title: symbol model
+title: Symbol Model
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 03-market-data
 created: 2026-09-01
 updated: 2026-09-01
-depends_on: []
-related: []
+depends_on: [DOC-DATA-015]
+related: [DOC-MT5-014, DOC-MT5-015]
 ---
 
-# symbol model
+# Symbol Model
 
 ## Purpose
 
-Specification for **symbol model** within the 03-market-data domain.
-
-## Scope
-
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+Clarify **Symbol** (broker-facing name) vs **Instrument** (internal entity).
 
 ## Definitions
 
-TBD
+| Term | Meaning |
+|------|---------|
+| Symbol | String identifier in a broker/terminal context (`EURUSD`) |
+| Instrument | Internal lab entity with stable `instrument_id` and full metadata |
 
-## Requirements
+One Instrument ↔ one primary Symbol per broker binding; aliases may exist.
 
-TBD — to be refined from Master Blueprint.
+## Binding
 
-## Architecture
+```text
+(broker, server?, name) → instrument_id
+```
 
-TBD
+## Selection
 
-## Inputs
+Symbols enter the lab only through **symbol selection** configuration + discovery (Market Watch / available list). Selecting a symbol:
 
-TBD
-
-## Outputs
-
-TBD
+1. Resolves or creates Instrument metadata snapshot
+2. Enables sync for configured timeframes (per timeframe policy)
+3. Does **not** by itself open a GUI chart (see Chart Management)
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Never key long-term storage partitions only by mutable display name without catalog mapping to `instrument_id`.
+- `canonical_name` is for analytics joins; storage paths may use broker `name` for operator clarity if catalog maps correctly.

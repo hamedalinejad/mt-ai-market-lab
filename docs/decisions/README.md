@@ -41,4 +41,8 @@ Status
 - [ADR-0009-automated-trading-boundaries.md](ADR-0009-automated-trading-boundaries.md)
 - [ADR-0010-cross-market-intelligence.md](ADR-0010-cross-market-intelligence.md)
 - [ADR-0011-mixture-of-specialists.md](ADR-0011-mixture-of-specialists.md)
-- [ADR-0012-adversarial-validation.md](ADR-0012-adversarial-validation.md)
+- [ADR-0012-adversarial-validation.md
+- [ADR-0013-timeframe-canonical-policy.md](ADR-0013-timeframe-canonical-policy.md)
+- [ADR-0014-chart-open-via-mql5.md](ADR-0014-chart-open-via-mql5.md)](ADR-0012-adversarial-validation.md
+- [ADR-0013-timeframe-canonical-policy.md](ADR-0013-timeframe-canonical-policy.md)
+- [ADR-0014-chart-open-via-mql5.md](ADR-0014-chart-open-via-mql5.md))
