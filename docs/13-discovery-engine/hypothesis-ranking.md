@@ -1,30 +1,46 @@
 ---
-id: DOC-DISC-011
-title: hypothesis ranking
+id: DOC-DISC-010
+title: Hypothesis Ranking
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 13-discovery-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DISC-001]
+related: [DOC-DISC-008, DOC-VAL-001]
 ---
 
-# hypothesis ranking
+# Hypothesis Ranking
 
 ## Purpose
 
-Specification for **hypothesis ranking** within the 13-discovery-engine domain.
+Rank Candidates for limited Experiment Lab slots using a **penalized** score — raw in-sample performance is never enough.
 
-## Scope
+## Discovery Score (logical)
 
-Phase 0 — Documentation First.
+```text
+discovery_score =
+    performance
+  - complexity_penalty
+  - instability_penalty
+  - turnover_penalty
+  - data_snooping_penalty
+  - regime_dependence_penalty
+```
 
-## Requirements
+| Term | Intent |
+|------|--------|
+| performance | Task metric on **training / search** split only (never final proof) |
+| complexity_penalty | Depth, terms, conditions, free parameters |
+| instability_penalty | Sensitivity to small param/time perturbations |
+| turnover_penalty | If Candidate implies trading intensity |
+| data_snooping_penalty | Function of search budget / family size used to find it |
+| regime_dependence_penalty | Edge concentrated in one regime only |
 
-TBD — refined from Master Blueprint.
+Exact functional forms are Benchmark/Validation parameters; the **structure** of penalties is mandatory.
 
-## Open Questions
+## Rules
 
-TBD
+- Score is for **queue priority**, not Promotion.
+- Promotion uses Validation pipeline outcomes, not discovery_score alone.

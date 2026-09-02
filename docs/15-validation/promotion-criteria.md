@@ -1,30 +1,35 @@
 ---
-id: DOC-VAL-012
-title: promotion criteria
+id: DOC-VAL-015
+title: Promotion Criteria
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 15-validation
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-VAL-022, DOC-VAL-014]
+related: [DOC-KNOW-001, ADR-0005]
 ---
 
-# promotion criteria
+# Promotion Criteria
 
 ## Purpose
 
-Specification for **promotion criteria** within the 15-validation domain.
+Define when a Candidate may move toward Active Knowledge / Paper / richer status.
 
-## Scope
+## Minimum (search-generated trading-relevant Candidates)
 
-Phase 0 — Documentation First.
+- [ ] Pipeline stages required for artifact type all recorded  
+- [ ] Multiplicity accounting present and correction applied  
+- [ ] Leakage checks passed  
+- [ ] OOS / WF per gate set  
+- [ ] Cost + slippage stress per gate set  
+- [ ] Adversarial subset passed  
+- [ ] No unresolved data-quality issues on eval ranges  
 
-## Requirements
+Failure → Rejected or Needs More Evidence; stored in memory.
 
-TBD — refined from Master Blueprint.
+## Rules
 
-## Open Questions
-
-TBD
+- Promotion is explicit, versioned, reversible.
+- discovery_score alone never promotes.

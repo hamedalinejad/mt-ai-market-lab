@@ -1,30 +1,67 @@
 ---
 id: DOC-VAL-022
-title: validation architecture
+title: Validation Architecture
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 15-validation
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-MASTER-001, ADR-0005]
+related: [DOC-VAL-001, DOC-VAL-014, DOC-VAL-003]
 ---
 
-# validation architecture
+# Validation Architecture
 
 ## Purpose
 
-Specification for **validation architecture** within the 15-validation domain.
+Turn Validation from a folder of names into a **gated pipeline**. File existence ≠ engine design.
 
-## Scope
+## Normative Pipeline
 
-Phase 0 — Documentation First.
+```text
+Candidate
+   ↓
+Training split evaluation (fit / calibrate only as allowed)
+   ↓
+Validation split
+   ↓
+Test / Holdout
+   ↓
+Walk-Forward
+   ↓
+Regime Test
+   ↓
+Stress Test
+   ↓
+Cost Test
+   ↓
+Slippage Test
+   ↓
+Monte Carlo / resampling (as applicable)
+   ↓
+Adversarial Validation
+   ↓
+Paper Trading gate (when trading-relevant)
+   ↓
+Promotion decision (or reject / needs more evidence)
+```
 
-## Requirements
+Not every Candidate type requires every stage at full depth; **artifact-specific gate sets** select stages, but skipping multiplicity / leakage controls for search-generated Candidates is forbidden.
 
-TBD — refined from Master Blueprint.
+## Components
 
-## Open Questions
+| Component | Role |
+|-----------|------|
+| Split Manager | Train/val/test and WF folds without leakage |
+| Metric Engine | Task + economic metrics |
+| Cost Model | Spread/commission |
+| Slippage Model | Stress and base |
+| Multiplicity Accountant | Family-wise search budget |
+| Adversarial Runner | Devil’s advocate perturbations |
+| Promotion Gate | Status transition only on pass |
 
-TBD
+## Rules
+
+- Search-fit metrics are not Validation results.
+- Pipeline outcomes are persisted with Candidate id + data versions.

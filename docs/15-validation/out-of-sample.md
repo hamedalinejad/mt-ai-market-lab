@@ -1,30 +1,24 @@
 ---
-id: DOC-VAL-010
-title: out of sample
+id: DOC-VAL-016
+title: Out-of-Sample
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 15-validation
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-VAL-022]
+related: [DOC-VAL-024, DOC-VAL-014]
 ---
 
-# out of sample
+# Out-of-Sample
 
 ## Purpose
 
-Specification for **out of sample** within the 15-validation domain.
+Hold out data not used for search or fitting.
 
-## Scope
+## Rules
 
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+- Search/Discovery must not touch final holdout.
+- Nested design: inner optimization vs outer OOS.
+- Report OOS with multiplicity context when Candidate was search-selected.

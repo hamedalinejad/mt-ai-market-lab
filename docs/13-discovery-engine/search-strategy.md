@@ -1,30 +1,51 @@
 ---
 id: DOC-DISC-017
-title: search strategy
+title: Search Strategy
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 13-discovery-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DISC-006]
+related: [DOC-DISC-010, DOC-DISC-020, DOC-DISC-009]
 ---
 
-# search strategy
+# Search Strategy
 
 ## Purpose
 
-Specification for **search strategy** within the 13-discovery-engine domain.
+Govern how the Discovery Space is explored under budget.
 
-## Scope
+## Budgets (must be explicit per run)
 
-Phase 0 — Documentation First.
+- Max Candidates evaluated
+- Max wall time / CPU
+- Max expression complexity
+- Hypothesis family id (for multiple-testing accounting)
 
-## Requirements
+## Complexity Limits
 
-TBD — refined from Master Blueprint.
+Hard caps required, for example dimensions:
 
-## Open Questions
+- max terms
+- max conditions
+- max nesting depth
+- max distinct inputs
 
-TBD
+Preventing:
+
+```text
+1000 terms / 200 conditions / 17 nested operations
+```
+
+from being legal search outputs by default.
+
+## Algorithms
+
+- Enumerative / random search (bounded)
+- Symbolic regression solvers
+- Genetic programming
+- Hybrid
+
+Each run records algorithm id + hyperparameters + seed.

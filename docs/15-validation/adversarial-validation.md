@@ -1,30 +1,35 @@
 ---
-id: DOC-VAL-002
-title: adversarial validation
+id: DOC-VAL-001
+title: Adversarial Validation
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 15-validation
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [ADR-0012, DOC-VAL-022]
+related: [DOC-VAL-015]
 ---
 
-# adversarial validation
+# Adversarial Validation
 
 ## Purpose
 
-Specification for **adversarial validation** within the 15-validation domain.
+Actively try to break the Candidate before Promotion.
 
-## Scope
+## Attack families (candidates)
 
-Phase 0 — Documentation First.
+- Parameter perturbation  
+- Time window shift  
+- Regime stress  
+- Bootstrap / resampling  
+- Noise injection  
+- Feature removal  
+- Alternate splits  
+- Cost/slippage stress  
+- Symbol / timeframe transfer  
 
-## Requirements
+## Rules
 
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+- Soft Candidates that fail adversarial suite do not Promote.
+- Attacks and outcomes are logged for audit.

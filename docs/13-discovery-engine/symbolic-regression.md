@@ -8,29 +8,46 @@ domain: 13-discovery-engine
 created: 2026-09-01
 updated: 2026-09-02
 depends_on: [DOC-DISC-006]
-related: [DOC-DISC-008, DOC-DISC-009]
+related: [DOC-DISC-009, DOC-DISC-008]
 ---
 
 # Symbolic Regression
 
 ## Purpose
 
-Search numeric expressions with interpretability constraints.
+**Separate tool** from Genetic Programming.
+
+### Goal
+
+```text
+find f(X) → Y
+```
+
+Recover an interpretable numeric mapping from features/representation inputs `X` to a target `Y` (e.g. next return, direction score, range), under complexity and stability constraints.
+
+## Non-Goals
+
+- Evolving full trading strategies or multi-rule policies (that is closer to GP / strategy search)
+- Unbounded expression growth
+
+## Method Role
+
+Symbolic regression explores the **formula subspace** of Discovery Space: algebraic/temporal expressions with ranked complexity.
 
 ## Controls
 
-- Maximum depth / length
-- Operator set ⊆ Discovery Space whitelist
-- Complexity penalty (e.g. length, unique ops)
-- Numerical stability checks
-- Runtime cost estimate per candidate
-- Reproducibility: seed + data version + space version
+- Max depth / token length
+- Operator whitelist
+- Complexity penalty in scoring
+- Numerical validity
+- Train-only fitness; all promotion via Validation pipeline
 
-## Output
+## Relationship to GP
 
-Formula Candidates → shared Formula Discovery pipeline (OOS, WF, multiplicity, robustness).
+| | Symbolic Regression | Genetic Programming |
+|--|---------------------|---------------------|
+| Primary goal | `f(X)→Y` expressions | Evolve expressions **or** rules **or** strategy structures |
+| Output shape | Formula / feature | Broader genotype (rules, trees, graphs) |
+| Shared | Same space versioning, scoring penalties, Validation gates |
 
-## Rules
-
-- Prevent formula explosion via hard caps and early pruning.
-- Prefer Pareto front of fitness vs complexity for human review queues.
+They **must not** be merged into one vague “evolutionary discovery” concept in specs or code modules.

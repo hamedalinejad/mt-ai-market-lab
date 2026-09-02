@@ -1,30 +1,54 @@
 ---
 id: DOC-DISC-005
-title: discovery objectives
+title: Discovery Objectives
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 13-discovery-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DISC-001, DOC-MASTER-001]
+related: [DOC-DISC-006, DOC-VAL-001]
 ---
 
-# discovery objectives
+# Discovery Objectives
 
 ## Purpose
 
-Specification for **discovery objectives** within the 13-discovery-engine domain.
+State what Discovery **can and cannot** claim.
 
-## Scope
+## What Cannot Be Guaranteed
 
-Phase 0 — Documentation First.
+The system **cannot guarantee** that it will:
 
-## Requirements
+- always find something new
+- always find something true
+- always find something profitable
+- recover the “real” causal structure of markets
 
-TBD — refined from Master Blueprint.
+These are not engineering SLAs; they are scientific impossibilities to promise.
 
-## Open Questions
+## What We Design For
 
-TBD
+A **systematic, automated, reproducible** search over a versioned hypothesis space, where every Discovery is a **Candidate** subjected to strict statistical and economic evaluation.
+
+Aligned with project philosophy:
+
+> Discovery ≠ Truth  
+> Validation Before Promotion  
+> Failed Candidates are retained
+
+## Success Criteria for the Discovery subsystem
+
+| Criterion | Meaning |
+|-----------|---------|
+| Coverage | Search runs consume budget with logged space version |
+| Reproducibility | Same seed + data + space → same Candidate set |
+| Discipline | No Candidate skips Validation gates |
+| Learning | Failures feed memory; space not blindly expanded |
+| Resource honesty | Search respects laptop priority policy |
+
+## Rules
+
+- Marketing language in docs must not imply guaranteed edge discovery.
+- Research reports must separate “search activity” from “validated knowledge.”
