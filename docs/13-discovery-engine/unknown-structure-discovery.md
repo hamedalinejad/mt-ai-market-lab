@@ -1,30 +1,36 @@
 ---
-id: DOC-DISC-022
-title: unknown structure discovery
+id: DOC-DISC-021
+title: Unknown Structure Discovery
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 13-discovery-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DISC-014, DOC-REPR-002]
+related: [DOC-DISC-013, DOC-VAL-001]
 ---
 
-# unknown structure discovery
+# Unknown Structure Discovery
 
 ## Purpose
 
-Specification for **unknown structure discovery** within the 13-discovery-engine domain.
+Find structures not in the human candlestick taxonomy.
 
-## Scope
+## Intent
 
-Phase 0 — Documentation First.
+```text
+shape + regime + volume + time context → shifted outcome distribution
+```
 
-## Requirements
+## Method Family (candidates)
 
-TBD — refined from Master Blueprint.
+- Sequence encoding + clustering
+- Motif discovery
+- Representation learning (resource-limited)
+- Rule mining over representation predicates
 
-## Open Questions
+## Rules
 
-TBD
+- Outputs require characterization humans can inspect when possible.
+- Statistical claims require full Validation stack including multiple-testing control.

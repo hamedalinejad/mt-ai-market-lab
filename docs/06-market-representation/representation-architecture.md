@@ -1,30 +1,34 @@
 ---
-id: DOC-REPR-008
-title: representation architecture
+id: DOC-REPR-001
+title: Representation Architecture
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 06-market-representation
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DATA-001]
+related: [DOC-REPR-002, DOC-REPR-011, DOC-ANLY-001]
 ---
 
-# representation architecture
+# Representation Architecture
 
 ## Purpose
 
-Specification for **representation architecture** within the 06-market-representation domain.
+Convert Canonical Market Data into analysis-ready structures without embedding strategy logic.
 
-## Scope
+## Pipeline
 
-Phase 0 — Documentation First.
+```text
+Canonical Candle/Tick
+  → Candle Representation
+  → Sequence Representation
+  → Market State / Regime / Structure
+  → Cross-Timeframe / Cross-Market context
+  → Feature consumers (Analysis, AI, Discovery)
+```
 
-## Requirements
+## Separation
 
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+- Representation **does not** emit Signals or Orders.
+- Known pattern labels may be attached as optional annotations (Analysis/Knowledge), still Candidates until Validation when used for trading claims.

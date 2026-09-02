@@ -1,30 +1,39 @@
 ---
 id: DOC-TKNW-003
-title: candlestick patterns
+title: Candlestick Patterns
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 08-trading-knowledge
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-REPR-002]
+related: [DOC-DISC-014, DOC-TKNW-009]
 ---
 
-# candlestick patterns
+# Candlestick Patterns (Known Catalog)
 
 ## Purpose
 
-Specification for **candlestick patterns** within the 08-trading-knowledge domain.
+Catalog **Level-1 Known Patterns** as explicit definitions over Candle Representation.
 
-## Scope
+## Examples (non-exhaustive)
 
-Phase 0 — Documentation First.
+| Pattern | Geometric intent (must be formalized) |
+|---------|--------------------------------------|
+| Doji | Very small body_ratio |
+| Hammer | Small body, long lower_wick, short upper_wick, location rules |
+| Engulfing | Two-candle body containment + direction opposition |
+| Morning Star | Three-candle sequence with defined middle weakness |
 
-## Requirements
+Each pattern entry requires:
 
-TBD — refined from Master Blueprint.
+- `pattern_id`, version
+- Boolean predicate over 1..N candle representations
+- Optional context preconditions (trend/session)
+- References to literature/taxonomy (not proof of edge)
 
-## Open Questions
+## Rules
 
-TBD
+- Known ≠ profitable. Catalog is Knowledge of **definitions**, not Validation of expectancy.
+- Implementations must use shared Representation fields, not one-off OHLC code.

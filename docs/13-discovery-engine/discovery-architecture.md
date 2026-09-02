@@ -1,30 +1,42 @@
 ---
-id: DOC-DISC-003
-title: discovery architecture
+id: DOC-DISC-001
+title: Discovery Architecture
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 13-discovery-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-MASTER-001]
+related: [DOC-DISC-006, DOC-DISC-014, DOC-EXPL-001, DOC-VAL-001]
 ---
 
-# discovery architecture
+# Discovery Architecture
 
 ## Purpose
 
-Specification for **discovery architecture** within the 13-discovery-engine domain.
+Discovery produces **Candidates only** (patterns, formulas, relationships, regimes, …).
 
-## Scope
+## Pipeline
 
-Phase 0 — Documentation First.
+```text
+Discovery Space → Search → Candidate Generation
+  → Duplicate / Novelty Check → Ranking
+  → Experiment Lab → Validation → Knowledge (optional)
+```
 
-## Requirements
+## Pattern Levels
 
-TBD — refined from Master Blueprint.
+1. Known patterns  
+2. Parameterized patterns  
+3. Unknown structures  
 
-## Open Questions
+## Formula / Indicator Search
 
-TBD
+Uses versioned variable and operator space; classic indicators are baselines, not the ceiling.
+
+## Hard Rules
+
+- Discovery ≠ Truth  
+- Discovery ≠ Order  
+- Failed Candidates retained for memory  

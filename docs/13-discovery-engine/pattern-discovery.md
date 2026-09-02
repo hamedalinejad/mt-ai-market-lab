@@ -1,30 +1,74 @@
 ---
 id: DOC-DISC-014
-title: pattern discovery
+title: Pattern Discovery
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 13-discovery-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DISC-001, DOC-REPR-002, DOC-DISC-006]
+related: [DOC-DISC-021, DOC-TKNW-003, DOC-VAL-001]
 ---
 
-# pattern discovery
+# Pattern Discovery
 
 ## Purpose
 
-Specification for **pattern discovery** within the 13-discovery-engine domain.
+Discover pattern Candidates at three levels. Discovery **never** promotes to Truth without Validation.
 
-## Scope
+## Level 1 — Known Patterns
 
-Phase 0 — Documentation First.
+- Taxonomy: Doji, Hammer, Engulfing, Morning Star, …
+- Formal predicates on Candle Representation
+- Output: annotations / features / hypothesis seeds
+- Still Candidates for any **edge** claim
 
-## Requirements
+## Level 2 — Parameterized Patterns
 
-TBD — refined from Master Blueprint.
+Search over thresholds and combinations, e.g.:
 
-## Open Questions
+```text
+body_ratio < X
+wick_ratio > Y
+range percentile > Z
+direction = up
+volatility_context ∈ {compression, …}
+```
 
-TBD
+- X, Y, Z drawn from search space with complexity limits
+- Duplicate/novelty checks against Known + prior Candidates
+
+## Level 3 — Unknown Structure Discovery
+
+Unsupervised / representation-learning style search for structures **without** human pattern names:
+
+```text
+[shape embedding or geometry cluster A]
++ [volatility regime B]
++ [volume condition C]
++ [time/session context D]
+→ change in future return / range distribution
+```
+
+Pipeline sketch:
+
+```text
+Sequence encoding → similarity/clustering → cluster characterization
+  → outcome analysis → Pattern Candidate → Experiment Lab → Validation
+```
+
+## Outputs
+
+Always `Candidate` with:
+
+- definition (serializable)
+- support set / frequency
+- associated outcome metrics (preliminary only)
+- links to failed-memory if similar structures failed before
+
+## Rules
+
+- Level 1 definitions live in trading-knowledge; edge tests go through Validation.
+- Level 2/3 cannot skip Adversarial / multiple-testing controls.
+- No direct path to Order.
