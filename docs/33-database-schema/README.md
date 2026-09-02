@@ -1,14 +1,12 @@
 ---
-id: DOC-DBSCHEMA-README
-title: Database Schema Index
+id: DOC-33-README
+title: Database Schema Domain
 status: draft
 version: 0.2
 phase: 0
 domain: 33-database-schema
-depends_on: [DOC-CONTRACT-DB-001]
 ---
 
-# Database Schema Index
+# Database Schema
 
-**Binding schema:** `docs/contracts/database/sqlite-schema.md`  
-Parquet layout remains under storage domain narrative + partition contracts.
+See [sqlite-schema.md](sqlite-schema.md). Parquet partition layout remains under storage domain; SQLite owns control-plane state.

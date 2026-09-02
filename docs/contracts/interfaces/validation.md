@@ -7,10 +7,8 @@ phase: 0
 domain: contracts
 ---
 
-# Interface: ValidationEngine
+# ValidationEngine
 
 ## Methods
-
-run_pipeline(candidate, gate_set), record_multiplicity, promote_decision
-
-Hard-fail on leakage / missing multiplicity for search-origin candidates.
+- `run(candidate_id, gate_set) -> ValidationReport`
+- multiplicity metadata required for search-origin candidates

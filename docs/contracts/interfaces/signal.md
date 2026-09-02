@@ -7,10 +7,9 @@ phase: 0
 domain: contracts
 ---
 
-# Interface: SignalEngine
+# SignalEngine
 
 ## Methods
-
-assemble_candidate, validate_signal, publish, expire, mark_failed
-
-Requires Trace for material signals.
+- `propose(inputs) -> SignalCandidate`
+- `confirm / expire / resolve / fail`
+- always attaches trace_id

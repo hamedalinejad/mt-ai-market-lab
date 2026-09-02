@@ -1,21 +1,19 @@
 ---
 id: DOC-DATA-027
 title: Source Precedence
-status: draft
-version: 0.2
+status: reviewed
+version: 0.3
 phase: 0
 domain: 03-market-data
-created: 2026-09-02
-updated: 2026-09-02
-depends_on: [DOC-CONTRACT-IF-001]
 ---
 
-# Source Precedence
-
-When multiple providers supply the same identity:
+# Source Precedence (deterministic)
 
 ```text
-policy-ordered sources → conflict → quarantine or prefer higher-precedence with audit
+1 Primary source (e.g. live MT5 for that instrument)
+2 Secondary source
+3 Import source (CSV/Parquet bulk)
+4 Diagnostic source
 ```
 
-Never silently mix without `origin` / source field.
+Conflicts: higher wins for canonical publish; lower quarantined or stored as alternate origin with audit. Never silent mix.

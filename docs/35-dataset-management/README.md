@@ -1,13 +1,12 @@
 ---
-id: DOC-DSM-README
+id: DOC-35-README
 title: Dataset Management Index
 status: draft
 version: 0.2
 phase: 0
 domain: 35-dataset-management
-depends_on: [DOC-CONTRACT-DATASET-001]
 ---
 
-# Dataset Management Index
+# Dataset Management
 
-**Binding specification:** `docs/contracts/schemas/dataset-management.md`
+**Spec:** [dataset-specification.md](dataset-specification.md)

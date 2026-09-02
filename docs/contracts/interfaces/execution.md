@@ -7,12 +7,9 @@ phase: 0
 domain: contracts
 ---
 
-# Interface: ExecutionEngine
+# ExecutionEngine
 
 ## Methods
-
-submit(intent), cancel, reconcile, get_state
-
-## Idempotency
-
-client_order_id / intent_id; timeout → reconcile not blind resend
+- `submit(intent) -> Execution` (idempotent on client_order_id)
+- `reconcile(intent_id) -> Execution`
+- paper | live modes

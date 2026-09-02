@@ -7,10 +7,8 @@ phase: 0
 domain: contracts
 ---
 
-# Interface: RiskEngine
+# RiskEngine
 
 ## Methods
-
-evaluate(intent) → RiskDecision (ALLOW|DENY|REDUCE|DELAY|HALT)
-
-Independent of AI confidence.
+- `evaluate(intent) -> RiskDecision`
+- may DENY even if model confidence high

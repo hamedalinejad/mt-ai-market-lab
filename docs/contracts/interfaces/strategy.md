@@ -1,14 +1,23 @@
 ---
 id: DOC-CONTRACT-IF-strategy
 title: Interface — StrategyEngine
-status: draft
-version: 0.2
+status: reviewed
+version: 0.3
 phase: 0
 domain: contracts
 ---
 
-# Interface: StrategyEngine
+# StrategyEngine
 
 ## Methods
+```text
+on_signal(signal) -> OrderIntent | None
+on_bar(closed_bar_context) -> OrderIntent | None
+validate_intent(intent) -> bool
+```
 
-on_signal → OrderIntent proposal (never direct broker send)
+## Rules
+Never submits to broker; RiskEngine must evaluate intent.
+
+## Test double
+PassthroughStrategy / NoopStrategy

@@ -1,22 +1,31 @@
 ---
 id: DOC-CONTRACT-IF-model
-title: Interface — ModelAdapter / ModelRegistry
-status: draft
-version: 0.2
+title: Interface — Model Registry & Runtime
+status: reviewed
+version: 0.3
 phase: 0
 domain: contracts
 ---
 
-# Interface: ModelAdapter & Registry
+# Model Registry / Runtime
 
-## ModelAdapter
+## Methods
+```text
+list_models()
+get_active_model(slot?)
+promote_model(version)
+rollback_model(to_version)
+retire_model(version)
+compare_models(a, b)
+load(version) / unload()
+predict(feature_snapshot) -> Prediction
+```
 
-fit (offline), predict, save_artifact, load_artifact
-
-## Registry
-
-list_models, get_active, promote, rollback, retire, compare
+## Errors
+ModelNotFound, FeatureVersionMismatch, PromotionDenied
 
 ## Idempotency
+promote/rollback recorded once per transition event
 
-promote/rollback recorded as events; artifacts immutable.
+## Test double
+StubModelAdapter returning fixed Prediction

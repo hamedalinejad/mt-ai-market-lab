@@ -1,32 +1,18 @@
 ---
 id: DOC-DATA-028
 title: Volume Model
-status: draft
-version: 0.2
+status: reviewed
+version: 0.3
 phase: 0
 domain: 03-market-data
-created: 2026-09-02
-updated: 2026-09-02
-depends_on: [DOC-DATA-003, DOC-DATA-024]
 ---
 
 # Volume Model
 
-## Purpose
+## Fields
+```text
+volume_type ∈ {tick_volume, real_volume, trade_volume, unknown}
+volume_semantics  # broker/asset-class specific note id
+```
 
-Define volume fields for ticks and candles without assuming exchange-quality volume on all FX symbols.
-
-## Candle
-
-- `tick_volume` when broker provides tick volume
-- `volume` when real volume available
-- Missing volume → null, not zero (unless source explicitly zero)
-
-## Tick
-
-Optional trade size / volume fields when present; quote-only ticks may have null volume.
-
-## Invariants
-
-- Volume >= 0 when present
-- Do not invent volume from OHLC alone for promotable features without declaring synthetic definition version
+FX often tick_volume only; crypto/CFD may differ — never assume interchangeability without volume_type.

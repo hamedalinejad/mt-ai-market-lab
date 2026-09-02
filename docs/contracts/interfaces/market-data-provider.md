@@ -2,36 +2,25 @@
 id: DOC-CONTRACT-IF-001
 title: Interface — MarketDataProvider
 status: draft
-version: 0.2
+version: 0.3
 phase: 0
 domain: contracts
 ---
 
-# Interface: MarketDataProvider
+# MarketDataProvider
 
-## Methods (logical)
-
-| Method | Input | Output | Idempotent |
-|--------|-------|--------|------------|
-| list_instruments | filter? | Instrument[] | yes |
-| get_instrument | id/name | Instrument | yes |
-| get_bars | instrument, tf, range | Candle[] | yes |
-| get_ticks | instrument, range | Tick[] | yes |
-| get_last_quote | instrument | Quote | yes |
-| health | — | Health | yes |
+## Methods
+- `list_instruments() -> Instrument[]`
+- `get_candles(instrument_id, timeframe, from, to) -> Candle[]`
+- `get_ticks(instrument_id, from, to) -> Tick[]`
+- `get_quote(instrument_id) -> Quote`
+- `health() -> ProviderHealth`
 
 ## Errors
+retryable: timeout, disconnect | non_retryable: invalid symbol | recoverable: after reconnect
 
-retryable: connection timeout; non_retryable: invalid symbol; fatal: auth broken
-
-## Concurrency
-
-Thread-safe read; writers only inside adapter connection policy.
-
-## Timeout / Cancellation
-
-All IO methods accept timeout; long range fetches cancellable.
+## Semantics
+idempotent reads; no side effects on market; timeout per call; cancellation cooperative
 
 ## Test double
-
-`FakeMarketDataProvider`, `ReplayProvider`
+`FakeMarketDataProvider` / `ReplayProvider`

@@ -1,30 +1,28 @@
 ---
 id: DOC-CONTRACT-001
-title: Contracts Layer — Single Source of Truth
+title: Contracts — Source of Truth
 status: draft
-version: 0.2
+version: 0.3
 phase: 0
 domain: contracts
 created: 2026-09-01
 updated: 2026-09-02
 ---
 
-# Contracts — Binding Source of Truth
+# Contracts — Single Source of Truth
+
+**Binding** data contracts, interfaces, events, schemas, and errors live **only** under:
 
 ```text
 docs/contracts/
-├── data/          # entity schemas (binding)
-├── interfaces/    # method-level interfaces (binding)
+├── data/
+├── interfaces/
 ├── events/
-├── schemas/       # shared types
+├── schemas/          # SQLite/logical ER references
 ├── errors/
-└── database/      # SQLite logical schema (binding)
+└── README.md
 ```
 
-Domain folders (03-market-data, 31-*, …) hold **narrative architecture** and **indexes**.  
-If narrative and contract conflict, **contract wins** until an ADR changes it.
+Domain folders `docs/31-data-contracts` … `docs/35-dataset-management` are **indexes/pointers only** — they must not duplicate binding field lists.
 
-## Policy
-
-- No important contract may have two binding homes.
-- Domains 31–35 are indexes pointing here.
+Narrative architecture remains in domains `00–29`, `30-testing`, `36+`.

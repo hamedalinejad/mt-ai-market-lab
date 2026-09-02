@@ -1,14 +1,12 @@
 ---
-id: DOC-REPLAY-README
+id: DOC-34-README
 title: Replay Engine Index
 status: draft
 version: 0.2
 phase: 0
 domain: 34-replay-engine
-depends_on: [DOC-CONTRACT-REPLAY-001]
 ---
 
-# Replay Engine Index
+# Replay Engine
 
-**Binding specification:** `docs/contracts/schemas/replay-engine.md` (and validation docs).  
-This folder is navigation only.
+**Spec:** [replay-specification.md](replay-specification.md)

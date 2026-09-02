@@ -1,24 +1,26 @@
 ---
-id: DOC-CONV-0006
-title: Status Model
-status: draft
-version: 0.1
+id: DOC-CONV-005
+title: Document Status Model
+status: approved
+version: 0.3
 phase: 0
 domain: conventions
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
 ---
 
-# Status Model
+# Document Status Model
 
-Allowed values:
+```text
+draft → reviewed → approved → implemented → deprecated
+```
 
-- `draft`
-- `review`
-- `approved`
-- `deprecated`
-- `superseded`
+| Status | Meaning |
+|--------|---------|
+| draft | Work in progress; not binding for code |
+| reviewed | Peer/architecture review done; not yet binding |
+| approved | **Binding for implementation** — required before code for that P0 item |
+| implemented | Code exists matching approved contract |
+| deprecated | Superseded; do not implement against |
 
-**Rule:** Approved Specification ≠ Implemented Code.
+**Rule:** No P0 item enters production code implementation without `status: approved`.
