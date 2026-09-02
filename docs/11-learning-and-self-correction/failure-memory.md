@@ -1,30 +1,46 @@
 ---
-id: DOC-LEARN-009
-title: failure memory
+id: DOC-LEARN-008
+title: Failure Memory
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 11-learning-and-self-correction
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-LEARN-001]
+related: [DOC-LEARN-015, DOC-AI-012]
 ---
 
-# failure memory
+# Failure Memory
 
 ## Purpose
 
-Specification for **failure memory** within the 11-learning-and-self-correction domain.
+```text
+Failure = Training Signal
+```
 
-## Scope
+Failures are recorded, not deleted.
 
-Phase 0 — Documentation First.
+## Forbidden
 
-## Requirements
+- “Delete the mistake”
+- Silent overwrite without record
+- Erasing failed patterns so they cannot be re-identified
 
-TBD — refined from Master Blueprint.
+## Required Record
 
-## Open Questions
+```text
+Prediction / Signal / Strategy decision
+Outcome
+Error
+Context Snapshot
+Model Version
+Feature Version
+Market Regime
+Confidence
+Timestamp
+```
 
-TBD
+## Usage
+
+Retrievable in similar context; negative evidence for ranking, routing, shadow updates, promotion vetoes, and Signal Trace.

@@ -1,30 +1,64 @@
 ---
-id: DOC-AI-017
-title: online learning
+id: DOC-AI-012
+title: Online Learning
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 10-ai-core
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [ADR-0007, DOC-LEARN-015]
+related: [DOC-LEARN-008, DOC-VAL-022]
 ---
 
-# online learning
+# Online Learning
 
 ## Purpose
 
-Specification for **online learning** within the 10-ai-core domain.
+Limited live adaptation without letting a single bad observation destroy the promoted model.
 
-## Scope
+## Forbidden
 
-Phase 0 — Documentation First.
+```text
+new candle → model.update() → immediate production use
+```
 
-## Requirements
+## Required governance pipeline
 
-TBD — refined from Master Blueprint.
+```text
+Live Observation
+       ↓
+Prediction
+       ↓
+Outcome becomes known
+       ↓
+Outcome Evaluation
+       ↓
+Error Classification
+       ↓
+Candidate Update
+       ↓
+Shadow Model
+       ↓
+Validation
+       ↓
+Promotion / Rollback
+```
 
-## Open Questions
+## Concepts
 
-TBD
+- **Promoted model**: production; changes only via Promotion
+- **Shadow model**: receives candidate online updates; parallel eval
+- **Candidate update**: proposed change from error analysis — not auto-written to production
+
+## Constraints
+
+- Light, incremental, bounded steps
+- Always versioned and reversible
+- No immediate Promotion
+- Minimum shadow sample/time budget before Promotion review
+
+## Rules
+
+- Online learning without Shadow + Validation is out of policy.
+- Failure Memory feeds candidate updates; it does not directly write production weights.

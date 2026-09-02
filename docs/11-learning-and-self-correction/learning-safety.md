@@ -1,30 +1,46 @@
 ---
-id: DOC-LEARN-012
-title: learning safety
+id: DOC-LEARN-015
+title: Learning Safety
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 11-learning-and-self-correction
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-LEARN-001, ADR-0007]
+related: [DOC-AI-012, DOC-LEARN-008]
 ---
 
-# learning safety
+# Learning Safety
 
 ## Purpose
 
-Specification for **learning safety** within the 11-learning-and-self-correction domain.
+Bound learning so mistakes correct the system **through governance**, not through erasure or blind updates.
 
-## Scope
+## Forbidden
 
-Phase 0 — Documentation First.
+```text
+new candle → model.update() → production
+```
 
-## Requirements
+```text
+mistake → delete the mistake from history
+```
 
-TBD — refined from Master Blueprint.
+## Required
 
-## Open Questions
+```text
+Observation → Prediction → Outcome → Evaluation
+  → Error Classification → Candidate Update
+  → Shadow Model → Validation → Promotion / Rollback
+```
 
-TBD
+```text
+Failure → Failure Memory → Training Signal / Negative Evidence
+```
+
+## Rules
+
+- Production weights change only via Promotion.
+- Shadow models absorb candidate online updates.
+- Failure Memory is mandatory evidence, not disposable log noise.
