@@ -1,30 +1,49 @@
 ---
-id: DOC-PRED-006
-title: next candle prediction
+id: DOC-PRED-007
+title: Next Candle Prediction
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 12-prediction
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-PRED-001, DOC-REPR-002]
+related: [DOC-PRED-002, DOC-PRED-005]
 ---
 
-# next candle prediction
+# Next Candle Prediction
 
 ## Purpose
 
-Specification for **next candle prediction** within the 12-prediction domain.
+Predict properties of the **next candle** as a multi-output probabilistic object — not a single label `bullish`.
 
-## Scope
+## Required / Preferred Outputs
 
-Phase 0 — Documentation First.
+```text
+P(Close > Open)
+P(Close > previous_close)
+Expected return
+Expected range
+Expected volatility
+Expected high
+Expected low
+```
 
-## Requirements
+Optional:
 
-TBD — refined from Master Blueprint.
+- quantiles for high/low/close/return  
+- scenarios (paths) with probabilities  
+- uncertainty intervals  
 
-## Open Questions
+## Forbidden as sole output
 
-TBD
+```text
+next_candle = bullish
+```
+
+A hard direction label may exist only as a **summary** of an underlying probability vector, with thresholds declared and calibrated.
+
+## Rules
+
+- Decision point (bar open vs close) must be declared.
+- Outputs are estimates for Signal Engine consumption, not orders.

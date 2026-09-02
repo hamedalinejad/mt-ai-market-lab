@@ -1,30 +1,64 @@
 ---
-id: DOC-SIG-011
-title: signal model
+id: DOC-SIG-002
+title: Signal Model
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 16-signal-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-SIG-001]
+related: [DOC-SIG-012, DOC-LEARN-008]
 ---
 
-# signal model
+# Signal Model
 
 ## Purpose
 
-Specification for **signal model** within the 16-signal-engine domain.
+Signal is an independent entity with lifecycle and trace.
 
-## Scope
+## Core Fields
 
-Phase 0 — Documentation First.
+```text
+Symbol / instrument_id
+Timeframe
+Direction
+Horizon
+Strength
+Confidence
+Prediction References
+Evidence
+Supporting Knowledge
+Contradicting Knowledge
+Expiration
+Status
+Trace
+```
 
-## Requirements
+## Lifecycle
 
-TBD — refined from Master Blueprint.
+```text
+CREATED
+  ↓
+CONFIRMED
+  ↓
+ACTIVE
+  ↓
+UPDATED
+  ↓
+EXPIRED
+  ↓
+RESOLVED
+```
 
-## Open Questions
+If wrong:
 
-TBD
+```text
+FAILED
+```
+
+## Rules
+
+- **FAILED signals are not deleted.** They are recorded and linked to Failure Memory and outcome evaluation.
+- EXPIRED / RESOLVED remain in history for learning and audit.
+- Status transitions are explicit and timestamped.

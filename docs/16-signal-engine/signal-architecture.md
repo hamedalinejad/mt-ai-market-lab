@@ -1,30 +1,50 @@
 ---
-id: DOC-SIG-003
-title: signal architecture
+id: DOC-SIG-001
+title: Signal Architecture
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 16-signal-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-PRED-001, ADR-0005]
+related: [DOC-SIG-012, DOC-SIG-002]
 ---
 
-# signal architecture
+# Signal Architecture
 
 ## Purpose
 
-Specification for **signal architecture** within the 16-signal-engine domain.
+Keep **Signal** independent from **Prediction**.
 
-## Scope
+```text
+Prediction ≠ Decision
+```
 
-Phase 0 — Documentation First.
+## Assembly Path
 
-## Requirements
+```text
+Prediction
++
+Analysis
++
+Discovery
++
+Context
++
+Knowledge
+       ↓
+Signal Candidate
+       ↓
+Signal Validation
+       ↓
+Signal Confidence
+       ↓
+Signal
+```
 
-TBD — refined from Master Blueprint.
+## Rules
 
-## Open Questions
-
-TBD
+- A Prediction alone does not create a production Signal.
+- Evidence, knowledge refs, and Trace are mandatory for material signals.
+- Risk Engine may veto after Signal creation; Execution remains further downstream.

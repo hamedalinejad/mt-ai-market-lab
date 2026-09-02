@@ -1,30 +1,39 @@
 ---
-id: DOC-SIG-014
-title: signal trace
+id: DOC-SIG-012
+title: Signal Trace
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 16-signal-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-SIG-002]
+related: [DOC-LEARN-008]
 ---
 
-# signal trace
+# Signal Trace
 
 ## Purpose
 
-Specification for **signal trace** within the 16-signal-engine domain.
+Answer: **Why was this signal created?**
 
-## Scope
+## Trace Contents (candidate)
 
-Phase 0 — Documentation First.
+```text
+Data Snapshot
+Market State
+Detected Patterns
+Indicators
+Features
+Predictions
+Knowledge References
+Contradictions
+Error Memory Matches
+Confidence Decomposition
+Decision Path
+```
 
-## Requirements
+## Rules
 
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+- Material signals without Trace are non-compliant.
+- FAILED signals keep Trace for diagnosis; they are not purged.

@@ -1,30 +1,59 @@
 ---
-id: DOC-PRED-007
-title: prediction architecture
+id: DOC-PRED-001
+title: Prediction Architecture
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 12-prediction
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-AI-001]
+related: [DOC-PRED-002, DOC-PRED-007, DOC-SIG-001]
 ---
 
-# prediction architecture
+# Prediction Architecture
 
 ## Purpose
 
-Specification for **prediction architecture** within the 12-prediction domain.
+Prediction is a **probabilistic estimate**, not a decision. It must not collapse to a single hard `next_price`.
 
-## Scope
+## Preferred Target Families
 
-Phase 0 — Documentation First.
+```text
+Direction
+Return
+Price
+Range
+Volatility
+Probability
+Quantiles
+Scenario
+Next Candle
+Multi-Candle Path
+```
 
-## Requirements
+Prefer:
 
-TBD — refined from Master Blueprint.
+```text
+P(up), P(down), P(flat)
+```
 
-## Open Questions
+over a lone point:
 
-TBD
+```text
+next_price = 1.2345
+```
+
+Point forecasts, when present, should come with uncertainty (intervals, quantiles, or variance).
+
+## Required Companion Fields
+
+- Probability / confidence / uncertainty  
+- Model version  
+- Feature snapshot id  
+- Evaluation context / decision point  
+
+## Rules
+
+- Prediction ≠ Signal ≠ Order  
+- Multi-horizon outputs are first-class when the model provides them  

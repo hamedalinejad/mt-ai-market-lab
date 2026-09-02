@@ -1,30 +1,27 @@
 ---
-id: DOC-PRED-003
-title: direction prediction
+id: DOC-PRED-002
+title: Direction Prediction
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 12-prediction
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-PRED-001]
+related: [DOC-PRED-007]
 ---
 
-# direction prediction
+# Direction Prediction
 
-## Purpose
+## Preferred form
 
-Specification for **direction prediction** within the 12-prediction domain.
+```text
+P(up), P(down), P(flat)
+```
 
-## Scope
+not only a hard class label.
 
-Phase 0 — Documentation First.
+## Rules
 
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+- Hard label, if emitted, is a thresholded summary of probabilities.
+- Calibration and confidence are part of evaluation, not optional extras.
