@@ -1,30 +1,17 @@
 ---
-id: DOC-EXPL-007
-title: experiment registry
+id: DOC-EXPL-004
+title: Experiment Registry
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 14-experiment-lab
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-EXPL-003]
 ---
 
-# experiment registry
+# Experiment Registry
 
-## Purpose
-
-Specification for **experiment registry** within the 14-experiment-lab domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+```text
+Experiment ID | Hypothesis | Dataset | Method | Result | Conclusion
+```

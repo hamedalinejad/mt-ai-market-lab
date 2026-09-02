@@ -1,30 +1,20 @@
 ---
-id: DOC-STRAT-004
-title: strategy decay
+id: DOC-STRAT-012
+title: Strategy Decay
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 17-strategy-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-STRAT-011]
+related: [DOC-VAL-012]
 ---
 
-# strategy decay
+# Strategy Decay
 
-## Purpose
+```text
+decay = f(performance deterioration over time)
+```
 
-Specification for **strategy decay** within the 17-strategy-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+Thresholds and window lengths are versioned policy parameters, not hard-coded magic numbers in engines.

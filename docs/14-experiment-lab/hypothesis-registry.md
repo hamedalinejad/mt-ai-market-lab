@@ -1,30 +1,18 @@
 ---
-id: DOC-EXPL-010
-title: hypothesis registry
+id: DOC-EXPL-005
+title: Hypothesis Registry
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 14-experiment-lab
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-EXPL-002]
 ---
 
-# hypothesis registry
+# Hypothesis Registry
 
-## Purpose
-
-Specification for **hypothesis registry** within the 14-experiment-lab domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+```text
+H-00001
+status: open | testing | supported | rejected | superseded
+```

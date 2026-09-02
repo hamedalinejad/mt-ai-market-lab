@@ -11,11 +11,15 @@ depends_on: [DOC-KNOW-001]
 related: [DOC-VAL-015]
 ---
 
-# Knowledge Lifecycle
+# Knowledge Lifecycle (State Machine)
 
 ```text
-UNKNOWN → CANDIDATE → DISCOVERED → TESTED → VALIDATED
-  → ACTIVE → DEGRADED → UNCERTAIN → RETIRED / REJECTED
+UNKNOWN → CANDIDATE → EXPERIMENTAL → VALIDATED → ACTIVE
+  → DEGRADED → RETIRED
+
+REJECTED  (branch)
 ```
 
-Each transition records evidence edges (Validation, Outcome, Failure).
+## Evidence rule
+
+No Knowledge becomes **ACTIVE** without `evidence_ids`.

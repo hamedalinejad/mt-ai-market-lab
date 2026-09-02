@@ -2,74 +2,29 @@
 id: DOC-MT5-009
 title: Integration Boundary
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 02-metatrader
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [ADR-0008]
+related: [DOC-CONTRACT-IF-001]
 ---
 
-# Integration Boundary
+# MT5 Integration Boundary
 
-## Purpose
+## MT5Adapter is the only gateway
 
-Specification for **Integration Boundary** within the 02-metatrader domain.
+No domain may call:
 
-## Scope
+```text
+mt5.copy_rates_range(...)
+```
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+directly. Path:
 
-## Definitions
+```text
+MT5 Adapter → Canonical Market Schema → rest of system
+```
 
-TBD
-
-## Requirements
-
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
-
-## Rules
-
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+Canonical data is **source-neutral**. AI never binds to MT5 namedtuples.
