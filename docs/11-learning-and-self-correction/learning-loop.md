@@ -1,30 +1,47 @@
 ---
-id: DOC-LEARN-011
-title: learning loop
+id: DOC-LEARN-001
+title: Learning Loop
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 11-learning-and-self-correction
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-LEARN-015]
+related: [DOC-AI-012]
 ---
 
-# learning loop
+# Learning Loop
 
-## Purpose
+## Anti-oscillation controls
 
-Specification for **learning loop** within the 11-learning-and-self-correction domain.
+```text
+update threshold
+minimum evidence
+cooldown
+rollback threshold
+stability window
+```
 
-## Scope
+Blind `error → update → error → update` loops are forbidden.
 
-Phase 0 — Documentation First.
+## Continual learning with replay
 
-## Requirements
+```text
+Recent Data
++ Representative Historical Data
++ Failure Cases
++ Rare Events
++ Regime Samples
+```
 
-TBD — refined from Master Blueprint.
+Mitigates catastrophic forgetting.
 
-## Open Questions
+## Failure memory weighting
 
-TBD
+Failures are not equal:
+
+```text
+normal miss | rare-event miss | regime-change miss
+execution miss | data-quality miss | model-confidence miss
+```

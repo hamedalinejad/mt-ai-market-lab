@@ -1,30 +1,20 @@
 ---
 id: DOC-FEAT-003
-title: cross timeframe features
+title: Cross-Timeframe Features
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 07-feature-engineering
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-VAL-013, DOC-DATA-023]
+related: [DOC-REPR-003]
 ---
 
-# cross timeframe features
+# Cross-Timeframe Features
 
-## Purpose
+## Leakage control
 
-Specification for **cross timeframe features** within the 07-feature-engineering domain.
+An M1 decision must not use an **incomplete** higher-TF bar as if it were closed H1/D1 future knowledge.
 
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+Only last **closed** higher-TF bars (or explicitly declared partial-bar semantics) are allowed.

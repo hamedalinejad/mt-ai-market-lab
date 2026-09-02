@@ -1,30 +1,30 @@
 ---
-id: DOC-FEAT-007
-title: feature selection
+id: DOC-FEAT-016
+title: Feature Selection
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 07-feature-engineering
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-FEAT-001, DOC-VAL-013]
+related: [DOC-FEAT-015]
 ---
 
-# feature selection
+# Feature Selection
 
-## Purpose
+## Redundancy before heavy training
 
-Specification for **feature selection** within the 07-feature-engineering domain.
+```text
+correlation | mutual information | stability | importance | redundancy
+```
 
-## Scope
+## Time-aware selection (mandatory)
 
-Phase 0 — Documentation First.
+Forbidden:
 
-## Requirements
+```text
+full dataset → feature selection → train/test
+```
 
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+Required: selection **inside each training window** (nested), never using future test folds.

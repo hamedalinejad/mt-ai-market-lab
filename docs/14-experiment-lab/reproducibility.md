@@ -8,21 +8,25 @@ domain: 14-experiment-lab
 created: 2026-09-01
 updated: 2026-09-02
 depends_on: [DOC-EXPL-003]
-related: [DOC-AI-014, DOC-FEAT-001, DOC-VAL-021]
+related: [DOC-AI-014, DOC-FEAT-001, DOC-VAL-021, DOC-CFG-001]
 ---
 
 # Reproducibility
 
-## Required Pins
+## Required Experiment Pins
 
 ```text
+experiment_id
 dataset_version
-feature_definition_version
+data_snapshot
+feature_version
+model_version
 code_version
-seed
+config_version
+random_seed
+hardware_profile
+timestamp
 cost_bundle_id
-model_version (if inference under test)
-timezone/session policy versions
 ```
 
-Same pins ⇒ comparable rerun.
+Missing pins ⇒ non-comparable / non-promotable for trading claims.
