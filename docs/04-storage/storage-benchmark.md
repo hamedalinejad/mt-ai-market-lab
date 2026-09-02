@@ -1,75 +1,24 @@
 ---
 id: DOC-STOR-015
-title: storage benchmark
+title: Storage Benchmark
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 04-storage
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [ADR-0004]
+related: [DOC-TEST-004]
 ---
 
-# storage benchmark
+# Storage Benchmark Specification
 
-## Purpose
+Workloads:
 
-Specification for **storage benchmark** within the 04-storage domain.
+```text
+1M / 10M / 100M rows
+random read | range read | append | upsert
+compression | concurrent read | recovery | disk usage
+```
 
-## Scope
-
-Phase 0 — Documentation First. This is a Specification document, not implementation.
-
-## Definitions
-
-TBD
-
-## Requirements
-
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
-
-## Rules
-
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+Storage selection remains Benchmark-driven per ADR.
