@@ -2,28 +2,20 @@
 id: DOC-CONTRACT-IF-storage
 title: Interface — Storage
 status: reviewed
-version: 0.3
+version: 0.4
 phase: 0
 domain: contracts
 ---
 
 # Storage
 
+## Boundaries
+SQLite control plane | Parquet canonical | DuckDB analytics (read)
+
 ## Methods
-| Method | Notes |
-|--------|-------|
-| put_raw(batch) | durable raw |
-| put_canonical(batch) | after quality; idempotent by logical identity |
-| get_range(identity_query) | ordered |
-| exists(logical_id) | |
-| begin/commit/rollback | SQLite tx; single-writer |
-| checkpoint | WAL checkpoint policy |
+put_raw, put_canonical (after validate), get_range, publish_batch (atomic order), quarantine_put, manifest_write/read
 
-## Errors
-StorageFull (fatal→Safe Mode), StorageLocked (backoff), CorruptObject (quarantine)
+## Atomic publish order
+staging → validate → checksum → publish → sync_state/manifest update
 
-## Idempotency
-put_canonical upsert on logical identity
-
-## Test double
-MemoryStorage / TempDirStorage
+## Single-writer SQLite; idempotent canonical upsert by logical identity

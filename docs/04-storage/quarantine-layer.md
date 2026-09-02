@@ -1,23 +1,14 @@
 ---
 id: DOC-STOR-020
 title: Quarantine Layer
-status: draft
-version: 0.2
+status: reviewed
+version: 0.3
 phase: 0
 domain: 04-storage
-created: 2026-09-01
-updated: 2026-09-02
-depends_on: [DOC-DATA-007]
-related: [DOC-STOR-019]
 ---
 
-# Quarantine Layer
+# Quarantine
 
-Holds:
+Invalid data → `data/quarantine/` (or equivalent store) with reason + batch id.
 
-```text
-bad ticks | bad candles | unknown symbols
-corrupt datasets | invalid discoveries | failed models
-```
-
-Not deleted; isolated from promotable training paths by default.
+**Never silently drop.** Promotion/training paths exclude quarantine by default.

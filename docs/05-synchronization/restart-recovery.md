@@ -1,75 +1,21 @@
 ---
-id: DOC-SYNC-011
-title: restart recovery
-status: draft
-version: 0.1
+id: DOC-SYNC-016
+title: Restart Recovery
+status: reviewed
+version: 0.2
 phase: 0
 domain: 05-synchronization
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
 ---
 
-# restart recovery
+# Restart Recovery
 
-## Purpose
+```text
+load sync states
+discover source availability
+detect gaps
+repair
+reconcile
+resume live
+```
 
-Specification for **restart recovery** within the 05-synchronization domain.
-
-## Scope
-
-Phase 0 — Documentation First. This is a Specification document, not implementation.
-
-## Definitions
-
-TBD
-
-## Requirements
-
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
-
-## Rules
-
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+Part of Startup sequence; fail closed on integrity errors.

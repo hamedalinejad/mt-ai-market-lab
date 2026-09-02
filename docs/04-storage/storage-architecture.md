@@ -1,51 +1,23 @@
 ---
 id: DOC-STOR-014
 title: Storage Architecture
-status: draft
-version: 0.2
+status: reviewed
+version: 0.4
 phase: 0
 domain: 04-storage
-created: 2026-09-01
 updated: 2026-09-02
 depends_on: [ADR-0004]
-related: [DOC-DATA-024, DOC-DATA-003, DOC-RES-009]
 ---
 
-# Storage Architecture
+# Storage Architecture — Binding Boundaries
 
-## Hybrid (direction)
-
-```text
-SQLite  → metadata, sync_state, registry, experiments
-Parquet → historical market / features / datasets
-DuckDB  → analytics over Parquet (+ SQLite attach)
-```
-
-## Layout (candidate)
-
-```text
-data/
-├── raw/{ticks,bars}/
-├── canonical/{symbol}/...
-├── features/
-├── labels/
-├── datasets/
-├── experiments/
-└── archive/
-
-state/market_lab.sqlite
-analytics/market_lab.duckdb
-```
-
-## Tiering
-
-```text
-Hot:  Recent ticks
-Warm: Recent bars
-Cold: Historical compressed ticks + historical bars
-```
+| Layer | Technology | Owns |
+|-------|------------|------|
+| **Control / metadata** | **SQLite** (WAL) | registries, sync_state, config pins, experiment index, event_log pointers |
+| **Canonical historical** | **Parquet** | market bars/ticks partitions, feature matrices, dataset snapshots |
+| **Analytics / research** | **DuckDB** | query engine over Parquet (+ attach SQLite); not primary write path for canonical |
 
 ## Rules
-
-- Tick and candle canonical series are independent.
-- Retention and compression policies are Resource-profile aware.
+- DuckDB is not the system of record for canonical writes.
+- SQLite is not the multi-year market data lake.
+- Parquet partitions are immutable once published (new version / compaction = new files + manifest).

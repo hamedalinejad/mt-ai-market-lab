@@ -1,20 +1,20 @@
 ---
 id: DOC-STOR-024
 title: Compaction Engine
-status: draft
-version: 0.2
+status: reviewed
+version: 0.3
 phase: 0
 domain: 04-storage
-created: 2026-09-01
-updated: 2026-09-02
-depends_on: [DOC-STOR-023]
-related: [DOC-RES-009]
 ---
 
-# Compaction Engine
+# Compaction Policy
 
-```text
-many small files → merge → optimize
-```
+| Item | Requirement |
+|------|-------------|
+| trigger | file count / size threshold / schedule (resource-aware) |
+| target file size | versioned policy |
+| row group size | versioned policy |
+| concurrent readers | old files readable until cutover; readers use manifest |
+| recovery | compaction job id; partial failure leaves prior manifest active |
 
-Resource-aware; never blocks P0 data integrity or live path under Emergency mode.
+Never blocks P0 live path under Emergency / Safe Mode.
