@@ -1,75 +1,48 @@
 ---
-id: DOC-DATA-008
-title: data quality
+id: DOC-DATA-007
+title: Data Quality
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 03-market-data
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DATA-001]
+related: [DOC-DATA-003, DOC-SYNC-003, DOC-AI-001]
 ---
 
-# data quality
+# Data Quality
 
 ## Purpose
 
-Specification for **data quality** within the 03-market-data domain.
+**Quality before AI.** Corrupted data must not reach Analysis, Training, Discovery, or Inference as if it were clean.
 
-## Scope
+## Pipeline (normative)
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
-
-## Definitions
-
-TBD
-
-## Requirements
-
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
+```text
+Raw
+ ↓
+Schema Validation
+ ↓
+Timestamp Validation
+ ↓
+Duplicate Detection
+ ↓
+Gap Detection
+ ↓
+OHLC Validation
+ ↓
+Price Validation
+ ↓
+Volume Validation
+ ↓
+Cross-Timeframe Validation
+ ↓
+Canonical
+```
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Fail or quarantine at the earliest stage; do not silently “fix” and promote.
+- `quality_status` on canonical rows: `ok | suspect | rejected | gap_filled | quarantined`
+- AI/Discovery consumers read only rows allowed by policy (default: `ok`, optionally `suspect` for research-only).

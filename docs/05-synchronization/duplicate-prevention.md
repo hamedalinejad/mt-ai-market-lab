@@ -1,75 +1,50 @@
 ---
-id: DOC-SYNC-003
-title: duplicate prevention
+id: DOC-SYNC-007
+title: Duplicate Prevention
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 05-synchronization
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DATA-007, DOC-DATA-003]
+related: [DOC-MT5-011]
 ---
 
-# duplicate prevention
+# Duplicate Prevention
 
 ## Purpose
 
-Specification for **duplicate prevention** within the 05-synchronization domain.
+Prevent double-insert corruption of datasets.
 
-## Scope
+## Composite Key (bars)
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+Minimum identity for dedupe:
 
-## Definitions
+```text
+source
+broker
+symbol / instrument_id
+timeframe
+timestamp (utc_timestamp)
+```
 
-TBD
+**Not** timestamp alone.
 
-## Requirements
+## Ticks
 
-TBD — to be refined from Master Blueprint.
+```text
+source + broker + instrument_id + utc_timestamp (+ sequence / tick_id when available)
+```
 
-## Architecture
+## Live Collector
 
-TBD
+Effectively-once publish:
 
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
+- If the same key arrives twice → dedupe; no second canonical row.
+- Prefer upsert / ignore-duplicate on publish path.
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Double insert must not inflate volume or create conflicting OHLC for the same key.
+- Conflicts (same key, different OHLC) escalate to reconciliation/quarantine.

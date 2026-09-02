@@ -1,30 +1,53 @@
 ---
-id: DOC-OPS-009
-title: startup
+id: DOC-OPS-001
+title: Startup
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 28-operations
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-RUN-001]
+related: [DOC-OPS-002, DOC-SYNC-013, DOC-OBS-001]
 ---
 
-# startup
+# Startup
 
-## Purpose
+## Not Allowed
 
-Specification for **startup** within the 28-operations domain.
+```text
+start → run
+```
 
-## Scope
+## Recovery-Aware Sequence
 
-Phase 0 — Documentation First.
+```text
+Environment Check
+ ↓
+Storage Check
+ ↓
+Database Recovery
+ ↓
+MT5 Connection
+ ↓
+Symbol Verification
+ ↓
+Data Health
+ ↓
+Sync
+ ↓
+Model Load
+ ↓
+Model Health
+ ↓
+Live Mode
+```
 
-## Requirements
+## Crash-Safe Continuity
 
-TBD — refined from Master Blueprint.
+Reload `sync_state.last_persisted_*` and resume Live/Backfill from durable cursors only.
 
-## Open Questions
+## Rules
 
-TBD
+- Fail closed on integrity/storage check failures.
+- Emit startup events to the immutable event log.
