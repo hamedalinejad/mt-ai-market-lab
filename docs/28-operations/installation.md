@@ -1,30 +1,28 @@
 ---
-id: DOC-OPS-004
-title: installation
+id: DOC-OPS-005
+title: Installation
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 28-operations
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-OPS-006]
 ---
 
-# installation
+# Installation
 
-## Purpose
+Must document:
 
-Specification for **installation** within the 28-operations domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+```text
+Windows
+Python version
+MT5 version
+Broker notes
+Virtual environment
+Dependencies
+Data directory
+First run
+MT5 configuration
+Permissions
+```
