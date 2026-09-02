@@ -1,30 +1,47 @@
 ---
-id: DOC-EXEC-009
-title: order model
+id: DOC-EXEC-003
+title: Order Model
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 19-execution
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-EXEC-001]
+related: [DOC-EXEC-011]
 ---
 
-# order model
+# Order Model
 
 ## Purpose
 
-Specification for **order model** within the 19-execution domain.
+Idempotent order intent for paper and live.
 
-## Scope
+## Required identifiers
 
-Phase 0 — Documentation First.
+```text
+intent_id
+client_order_id
+broker_ticket          # when known
+execution_state
+```
 
-## Requirements
+## Execution states (logical)
 
-TBD — refined from Master Blueprint.
+```text
+INTENT_CREATED
+VALIDATED
+SENT
+ACCEPTED
+REJECTED
+PARTIAL
+FILLED
+CANCELLED
+UNKNOWN_NEEDS_RECONCILE
+RECONCILED
+```
 
-## Open Questions
+## Rules
 
-TBD
+- On `UNKNOWN_NEEDS_RECONCILE`, forbid blind resend.
+- Bind `broker_ticket` from positions/orders/deals during reconciliation.

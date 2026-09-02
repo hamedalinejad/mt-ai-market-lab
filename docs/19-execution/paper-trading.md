@@ -1,30 +1,45 @@
 ---
-id: DOC-EXEC-011
-title: paper trading
+id: DOC-EXEC-012
+title: Paper Trading
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 19-execution
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-EXEC-001]
+related: [DOC-EXEC-011, DOC-EXEC-010]
 ---
 
-# paper trading
+# Paper Trading
 
 ## Purpose
 
-Specification for **paper trading** within the 19-execution domain.
+Paper Trading must mirror Live, except broker submission.
 
-## Scope
+## Same as Live
 
-Phase 0 — Documentation First.
+```text
+Signal
+Strategy
+Risk
+Execution
+Reconciliation
+Cost
+Slippage
+Spread
+Latency (modeled)
+```
 
-## Requirements
+## Difference
 
-TBD — refined from Master Blueprint.
+```text
+Broker Execution  →  Simulated Execution
+```
 
-## Open Questions
+## Rules
 
-TBD
+- Not a toy simulator that bypasses Risk or Trace.
+- Uses real market data path.
+- Simulated fills consume the **dynamic slippage model**.
+- Outcomes feed Error Memory and performance the same way as live (flagged `paper`).

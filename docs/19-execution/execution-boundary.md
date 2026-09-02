@@ -1,30 +1,28 @@
 ---
-id: DOC-EXEC-004
-title: execution boundary
+id: DOC-EXEC-002
+title: Execution Boundary
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 19-execution
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-EXEC-001]
+related: [DOC-EXEC-011, DOC-RISK-001]
 ---
 
-# execution boundary
+# Execution Boundary
 
-## Purpose
+## Allows
 
-Specification for **execution boundary** within the 19-execution domain.
+- Paper execution
+- Controlled live execution (later phases)
+- Order validation
+- Execution reconciliation
 
-## Scope
+## Forbids
 
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+- Direct Prediction → Order
+- Direct Discovery → Order
+- Strategy bypass of Risk
+- Blind resend of orders without reconcile

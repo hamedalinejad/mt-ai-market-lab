@@ -1,30 +1,56 @@
 ---
-id: DOC-EXEC-003
-title: execution architecture
+id: DOC-EXEC-001
+title: Execution Architecture
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 19-execution
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-RISK-001, ADR-0009]
+related: [DOC-EXEC-002, DOC-EXEC-011, DOC-EXEC-015]
 ---
 
-# execution architecture
+# Execution Architecture
 
-## Purpose
+## Path
 
-Specification for **execution architecture** within the 19-execution domain.
+```text
+Signal → Strategy → Risk → Execution Eligibility
+  → Order Preparation → Order Validation
+  → Paper / Live → Execution → Reconciliation
+```
 
-## Scope
+## Idempotent Execution (mandatory)
 
-Phase 0 — Documentation First.
+Network loss after `order_send()` must not create double exposure.
 
-## Requirements
+Required identifiers and state:
 
-TBD — refined from Master Blueprint.
+```text
+intent_id
+client_order_id
+broker_ticket
+execution_state
+reconciliation
+```
 
-## Open Questions
+### Required behavior
 
-TBD
+1. Create local **Order Intent** with unique `intent_id` / `client_order_id` before send.
+2. Send order with that client id when the broker API supports it.
+3. On timeout / disconnect: **do not** blindly resend; run **Execution Reconciliation** against MT5 orders/positions/deals.
+4. Only create a new broker order if reconciliation proves the intent was never accepted.
+
+## Forbidden
+
+```text
+timeout → order_send() again without reconcile
+Prediction → order_send()
+Discovery → order_send()
+```
+
+## Rules
+
+- Execution is the only layer that submits broker orders (paper or live).
+- Paper and Live share the same path above Simulated vs Broker execution.
