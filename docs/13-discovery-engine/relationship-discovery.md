@@ -1,30 +1,27 @@
 ---
 id: DOC-DISC-016
-title: relationship discovery
+title: Relationship Discovery
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 13-discovery-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DISC-006]
+related: [DOC-ANLY-003, DOC-VAL-013]
 ---
 
-# relationship discovery
+# Relationship Discovery
 
 ## Purpose
 
-Specification for **relationship discovery** within the 13-discovery-engine domain.
+Discover cross-series and structural relationships as Candidates.
 
-## Scope
+## Includes
 
-Phase 0 — Documentation First.
+Cross-market and cross-timeframe relationships when enabled.
 
-## Requirements
+## Rules
 
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+- All cross-symbol features use **causal availability** (no future of B into decision on A).
+- Relationship Candidates still go through Validation and multiplicity accounting.

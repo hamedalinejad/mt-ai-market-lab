@@ -1,75 +1,35 @@
 ---
-id: DOC-MT5-006
+id: DOC-MT5-007
 title: Data Availability
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 02-metatrader
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-MT5-008, DOC-SYNC-013]
+related: [DOC-DATA-012, DOC-DATA-013]
 ---
 
 # Data Availability
 
 ## Purpose
 
-Specification for **Data Availability** within the 02-metatrader domain.
+MT5 does **not** guarantee unlimited history for every symbol/timeframe. The lab must never pretend missing data exists.
 
-## Scope
+## Availability Object
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
-
-## Definitions
-
-TBD
-
-## Requirements
-
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
+```text
+requested_range
+available_range
+missing_range
+broker_limitation
+terminal_limitation
+local_cache
+```
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Sync/backfill reports honest coverage.
+- Experiments declare required range; if unavailable, experiment is blocked or marked degraded — not silently filled with fiction.
+- Gaps classified (expected vs source_missing, etc.).

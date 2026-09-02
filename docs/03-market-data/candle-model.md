@@ -6,64 +6,39 @@ version: 0.2
 phase: 0
 domain: 03-market-data
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: [DOC-DATA-001, DOC-DATA-025]
-related: [DOC-STOR-009, DOC-REPR-002]
+updated: 2026-09-02
+depends_on: [DOC-DATA-001, DOC-DATA-022]
+related: [DOC-DATA-024, DOC-DATA-023, DOC-REPR-002]
 ---
 
 # Candle Model
 
 ## Purpose
 
-Formalize the canonical **Candle / Bar** contract after ingestion.
+Canonical OHLCV (+ quality) bars independent of the tick store.
 
-## Identity
+## Core Fields
 
 ```text
-(instrument_id, timeframe, timestamp_utc)
+instrument_id, timeframe, utc_timestamp
+open, high, low, close
+volume / tick_volume (as available)
+quality_status, origin (source_native | derived)
 ```
 
-`timestamp_utc` = bar **open** time in UTC.
+## Relationship to Ticks
 
-## Fields
+- May be sourced from MT5 rates or derived from ticks (definition versioned).
+- Tick dataset is **not** deleted after bar build.
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| timestamp_utc | yes | Open time UTC |
-| instrument_id | yes | Internal instrument key |
-| timeframe | yes | Canonical timeframe code |
-| open | yes | |
-| high | yes | |
-| low | yes | |
-| close | yes | |
-| tick_volume | yes | Broker tick volume |
-| real_volume | no | If available |
-| spread | no | Representative spread for bar if provided |
-| source | yes | mt5, import, … |
-| quality_status | yes | ok \| suspect \| gap_filled \| rejected |
-| schema_version | yes | Contract version |
+## Tiering
 
-## Invariants
-
-1. `high >= max(open, close)` and `high >= low`
-2. `low <= min(open, close)`
-3. `timestamp_utc` aligned to timeframe grid per session policy (documented exceptions for gaps)
-4. Prices quantized to instrument `price_precision`
-
-## Quality Status
-
-| Status | Meaning |
-|--------|---------|
-| ok | Passed validation |
-| suspect | Anomaly flags; usable with caution |
-| gap_filled | Synthetic or interpolated — **must not** train as native without flag |
-| rejected | Must not enter analysis |
-
-## Storage Projection
-
-See `docs/04-storage/market-data-storage.md` (Parquet partitions candidate).
+```text
+Warm: Recent bars (hot path for live)
+Cold: Historical bars in Parquet partitions
+```
 
 ## Rules
 
-- No consumer may invent OHLC from incomplete ticks without recording method in lineage.
-- Resampling from lower timeframes is a **derived** process with its own definition version.
+- Identity: `(instrument_id, timeframe, utc_timestamp)`
+- OHLC invariants; zero-range handled explicitly

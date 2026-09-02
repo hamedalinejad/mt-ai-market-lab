@@ -7,66 +7,52 @@ phase: 0
 domain: 13-discovery-engine
 created: 2026-09-01
 updated: 2026-09-02
-depends_on: [DOC-DISC-001, DOC-REPR-002]
-related: [DOC-DISC-008, DOC-DISC-011, DOC-DISC-020]
+depends_on: [DOC-DISC-001]
+related: [DOC-DISC-013, DOC-DISC-008, DOC-DISC-014]
 ---
 
 # Discovery Space
 
 ## Purpose
 
-Define the searchable alphabet for formulas, features, and parameterized patterns — the prerequisite for real Indicator/Formula Discovery (not a fixed RSI/MACD list).
+Versioned search alphabets and **search domains** for systematic discovery.
+
+## Search Domains (program catalog)
+
+```text
+01 Pattern Discovery
+02 Candle Discovery
+03 Sequence Discovery
+04 Feature Discovery
+05 Indicator Discovery
+06 Formula Discovery
+07 Relationship Discovery
+08 Regime Discovery
+09 Anomaly Discovery
+10 Signal Discovery
+11 Strategy Discovery
+12 Cross-Market Discovery
+13 Cross-Timeframe Discovery
+14 Temporal Discovery
+15 Structural Discovery
+16 Volatility Discovery
+17 Liquidity Discovery
+18 Unknown-Structure Discovery
+```
+
+Each domain has its own variable/operator constraints, complexity caps, and multiplicity family id.
 
 ## Variable Families
 
-| Family | Examples |
-|--------|----------|
-| Price | open, high, low, close, mid |
-| Return | log return, simple return, signed move |
-| Range | range, true_range, relative_range |
-| Volume | tick_volume, relative volume |
-| Volatility | rolling std, ATR-like constructs |
-| Momentum | differences, rates of change |
-| Distance | distance to rolling mean/max/min |
-| Ratio | body_ratio, wick ratios, price ratios |
-| Geometry | candle representation fields |
-| Rank / Quantile | rolling rank, percentile position |
-| Lag | x[t−k] |
-| Cross-timeframe | higher/lower TF aggregates |
-| Cross-asset | related instrument series (when enabled) |
+Price, Return, Range, Volume, Volatility, Momentum, Distance, Ratio, Geometry, Rank/Quantile, Lag, Cross-TF, Cross-Asset.
 
 ## Operator Families
 
 ```text
-+  -  *  /
-abs  log  sqrt  exp
-min  max  mean  std
-rank  corr
-lag  rolling  diff
++ - * / abs log sqrt exp min max mean std rank corr lag rolling diff
 ```
-
-Additional operators require explicit registration (numerical stability, cost).
-
-## Structure Axes
-
-```text
-Variables × Operators × Transforms × Lags × Windows
-× Thresholds × Conditions × Sequences
-× Cross-Timeframe × Cross-Symbol × Cross-Market
-```
-
-## Constraints (mandatory)
-
-| Constraint | Reason |
-|------------|--------|
-| Max expression depth | Explosion control |
-| Operator whitelist | Stability + interpretability |
-| Window set finite | Compute bound |
-| Complexity penalty | Prefer simpler Candidates |
-| Runtime cost budget | Laptop resource policy |
-| Numerical guards | div-by-zero, log≤0, NaN policy |
 
 ## Rules
 
-- Search space itself is versioned (`discovery_space_version`).
-- Expanding the space is an ADR-worthy change if it affects Validation multiplicity.
+- Expanding domains or operators is versioned; affects multiple-testing accounting.
+- Cross-market domain **must** enforce leakage controls (availability time per symbol).
