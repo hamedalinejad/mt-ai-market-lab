@@ -8,41 +8,25 @@ domain: 03-market-data
 created: 2026-09-01
 updated: 2026-09-02
 depends_on: [DOC-DATA-001, DOC-DATA-022]
-related: [DOC-DATA-003, DOC-STOR-009]
+related: [DOC-DATA-026, DOC-SYNC-007]
 ---
 
 # Tick Model
 
-## Purpose
-
-Ticks are a **first-class dataset**, not disposable scaffolding for bars.
-
-## Uses
+## Identity
 
 ```text
-spread analysis
-microstructure
-slippage
-liquidity
-execution
-anomaly
-volatility
-price formation
+tick_id (when source provides) OR (instrument_id, utc_timestamp, sequence)
 ```
 
-## Independence
+## Fields (logical)
 
-Tick store and Candle store are **independent** canonical series. Bars may be derived from ticks under a versioned definition, but ticks are retained per retention policy.
+bid, ask, last (if any), volume, flags, source timestamps → UTC, quality_status
 
-## Tiering (laptop)
+## Independent dataset
 
-```text
-Hot:   Recent ticks
-Warm:  Recent bars
-Cold:  Historical compressed ticks
-```
+Ticks are not disposable after candle build. Uses: spread, microstructure, slippage, liquidity, execution, anomaly, vol, price formation.
 
-## Rules
+## Tiering
 
-- Selective symbol enable for tick ingestion (resource-aware).
-- Quality flags: duplicate, crossed book, gap classification when applicable.
+Hot recent ticks / Cold compressed historical ticks.
