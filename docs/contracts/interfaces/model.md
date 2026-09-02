@@ -2,30 +2,21 @@
 id: DOC-CONTRACT-IF-model
 title: Interface — Model Registry & Runtime
 status: reviewed
-version: 0.3
+version: 0.4
 phase: 0
 domain: contracts
 ---
 
-# Model Registry / Runtime
+# Model Registry & Runtime
+
+## Registry fields
+model_id, version, parent_model, status, artifact_uri, dataset_snapshot, feature_version, config_version, training_run, validation_run, metrics, created_at, promoted_at, retired_at
+
+## States
+CANDIDATE | VALIDATED | SHADOW | CHAMPION | DEGRADED | RETIRED | REJECTED
 
 ## Methods
-```text
-list_models()
-get_active_model(slot?)
-promote_model(version)
-rollback_model(to_version)
-retire_model(version)
-compare_models(a, b)
-load(version) / unload()
-predict(feature_snapshot) -> Prediction
-```
+list_models, get_champion, promote, rollback, retire, compare, load, predict
 
-## Errors
-ModelNotFound, FeatureVersionMismatch, PromotionDenied
-
-## Idempotency
-promote/rollback recorded once per transition event
-
-## Test double
-StubModelAdapter returning fixed Prediction
+## Roles
+Predictor uses load/predict only. Learner proposes candidate versions. Discoverer does not write registry champion.

@@ -1,24 +1,21 @@
 ---
 id: DOC-AI-017
 title: Drift Detection
-status: draft
-version: 0.2
+status: reviewed
+version: 0.3
 phase: 0
 domain: 10-ai-core
-created: 2026-09-02
-updated: 2026-09-02
-depends_on: [DOC-AI-012, DOC-PRED-003]
-related: [DOC-RISK-013]
 ---
 
-# Drift Detection
+# Drift Types and Actions
 
-## Types
+| Type | Meaning | Example action |
+|------|---------|----------------|
+| **data drift** | input distribution shift | alert; tighten quality gates |
+| **feature drift** | feature marginals/joints shift | invalidate snapshot path; recompute |
+| **label drift** | label distribution shift | hold promotion; review labels |
+| **concept drift** | P(y\|x) change | challenger retrain; degrade champion |
+| **performance drift** | live metrics vs baseline | DEGRADED / rollback |
+| **calibration drift** | reliability curve break | recalibrate or disable decision_score |
 
-- **Data / feature drift**
-- **Concept drift** (relationship feature→outcome changes)
-- **Calibration drift**
-
-## Actions
-
-Degrade confidence, disable model (AI health gate), trigger shadow retrain candidate — not blind full overwrite of active model.
+Each type has threshold + severity + escalation in policy version — not one generic “drift” flag.

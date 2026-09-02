@@ -1,38 +1,19 @@
 ---
 id: DOC-AI-016
 title: Predictor Learner Discoverer
-status: draft
-version: 0.2
+status: reviewed
+version: 0.3
 phase: 0
 domain: 10-ai-core
-created: 2026-09-01
-updated: 2026-09-02
-depends_on: [DOC-AI-001, DOC-DISC-001]
+updated: 2026-09-03
 ---
 
-# Three Systems
+# Three Roles (binding)
 
-| System | Role |
-|--------|------|
-| **Predictor** | known features → forecast |
-| **Learner** | update from outcomes under governance |
-| **Discoverer** | search new feature/pattern/formula/relationship |
+| Role | Responsibility | Must not |
+|------|----------------|----------|
+| **Predictor** | feature snapshot → Prediction | mutate production weights; run unbounded search |
+| **Learner** | outcomes → candidate updates under governance | promote itself; full discovery search |
+| **Discoverer** | search space → Discovery Candidates | write champion model; emit orders |
 
-Do **not** merge Learner and Discoverer.
-
-## Parallel paths
-
-```text
-                 Market State
-                      │
-          ┌───────────┴───────────┐
-          ▼                       ▼
-      Prediction              Discovery
-          │                       │
-          ▼                       ▼
-     Forecast                Candidate
-          │                       │
-          └──────────┬────────────┘
-                     ▼
-                Validation
-```
+No component may own all three without **hard module boundaries** and separate process budgets (Live vs Research).
