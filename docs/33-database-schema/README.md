@@ -1,13 +1,14 @@
 ---
-id: DOC-33-database-schema-README
-title: 33-database-schema README
+id: DOC-DBSCHEMA-README
+title: Database Schema Index
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 33-database-schema
-created: 2026-09-02
+depends_on: [DOC-CONTRACT-DB-001]
 ---
 
-# 33-database-schema
+# Database Schema Index
 
-Phase 0 domain folder. Detailed specs land here before code for this area.
+**Binding schema:** `docs/contracts/database/sqlite-schema.md`  
+Parquet layout remains under storage domain narrative + partition contracts.

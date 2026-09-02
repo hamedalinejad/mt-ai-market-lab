@@ -1,13 +1,22 @@
 ---
 id: DOC-CONTRACT-IF-model
-title: Interface — model
+title: Interface — ModelAdapter / ModelRegistry
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: contracts
-created: 2026-09-02
 ---
 
-# Interface: model
+# Interface: ModelAdapter & Registry
 
-Method-level contract (inputs/outputs/errors/idempotency) to be completed before implementation.
+## ModelAdapter
+
+fit (offline), predict, save_artifact, load_artifact
+
+## Registry
+
+list_models, get_active, promote, rollback, retire, compare
+
+## Idempotency
+
+promote/rollback recorded as events; artifacts immutable.

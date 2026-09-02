@@ -1,33 +1,37 @@
 ---
 id: DOC-CONTRACT-IF-001
-title: MarketDataProvider Interface
+title: Interface — MarketDataProvider
 status: draft
 version: 0.2
 phase: 0
 domain: contracts
-created: 2026-09-01
-updated: 2026-09-02
-depends_on: [DOC-CONTRACT-001, ADR-0008]
-related: [DOC-MT5-009]
 ---
 
-# MarketDataProvider
+# Interface: MarketDataProvider
 
-## Purpose
+## Methods (logical)
 
-Source-agnostic market data gateway. Domains consume **Canonical Market Schema**, never raw MT5 types.
+| Method | Input | Output | Idempotent |
+|--------|-------|--------|------------|
+| list_instruments | filter? | Instrument[] | yes |
+| get_instrument | id/name | Instrument | yes |
+| get_bars | instrument, tf, range | Candle[] | yes |
+| get_ticks | instrument, range | Tick[] | yes |
+| get_last_quote | instrument | Quote | yes |
+| health | — | Health | yes |
 
-## Implementations (candidates)
+## Errors
 
-```text
-MT5Provider
-CSVProvider
-ParquetProvider
-ReplayProvider
-FutureProvider
-FakeMarketDataProvider   # tests
-```
+retryable: connection timeout; non_retryable: invalid symbol; fatal: auth broken
 
-## Rule
+## Concurrency
 
-Only the adapter/provider layer may call `mt5.copy_rates_*` / tick APIs. No other domain imports MetaTrader5 directly.
+Thread-safe read; writers only inside adapter connection policy.
+
+## Timeout / Cancellation
+
+All IO methods accept timeout; long range fetches cancellable.
+
+## Test double
+
+`FakeMarketDataProvider`, `ReplayProvider`

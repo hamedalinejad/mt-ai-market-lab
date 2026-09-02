@@ -1,13 +1,16 @@
 ---
 id: DOC-CONTRACT-IF-validation
-title: Interface — validation
+title: Interface — ValidationEngine
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: contracts
-created: 2026-09-02
 ---
 
-# Interface: validation
+# Interface: ValidationEngine
 
-Method-level contract (inputs/outputs/errors/idempotency) to be completed before implementation.
+## Methods
+
+run_pipeline(candidate, gate_set), record_multiplicity, promote_decision
+
+Hard-fail on leakage / missing multiplicity for search-origin candidates.

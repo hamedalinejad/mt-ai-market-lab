@@ -1,13 +1,18 @@
 ---
 id: DOC-CONTRACT-IF-storage
-title: Interface — storage
+title: Interface — Storage
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: contracts
-created: 2026-09-02
 ---
 
-# Interface: storage
+# Interface: Storage
 
-Method-level contract (inputs/outputs/errors/idempotency) to be completed before implementation.
+## Methods
+
+put_raw, put_canonical, get_range, query_analytics_hook, checkpoint, backup_hook
+
+## Concurrency
+
+SQLite: single-writer. Parquet: append/partition policy. DuckDB: analytics boundary.

@@ -1,13 +1,16 @@
 ---
 id: DOC-CONTRACT-IF-risk
-title: Interface — risk
+title: Interface — RiskEngine
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: contracts
-created: 2026-09-02
 ---
 
-# Interface: risk
+# Interface: RiskEngine
 
-Method-level contract (inputs/outputs/errors/idempotency) to be completed before implementation.
+## Methods
+
+evaluate(intent) → RiskDecision (ALLOW|DENY|REDUCE|DELAY|HALT)
+
+Independent of AI confidence.

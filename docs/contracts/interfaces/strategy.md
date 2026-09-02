@@ -1,13 +1,14 @@
 ---
 id: DOC-CONTRACT-IF-strategy
-title: Interface — strategy
+title: Interface — StrategyEngine
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: contracts
-created: 2026-09-02
 ---
 
-# Interface: strategy
+# Interface: StrategyEngine
 
-Method-level contract (inputs/outputs/errors/idempotency) to be completed before implementation.
+## Methods
+
+on_signal → OrderIntent proposal (never direct broker send)

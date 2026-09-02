@@ -1,13 +1,16 @@
 ---
 id: DOC-CONTRACT-IF-signal
-title: Interface — signal
+title: Interface — SignalEngine
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: contracts
-created: 2026-09-02
 ---
 
-# Interface: signal
+# Interface: SignalEngine
 
-Method-level contract (inputs/outputs/errors/idempotency) to be completed before implementation.
+## Methods
+
+assemble_candidate, validate_signal, publish, expire, mark_failed
+
+Requires Trace for material signals.
