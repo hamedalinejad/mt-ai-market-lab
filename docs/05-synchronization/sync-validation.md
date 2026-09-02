@@ -1,75 +1,31 @@
 ---
 id: DOC-SYNC-014
-title: sync validation
+title: Sync Validation
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 05-synchronization
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-SYNC-009, DOC-DATA-003]
+related: [DOC-SYNC-013]
 ---
 
-# sync validation
+# Sync Validation
 
 ## Purpose
 
-Specification for **sync validation** within the 05-synchronization domain.
+Checks that must pass before treating a range as healthy.
 
-## Scope
+## Checks
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+1. Identity uniqueness
+2. OHLC invariants
+3. Timestamp monotonicity within partition
+4. No open **unexpected** gaps in claimed continuous range
+5. Reconciliation sample clean (no unresolved ohlc_conflict)
+6. sync_state cursors ≤ max persisted ts
 
-## Definitions
+## Failure
 
-TBD
-
-## Requirements
-
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
-
-## Rules
-
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+On failure: status → error or remain backfilling; do not claim live-healthy.

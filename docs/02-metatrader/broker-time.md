@@ -2,74 +2,37 @@
 id: DOC-MT5-004
 title: Broker Time
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 02-metatrader
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-MT5-009]
+related: [DOC-DATA-022, DOC-DATA-025, DOC-MT5-012]
 ---
 
 # Broker Time
 
 ## Purpose
 
-Specification for **Broker Time** within the 02-metatrader domain.
+Treat **broker/terminal server time** as a first-class input to the data plane (P0).
 
-## Scope
+## Why P0
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+MT5 history and “bar time” are interpreted in the terminal/broker time context. DST changes, server offset, and daily boundaries affect:
 
-## Definitions
+- which UTC instant is the open of D1
+- whether a hole is weekend closure or data loss
+- alignment between TFs when deriving from M1
 
-TBD
+## Responsibilities of MT5 Adapter
 
-## Requirements
-
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
+1. Read server/broker time related fields available from the terminal API.
+2. Attach `source_timestamp`, `broker_server_time` (when available), and zone/offset metadata to raw batches.
+3. Never silently cast bar open integers to “UTC” without recording the conversion policy version.
+4. Surface clock skew health: lab UTC vs last known server time delta.
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Sync and gap logic consume **normalized UTC** plus **session calendar**, both versioned.
+- Operator documentation must state which broker server timezone assumption is active.

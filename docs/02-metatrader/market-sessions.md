@@ -2,74 +2,32 @@
 id: DOC-MT5-012
 title: Market Sessions
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 02-metatrader
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-MT5-004, DOC-DATA-025]
+related: [DOC-DATA-013, DOC-DATA-018]
 ---
 
 # Market Sessions
 
 ## Purpose
 
-Specification for **Market Sessions** within the 02-metatrader domain.
+Model trading sessions and closures used for gap classification and session features.
 
-## Scope
+## Concepts
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+- **Session segment** — continuous trading window (e.g. exchange session).
+- **Market closed** — expected non-trading interval (weekend, holiday, daily break).
+- **Session calendar** — versioned schedule per instrument or asset class.
 
-## Definitions
+## Use in Gap Logic
 
-TBD
-
-## Requirements
-
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
+If no bar is expected because the market is closed under the active calendar, gap class is **expected_market_closure** (or holiday/session_break), not `source_missing`.
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Crypto 24/7 calendars differ from FX; asset class selects default calendar family.
+- Calendar version is part of dataset lineage.

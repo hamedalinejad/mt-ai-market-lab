@@ -1,75 +1,65 @@
 ---
-id: DOC-SYNC-012
-title: sync architecture
+id: DOC-SYNC-011
+title: Sync Architecture
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 05-synchronization
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-STOR-014, DOC-MT5-008, DOC-SYNC-013]
+related: [DOC-SYNC-009, DOC-SYNC-003, DOC-DATA-023]
 ---
 
-# sync architecture
+# Sync Architecture
 
 ## Purpose
 
-Specification for **sync architecture** within the 05-synchronization domain.
+Describe the control plane that keeps local canonical data aligned with sources across restarts and failures.
 
-## Scope
+## Startup Sequence (normative)
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+```text
+LOAD CONFIG
+  → CONNECT MT5 (if live mode)
+  → DISCOVER / LOAD selected instruments
+  → LOAD sync_state
+  → COMPARE local vs source (recent window + checkpoints)
+  → DETECT gaps
+  → CLASSIFY gaps
+  → BACKFILL required ranges
+  → RECONCILE (including OHLC conflicts)
+  → VALIDATE
+  → DEDUPLICATE
+  → UPDATE sync_state
+  → START live collector
+```
 
-## Definitions
+## Components
 
-TBD
+| Component | Role |
+|-----------|------|
+| Sync Planner | Decides ranges to fetch from sync_state + gaps |
+| Historical Retriever | Source API batches |
+| Live Collector | Incremental follow |
+| Normalizer | Broker-time → UTC + identity |
+| Quality Gate | Invariants |
+| Canonical Writer | Atomic publish |
+| Gap Detector / Classifier | Continuity |
+| Reconciler | Compare/repair/verify |
+| State Store | SQLite sync_state + sync_run |
 
-## Requirements
+## Idempotency
 
-TBD — to be refined from Master Blueprint.
+Re-running sync for an overlapping range must not duplicate canonical identities. Publish path dedupes on `(instrument_id, timeframe, utc_timestamp)`.
 
-## Architecture
+## Timeframe Policy Interaction
 
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
+- Prioritize **M1** (and selective TICK) sync_state health.
+- Higher TF: derive or source-native per timeframe policy; each has its own state row if stored.
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Partial failure is recovery-safe: cursors only advance on verified persist.
+- Expected gaps do not force error status if classified and accepted.
+- Broker-time policy version is stored on sync_state / sync_run.

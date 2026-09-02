@@ -1,75 +1,56 @@
 ---
 id: DOC-SYNC-004
-title: gap classification
+title: Gap Classification
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 05-synchronization
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DATA-013, DOC-MT5-012]
+related: [DOC-SYNC-003, DOC-SYNC-009]
 ---
 
-# gap classification
+# Gap Classification
 
 ## Purpose
 
-Specification for **gap classification** within the 05-synchronization domain.
+Assign each detected gap a **class** that drives repair policy and health status.
 
-## Scope
+## Official Classes
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+```text
+Gap
+├── expected_market_closure   # e.g. FX weekend
+├── holiday                   # calendar holiday
+├── session_break             # scheduled intraday/session gap
+├── source_missing            # market should be open; source has no data
+├── transport_failure         # API/terminal/network failure window
+├── storage_failure           # local write/read failure window
+├── corrupt_data              # present but fails integrity / OHLC conflict
+└── unknown                   # needs human or further rules
+```
 
-## Definitions
+## Classification Inputs
 
-TBD
+1. Session calendar (versioned)
+2. Timezone / broker-time policy
+3. Sync run errors (transport)
+4. Storage layer errors
+5. Reconciliation conflicts (same ts, different OHLC)
 
-## Requirements
+## Actions by Class
 
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
+| Class | Default action |
+|-------|----------------|
+| expected_market_closure / holiday / session_break | Accept; record gap; no backfill required |
+| source_missing | Backfill from source; if still missing → remain open/error |
+| transport_failure | Retry sync; do not accept as market closure |
+| storage_failure | Repair local; re-verify |
+| corrupt_data | Quarantine; reconcile against source; repair or reject |
+| unknown | Escalate to health/ops; do not silently ignore |
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Friday→Monday FX hole **must not** be classified as `source_missing` solely because UTC calendar shows intervening days.
+- Classification is deterministic given calendar + policy version + evidence.

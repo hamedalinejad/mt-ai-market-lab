@@ -1,75 +1,42 @@
 ---
 id: DOC-SYNC-002
-title: conflict resolution
+title: Conflict Resolution
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 05-synchronization
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-SYNC-009]
+related: [DOC-SYNC-007, DOC-DATA-013]
 ---
 
-# conflict resolution
+# Conflict Resolution
 
 ## Purpose
 
-Specification for **conflict resolution** within the 05-synchronization domain.
+Define how reconciliation conflicts are resolved without silent data corruption.
 
-## Scope
+## Policies (default)
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+| Conflict | Default resolution |
+|----------|-------------------|
+| missing_local + market open | Backfill from source → canonical append |
+| missing_local + expected closure | Classify gap; no fill |
+| ohlc_conflict | Quarantine local; re-fetch source; replace with audit record; verify |
+| duplicate_local | Keep one row by deterministic tie-break; archive duplicate evidence |
+| missing_source | Do not delete local automatically; flag for investigation |
 
-## Definitions
+## Audit
 
-TBD
+Every destructive or replacing repair writes:
 
-## Requirements
-
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
+- sync_run_id
+- before/after hashes or OHLC snapshots
+- policy version
+- operator id if manual
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- No repair without classification.
+- Training datasets must not include quarantined conflict rows unless experiment opts in.

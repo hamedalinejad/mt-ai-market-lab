@@ -1,75 +1,56 @@
 ---
 id: DOC-DATA-013
-title: gap model
+title: Gap Model
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 03-market-data
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DATA-022, DOC-DATA-018, DOC-DATA-023]
+related: [DOC-SYNC-004, DOC-SYNC-003, DOC-SYNC-009]
 ---
 
-# gap model
+# Gap Model
 
 ## Purpose
 
-Specification for **gap model** within the 03-market-data domain.
+Represent missing expected bars/ticks as structured objects. **A gap is not automatically a bug.**
 
-## Scope
+## Definition
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+A **gap** is an interval where the timeframe grid (or tick continuity policy) predicts data should or might exist, but local canonical coverage is incomplete or broken.
 
-## Definitions
+## Gap Entity (logical)
 
-TBD
+| Field | Description |
+|-------|-------------|
+| gap_id | Stable id |
+| instrument_id | |
+| timeframe | or TICK |
+| start_utc | Inclusive start of missing/broken interval |
+| end_utc | Exclusive end |
+| expected_bar_count | If grid-based |
+| gap_class | See classification |
+| severity | info \| warn \| error |
+| detected_at | |
+| detected_by | sync_run id |
+| resolution | open \| accepted_expected \| repaired \| ignored_policy |
+| notes | |
 
-## Requirements
+## Expected vs Unexpected
 
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
+| Kind | Example | Default severity |
+|------|---------|------------------|
+| Expected closure | FX Friday close → Monday open | info |
+| Holiday | Exchange holiday | info |
+| Session break | Intraday break if applicable | info |
+| Unexpected hole | Mid-week missing M1 while market open | error |
+| Corrupt / conflict | Bar exists but fails integrity | error |
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Gap detection uses **session calendar + timezone policy version**.
+- Expected gaps do not block “coverage healthy” if classified and accepted.
+- Unexpected gaps block promotion of affected ranges into training datasets by default.
+- Filling gaps with synthetic bars requires `quality_status=gap_filled` and explicit experiment opt-in.

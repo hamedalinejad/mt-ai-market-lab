@@ -1,75 +1,30 @@
 ---
 id: DOC-DATA-018
-title: market calendar
+title: Market Calendar
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 03-market-data
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DATA-025]
+related: [DOC-DATA-013, DOC-MT5-012]
 ---
 
-# market calendar
+# Market Calendar
 
 ## Purpose
 
-Specification for **market calendar** within the 03-market-data domain.
+Versioned calendars of sessions, weekends, and holidays used for gap classification and session features.
 
-## Scope
+## Contents
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
-
-## Definitions
-
-TBD
-
-## Requirements
-
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
+- Weekly closed intervals (e.g. FX weekend)
+- Holiday lists (exchange/broker relevant)
+- Optional intraday session segments
+- Valid-from / valid-to for rule changes
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Gap detection **requires** a calendar reference.
+- Calendar id + version appear in sync_run and dataset manifests.

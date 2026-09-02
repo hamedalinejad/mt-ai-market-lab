@@ -1,75 +1,41 @@
 ---
-id: DOC-SYNC-005
-title: gap detection
+id: DOC-SYNC-003
+title: Gap Detection
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 05-synchronization
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DATA-013, DOC-DATA-023]
+related: [DOC-SYNC-004, DOC-SYNC-013]
 ---
 
-# gap detection
+# Gap Detection
 
 ## Purpose
 
-Specification for **gap detection** within the 05-synchronization domain.
+Find holes or continuity breaks in local canonical series.
 
-## Scope
+## Bar Series Algorithm (logical)
 
-Phase 0 — Documentation First. This is a Specification document, not implementation.
+1. Load coverage for `(instrument_id, timeframe)` from catalog/sync_state.
+2. Build expected open timestamps on the TF grid between `first_available` and `last_persisted` using session calendar.
+3. Diff expected vs present `utc_timestamp` set.
+4. Merge contiguous missing opens into gap intervals.
+5. Pass intervals to **Gap Classification**.
 
-## Definitions
+## Tick Series
 
-TBD
+Continuity rules differ (max idle duration while session open). Thresholds are configurable and versioned.
 
-## Requirements
+## Triggers
 
-TBD — to be refined from Master Blueprint.
-
-## Architecture
-
-TBD
-
-## Inputs
-
-TBD
-
-## Outputs
-
-TBD
+- End of each sync batch
+- Startup reconciliation
+- Periodic health scan (low priority workload)
 
 ## Rules
 
-TBD
-
-## Dependencies
-
-TBD
-
-## Failure Modes
-
-TBD
-
-## Validation
-
-TBD
-
-## Acceptance Criteria
-
-TBD
-
-## Risks
-
-TBD
-
-## Open Questions
-
-TBD
-
-## Related Documents
-
-- Master Blueprint (root reference)
-- Domain README
+- Detection without calendar is incomplete (will false-positive weekends).
+- Results written as Gap entities; counts rolled into `sync_state.gap_count` (unexpected vs total may be separate metrics).
