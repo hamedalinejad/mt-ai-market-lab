@@ -1,30 +1,27 @@
 ---
 id: DOC-DISC-002
-title: anomaly discovery
+title: Anomaly Discovery
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 13-discovery-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DATA-007]
+related: [DOC-RISK-001, DOC-OBS-001]
 ---
 
-# anomaly discovery
+# Anomaly Detection
 
-## Purpose
+## Before Signal
 
-Specification for **anomaly discovery** within the 13-discovery-engine domain.
+Bad ticks / price spikes must block or gate Signal generation.
 
-## Scope
+## Two classes
 
-Phase 0 — Documentation First.
+| Class | Example |
+|-------|---------|
+| **Data anomaly** | EURUSD jumps 1000 pips from corrupted tick |
+| **Market anomaly** | EURUSD moves 100 pips on real news |
 
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+Data anomalies → quarantine / quality gate. Market anomalies → context for models/risk, not automatic discard of market truth.

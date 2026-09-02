@@ -1,30 +1,23 @@
 ---
 id: DOC-VAL-004
-title: backtesting
+title: Backtesting
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 15-validation
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-VAL-022]
+related: [DOC-VAL-017, DOC-EXEC-010]
 ---
 
-# backtesting
+# Backtesting
 
-## Purpose
+## Two engines
 
-Specification for **backtesting** within the 15-validation domain.
+| Engine | Role |
+|--------|------|
+| **Vectorized** | Fast Discovery screening |
+| **Event-driven replay** | Final Validation (spread, slippage, latency, partial fill, stop, TP) |
 
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+Vectorized alone is insufficient for promotion of trading Claims.

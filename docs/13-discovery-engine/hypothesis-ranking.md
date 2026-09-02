@@ -8,39 +8,17 @@ domain: 13-discovery-engine
 created: 2026-09-01
 updated: 2026-09-02
 depends_on: [DOC-DISC-001]
-related: [DOC-DISC-008, DOC-VAL-001]
+related: [DOC-VAL-012]
 ---
 
 # Hypothesis Ranking
 
-## Purpose
+## Pareto Frontier
 
-Rank Candidates for limited Experiment Lab slots using a **penalized** score — raw in-sample performance is never enough.
-
-## Discovery Score (logical)
+Prefer a **front of Candidates**, not a single winner:
 
 ```text
-discovery_score =
-    performance
-  - complexity_penalty
-  - instability_penalty
-  - turnover_penalty
-  - data_snooping_penalty
-  - regime_dependence_penalty
+Candidate A / B / C  — each best on different objectives
 ```
 
-| Term | Intent |
-|------|--------|
-| performance | Task metric on **training / search** split only (never final proof) |
-| complexity_penalty | Depth, terms, conditions, free parameters |
-| instability_penalty | Sensitivity to small param/time perturbations |
-| turnover_penalty | If Candidate implies trading intensity |
-| data_snooping_penalty | Function of search budget / family size used to find it |
-| regime_dependence_penalty | Edge concentrated in one regime only |
-
-Exact functional forms are Benchmark/Validation parameters; the **structure** of penalties is mandatory.
-
-## Rules
-
-- Score is for **queue priority**, not Promotion.
-- Promotion uses Validation pipeline outcomes, not discovery_score alone.
+Rank for queue slots using penalized scores; keep multi-objective non-dominated sets for human/Experiment review.

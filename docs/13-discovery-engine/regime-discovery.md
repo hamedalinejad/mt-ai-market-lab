@@ -1,30 +1,33 @@
 ---
 id: DOC-DISC-015
-title: regime discovery
+title: Regime Discovery
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 13-discovery-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DISC-001, DOC-REPR-010]
+related: [DOC-ANLY-009]
 ---
 
-# regime discovery
+# Regime Discovery
 
-## Purpose
+## Core regimes (examples)
 
-Specification for **regime discovery** within the 13-discovery-engine domain.
+```text
+Trend | Range | High Vol | Low Vol
+High Liquidity | Low Liquidity | Event | Transition
+```
 
-## Scope
+Models and strategies should condition on `current_regime` when available.
 
-Phase 0 — Documentation First.
+## Regime Transition Detection
 
-## Requirements
+Many strategies fail in transitions. Compute/track:
 
-TBD — refined from Master Blueprint.
+```text
+regime transition probability
+```
 
-## Open Questions
-
-TBD
+as a first-class analysis/discovery output (Candidate until validated).

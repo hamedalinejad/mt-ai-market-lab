@@ -1,30 +1,32 @@
 ---
-id: DOC-RISK-012
-title: risk gates
+id: DOC-RISK-013
+title: Risk Gates
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 18-risk-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-RISK-001]
+related: [DOC-OBS-001, DOC-DATA-007]
 ---
 
-# risk gates
+# Risk Gates
 
-## Purpose
+## Data Quality Gate
 
-Specification for **risk gates** within the 18-risk-engine domain.
+```text
+data_health < threshold  →  NO TRADE
+```
 
-## Scope
+## AI Health Gate
 
-Phase 0 — Documentation First.
+```text
+model calibration degraded  →  disable model / DENY signals from it
+```
 
-## Requirements
+## Discovery Health Gate
 
-TBD — refined from Master Blueprint.
+Thousands of unstable discoveries → **discovery circuit breaker**.
 
-## Open Questions
-
-TBD
+Gates are independent of AI confidence.
