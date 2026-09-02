@@ -1,38 +1,27 @@
 ---
 id: DOC-DISC-017
 title: Search Strategy
-status: draft
-version: 0.2
+status: reviewed
+version: 0.4
 phase: 0
 domain: 13-discovery-engine
-created: 2026-09-01
-updated: 2026-09-02
-depends_on: [DOC-DISC-006]
-related: [DOC-DISC-013, DOC-RES-009]
 ---
 
-# Search Strategy
-
-## Budgets (per run)
+# Search Budget (binding per run)
 
 ```text
-max formulas / run
-max depth
-max operators
-max runtime
-max memory
-max candidates
-max experiments
+max_runtime
+max_memory
+max_candidates
+max_depth
+max_nodes
+max_experiments
 ```
+
+Live discovery: stricter subset. Research: higher but still capped.
 
 ## Cache
-
-Previously evaluated expressions (e.g. `abs(return_5)/volatility_20`) are not re-evaluated blindly.
+Evaluated expression hashes skipped on re-run unless space/data pins change.
 
 ## Algebraic equivalence
-
-```text
-A/B  vs  A * inverse(B)
-```
-
-normalize and treat as one discovery when equivalent under the registered algebra rules.
+Normalize AST (e.g. `A/B` ≡ `A * inv(B)` under registered rules) → single discovery id family.
