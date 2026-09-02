@@ -1,30 +1,20 @@
 ---
 id: DOC-MT5-009
 title: Integration Boundary
-status: draft
-version: 0.2
+status: reviewed
+version: 0.4
 phase: 0
 domain: 02-metatrader
-created: 2026-09-01
 updated: 2026-09-02
 depends_on: [ADR-0008]
 related: [DOC-CONTRACT-IF-001]
 ---
 
-# MT5 Integration Boundary
+# MT5 Boundary (binding)
 
-## MT5Adapter is the only gateway
+Only **MT5Adapter / MarketDataProvider implementations** may `import MetaTrader5`.
 
-No domain may call:
+## Enforcement
+Static test / CI grep: fail if `MetaTrader5` or `import mt5` appears outside approved adapter packages/modules.
 
-```text
-mt5.copy_rates_range(...)
-```
-
-directly. Path:
-
-```text
-MT5 Adapter → Canonical Market Schema → rest of system
-```
-
-Canonical data is **source-neutral**. AI never binds to MT5 namedtuples.
+Downstream domains consume Canonical schemas only.
