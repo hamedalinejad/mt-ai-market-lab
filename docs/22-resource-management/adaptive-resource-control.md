@@ -1,30 +1,62 @@
 ---
-id: DOC-RES-002
-title: adaptive resource control
+id: DOC-RES-009
+title: Adaptive Resource Control
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 22-resource-management
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-RES-002, DOC-RES-001]
+related: [DOC-RES-010, DOC-RUN-009]
 ---
 
-# adaptive resource control
+# Adaptive Resource Control
 
 ## Purpose
 
-Specification for **adaptive resource control** within the 22-resource-management domain.
+Adapt workload to measured resources.
 
-## Scope
+## Control Loop
 
-Phase 0 — Documentation First.
+```text
+Measure → Budget → Prioritize → Throttle → Degrade Gracefully
+```
 
-## Requirements
+## Profiles
 
-TBD — refined from Master Blueprint.
+```text
+Laptop Mode
+Standard Mode
+High Performance Mode
+Research Mode
+Emergency Low Resource Mode
+```
 
-## Open Questions
+## Shed Order (example under low RAM)
 
-TBD
+```text
+Discovery ↓
+Training ↓
+Feature cache ↓
+Parallelism ↓
+Live analysis stays ON
+```
+
+Priority reminder (from Master Blueprint):
+
+```text
+P0 Data Integrity
+P1 MT5 Connection
+P2 Live Analysis
+P3 Signal / Prediction
+P4 Online Learning
+P5 Validation
+P6 Discovery
+P7 Deep Research
+```
+
+## Rules
+
+- Emergency mode is automatic, auditable, and reversible when resources recover.
+- Research Mode must not share process with Live (see Runtime Modes).

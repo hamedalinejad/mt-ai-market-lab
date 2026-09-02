@@ -1,30 +1,39 @@
 ---
-id: DOC-RES-005
-title: graceful degradation
+id: DOC-RES-010
+title: Graceful Degradation
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 22-resource-management
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-RES-009]
+related: [DOC-RUN-009]
 ---
 
-# graceful degradation
+# Graceful Degradation
 
 ## Purpose
 
-Specification for **graceful degradation** within the 22-resource-management domain.
+When resources breach budget, shed work in priority order without killing data integrity or live monitoring.
 
-## Scope
+## Shed Order (example)
 
-Phase 0 — Documentation First.
+```text
+Discovery ↓
+Training ↓
+Feature cache ↓
+Parallelism ↓
+Live analysis stays ON
+```
 
-## Requirements
+## Preserve
 
-TBD — refined from Master Blueprint.
+- P0 Data Integrity
+- P1 MT5 Connection
+- P2 Live Analysis
 
-## Open Questions
+## Rules
 
-TBD
+- Degradation is automatic, observable, and reversible.
+- Never drop integrity checks to “save RAM.”

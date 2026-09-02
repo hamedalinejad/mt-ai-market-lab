@@ -1,30 +1,33 @@
 ---
-id: DOC-RUN-009
-title: training mode
+id: DOC-RUN-003
+title: Training Mode
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 21-runtime-modes
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-RUN-001]
+related: [DOC-AI-001, DOC-VAL-022]
 ---
 
-# training mode
+# Training Mode
 
-## Purpose
+## Process
 
-Specification for **training mode** within the 21-runtime-modes domain.
+Runs in the **TRAINING PROCESS** (separate from Live by default):
 
-## Scope
+```text
+Dataset → Training → Discovery (optional) → Validation → Model Candidate
+```
 
-Phase 0 — Documentation First.
+## Promotion
 
-## Requirements
+```text
+Candidate → Validation → Promotion → Live Model
+```
 
-TBD — refined from Master Blueprint.
+## Rules
 
-## Open Questions
-
-TBD
+- Must not share process with Live under default Laptop/Standard profiles.
+- May use Research / High Performance resource profile.

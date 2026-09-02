@@ -1,30 +1,72 @@
 ---
-id: DOC-AI-008
-title: mixture of specialists
+id: DOC-AI-011
+title: Mixture of Specialists
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 10-ai-core
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [ADR-0011, DOC-AI-001]
+related: [DOC-REPR-010, DOC-PRED-001]
 ---
 
-# mixture of specialists
+# Mixture of Specialists
 
 ## Purpose
 
-Specification for **mixture of specialists** within the 10-ai-core domain.
+AI Core must **not** be a single monolithic model. On a typical laptop, a large neural network is **not** the default direction.
 
-## Scope
+## Preferred Architecture
 
-Phase 0 — Documentation First.
+```text
+                Market State
+                     │
+          ┌──────────┼──────────┐
+          ▼          ▼          ▼
+      Trend       Momentum    Volatility
+      Expert       Expert       Expert
+          │          │          │
+          └──────────┼──────────┘
+                     ▼
+              Meta / Gating
+                     │
+                     ▼
+              Final Forecast
+```
 
-## Requirements
+## Example Specialists
 
-TBD — refined from Master Blueprint.
+```text
+Trend Specialist
+Range Specialist
+Momentum Specialist
+Mean-Reversion Specialist
+Volatility Specialist
+Cross-Market Specialist
+Regime Transition Specialist
+```
 
-## Open Questions
+## Router
 
-TBD
+```text
+Market State
+     ↓
+Regime
+     ↓
+Specialist Weights
+     ↓
+Ensemble / Decision Evidence
+```
+
+## Rules
+
+- Specialists are lightweight and independently versioned.
+- New specialists follow the same lifecycle: Candidate → Validation → Promotion / Retirement.
+- Gating produces **evidence for forecast**, not a direct order.
+- Model family remains candidate until Benchmark (ADR-0003 / ADR-0004 style governance).
+
+## Non-Goals (default laptop profile)
+
+- Single large end-to-end neural net as the only production model
+- Unbounded ensemble size

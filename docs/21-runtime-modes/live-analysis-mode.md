@@ -1,30 +1,35 @@
 ---
 id: DOC-RUN-002
-title: live analysis mode
+title: Live Analysis Mode
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 21-runtime-modes
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-RUN-001]
+related: [DOC-MT5-011, DOC-AI-012]
 ---
 
-# live analysis mode
+# Live Analysis Mode
 
-## Purpose
+## Process
 
-Specification for **live analysis mode** within the 21-runtime-modes domain.
+Runs in the **LIVE PROCESS**:
 
-## Scope
+```text
+MT5 → Data Collector → Feature Engine → Inference → Signal (+ light shadow learning)
+```
 
-Phase 0 — Documentation First.
+## Includes
 
-## Requirements
+- MT5 connection, sync, live data
+- Analysis, prediction, signal
+- Light online learning **only** via shadow + governance
+- Monitoring
 
-TBD — refined from Master Blueprint.
+## Excludes
 
-## Open Questions
-
-TBD
+- Heavy training
+- Full Discovery search
+- Adversarial campaigns that starve live resources

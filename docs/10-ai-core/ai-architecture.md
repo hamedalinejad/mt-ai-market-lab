@@ -1,30 +1,56 @@
 ---
-id: DOC-AI-002
-title: ai architecture
+id: DOC-AI-001
+title: AI Architecture
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 10-ai-core
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [ADR-0003, ADR-0011]
+related: [DOC-AI-011, DOC-AI-012, DOC-PRED-001]
 ---
 
-# ai architecture
+# AI Architecture
 
 ## Purpose
 
-Specification for **ai architecture** within the 10-ai-core domain.
+Model-agnostic AI Core with **Mixture of Specialists** as the preferred topology for laptop deployment.
 
-## Scope
+## Preferred Topology
 
-Phase 0 — Documentation First.
+```text
+                Market State
+                     │
+          ┌──────────┼──────────┐
+          ▼          ▼          ▼
+      Trend       Momentum    Volatility
+      Expert       Expert       Expert
+          │          │          │
+          └──────────┼──────────┘
+                     ▼
+              Meta / Gating
+                     │
+                     ▼
+              Final Forecast
+```
 
-## Requirements
+## Responsibilities
 
-TBD — refined from Master Blueprint.
+- Training / Inference
+- Model selection, versioning, monitoring
+- Ensemble / specialist gating
+- Uncertainty
+- Rollback / Retirement
+- Governance (no blind production updates)
 
-## Open Questions
+## Model Families (candidates only)
 
-TBD
+- Classical statistical
+- Tree-based
+- Linear / generalized linear
+- Online / incremental (shadow-governed)
+- Regime models
+- Lightweight ensembles
+
+No algorithm is Architecture Truth before Benchmark.
