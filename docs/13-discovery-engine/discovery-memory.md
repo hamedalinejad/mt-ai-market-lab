@@ -1,30 +1,22 @@
 ---
 id: DOC-DISC-004
-title: discovery memory
+title: Discovery Memory
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 13-discovery-engine
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-DISC-008]
+related: [DOC-KNOW-001, DOC-LEARN-008]
 ---
 
-# discovery memory
+# Discovery Memory
 
 ## Purpose
 
-Specification for **discovery memory** within the 13-discovery-engine domain.
+Retain accepted and rejected discoveries with full expression metadata for novelty checks and negative evidence.
 
-## Scope
+## Stores
 
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+Explainable formula/pattern payloads (expression, operators, inputs, scores, failure modes).

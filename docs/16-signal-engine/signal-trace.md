@@ -7,26 +7,39 @@ phase: 0
 domain: 16-signal-engine
 created: 2026-09-01
 updated: 2026-09-02
-depends_on: [DOC-SIG-002]
-related: [DOC-LEARN-008]
+depends_on: [DOC-SIG-002, DOC-KNOW-001]
+related: [DOC-PRED-001, DOC-RISK-001, DOC-LEARN-008]
 ---
 
 # Signal Trace
 
 ## Purpose
 
-Answer: **Why was this signal created?**
+End-to-end answer to **why** this signal exists.
 
-## Trace Contents (candidate)
+## Required Trace Fields (material signals)
+
+```text
+Symbol / instrument_id
+Timeframe
+Timestamp
+Candle IDs
+Features (feature_set_id + version + snapshot)
+Indicators
+Pattern refs
+Model + Model Version
+Prediction + Confidence / probabilities
+Discovery refs (if any)
+Knowledge refs
+Strategy ref
+Risk Decision (ALLOW/DENY/REDUCE/…)
+```
+
+Plus:
 
 ```text
 Data Snapshot
 Market State
-Detected Patterns
-Indicators
-Features
-Predictions
-Knowledge References
 Contradictions
 Error Memory Matches
 Confidence Decomposition
@@ -35,5 +48,6 @@ Decision Path
 
 ## Rules
 
-- Material signals without Trace are non-compliant.
-- FAILED signals keep Trace for diagnosis; they are not purged.
+- Material Signal without Trace is non-compliant.
+- FAILED signals retain Trace; they are not deleted.
+- Trace links into the Knowledge graph (typed edges).

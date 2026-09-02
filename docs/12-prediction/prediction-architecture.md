@@ -8,52 +8,50 @@ domain: 12-prediction
 created: 2026-09-01
 updated: 2026-09-02
 depends_on: [DOC-AI-001]
-related: [DOC-PRED-002, DOC-PRED-007, DOC-SIG-001]
+related: [DOC-SIG-001, DOC-SIG-012]
 ---
 
 # Prediction Architecture
 
 ## Purpose
 
-Prediction is a **probabilistic estimate**, not a decision. It must not collapse to a single hard `next_price`.
+Prediction is probabilistic estimate + **evidence**, not a mystical claim.
 
-## Preferred Target Families
-
-```text
-Direction
-Return
-Price
-Range
-Volatility
-Probability
-Quantiles
-Scenario
-Next Candle
-Multi-Candle Path
-```
-
-Prefer:
+## Targets
 
 ```text
-P(up), P(down), P(flat)
+Direction, Return, Price, Range, Volatility
+Probability, Quantiles, Scenario, Next Candle, Multi-Candle Path
 ```
 
-over a lone point:
+Prefer `P(up), P(down), P(flat)` over a lone hard price.
+
+## Evidence-Based Explainability
+
+Not:
 
 ```text
-next_price = 1.2345
+AI thinks price will go up
 ```
 
-Point forecasts, when present, should come with uncertainty (intervals, quantiles, or variance).
+But:
 
-## Required Companion Fields
+```text
+Prediction:
+  UP = 0.74
 
-- Probability / confidence / uncertainty  
-- Model version  
-- Feature snapshot id  
-- Evaluation context / decision point  
+Evidence:
+  - Trend state = bullish
+  - Volatility = expanding
+  - Pattern = candidate P-019
+  - Momentum = positive
+  - Cross-timeframe alignment = 4/5
+  - Model ensemble agreement = 0.81
+```
+
+Evidence is structured, versioned, and attachable to Signal Trace.
 
 ## Rules
 
-- Prediction ≠ Signal ≠ Order  
-- Multi-horizon outputs are first-class when the model provides them  
+- Prediction ≠ Decision
+- Companion fields: uncertainty, model version, feature snapshot, decision point

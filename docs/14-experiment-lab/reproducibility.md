@@ -1,30 +1,28 @@
 ---
 id: DOC-EXPL-011
-title: reproducibility
+title: Reproducibility
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 14-experiment-lab
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-EXPL-003]
+related: [DOC-AI-014, DOC-FEAT-001, DOC-VAL-021]
 ---
 
-# reproducibility
+# Reproducibility
 
-## Purpose
+## Required Pins
 
-Specification for **reproducibility** within the 14-experiment-lab domain.
+```text
+dataset_version
+feature_definition_version
+code_version
+seed
+cost_bundle_id
+model_version (if inference under test)
+timezone/session policy versions
+```
 
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+Same pins ⇒ comparable rerun.

@@ -1,30 +1,40 @@
 ---
-id: DOC-EXPL-006
-title: experiment model
+id: DOC-EXPL-003
+title: Experiment Model
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 14-experiment-lab
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-EXPL-001]
+related: [DOC-VAL-021, DOC-EXPL-011, DOC-KNOW-001]
 ---
 
-# experiment model
+# Experiment Model
 
 ## Purpose
 
-Specification for **experiment model** within the 14-experiment-lab domain.
+An Experiment is a reproducible evaluation of a Hypothesis/Candidate with pinned data, code, and **cost** assumptions.
 
-## Scope
+## Minimum Fields
 
-Phase 0 — Documentation First.
+```text
+experiment_id
+hypothesis_id
+candidate_refs
+dataset_version
+feature_set_id / feature_definition_version
+code_version
+seed
+metrics
+cost_bundle_id          # spread/slippage/commission/swap/execution/latency versions
+split_scheme_version
+status
+started_at / finished_at
+```
 
-## Requirements
+## Rules
 
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+- Experiments without `cost_bundle_id` are non-comparable for trading claims.
+- All runs are registered; selective reporting without registry is invalid.

@@ -1,30 +1,46 @@
 ---
 id: DOC-VAL-021
-title: transaction costs
+title: Transaction Costs
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 15-validation
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-VAL-022, DOC-EXPL-003]
+related: [DOC-EXEC-010, DOC-VAL-019, DOC-VAL-020]
 ---
 
-# transaction costs
+# Transaction Costs
 
 ## Purpose
 
-Specification for **transaction costs** within the 15-validation domain.
+Every backtest, experiment, and paper evaluation **must** bind explicit cost assumptions. Results without cost model versions are **not comparable**.
 
-## Scope
+## Required Cost Bundle (versioned)
 
-Phase 0 — Documentation First.
+```text
+spread_model_version
+slippage_model_version
+commission_model
+swap_model
+execution_assumptions
+latency_assumptions
+```
 
-## Requirements
+## Binding
 
-TBD — refined from Master Blueprint.
+Each **Dataset** used for economic evaluation and each **Experiment** run records the full cost bundle id/version in its manifest.
 
-## Open Questions
+```text
+dataset_manifest.cost_bundle_id
+experiment_run.cost_bundle_id
+```
 
-TBD
+Changing any component requires a **new cost_bundle version**; prior results remain tied to the old bundle.
+
+## Rules
+
+- No promotional claim from a backtest missing cost bundle metadata.
+- Paper and Live evaluation report realized costs against the same model family where applicable.
+- Slippage is dynamic (see execution slippage handling), not a fixed constant alone.

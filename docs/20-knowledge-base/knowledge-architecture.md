@@ -1,30 +1,65 @@
 ---
-id: DOC-KNOW-008
-title: knowledge architecture
+id: DOC-KNOW-001
+title: Knowledge Architecture
 status: draft
-version: 0.1
+version: 0.2
 phase: 0
 domain: 20-knowledge-base
 created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-02
+depends_on: [DOC-MASTER-001]
+related: [DOC-KNOW-016, DOC-SIG-012, DOC-EXPL-003]
 ---
 
-# knowledge architecture
+# Knowledge Architecture
 
 ## Purpose
 
-Specification for **knowledge architecture** within the 20-knowledge-base domain.
+Knowledge is **not** a pile of free text. It is a **graph-like** network of typed nodes and edges with lifecycle status.
 
-## Scope
+## Graph Sketch
 
-Phase 0 — Documentation First.
+```text
+Discovery D123
+   ↓
+Feature F87
+   ↓
+Pattern P32
+   ↓
+Signal S45
+   ↓
+Strategy ST12
+   ↓
+Experiment E900
+   ↓
+Validation V300
+   ↓
+Outcome O500
+```
 
-## Requirements
+## Node Types (examples)
 
-TBD — refined from Master Blueprint.
+```text
+Discovery, Feature, Pattern, Indicator, Formula
+PredictionModel, Signal, Strategy, Experiment
+ValidationRun, Outcome, Failure, KnowledgeArticle
+```
 
-## Open Questions
+## Edge Types (examples)
 
-TBD
+```text
+derived_from
+uses_feature
+supports
+contradicts
+validated_by
+produced
+failed_as
+supersedes
+```
+
+## Rules
+
+- Promotion moves **node status**, not “save a paragraph.”
+- Traceability walks the graph; orphan signals without edges are non-compliant for material use.
+- Text notes may annotate nodes; they are not a substitute for typed links.
