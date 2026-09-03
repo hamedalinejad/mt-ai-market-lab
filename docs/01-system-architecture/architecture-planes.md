@@ -1,23 +1,24 @@
 ---
 id: DOC-ARCH-001
 title: Architecture Planes
-status: draft
-version: 0.2
+status: reviewed
+version: 0.5
 phase: 0
 domain: 01-system-architecture
-created: 2026-09-01
-updated: 2026-09-02
-depends_on: [DOC-MASTER-001]
 ---
 
-# Architecture Planes
+# Final Plane Layout
 
 ```text
-CONTROL PLANE   Config | Runtime | Scheduler | Resource | Safety
-DATA PLANE      MT5 | External | Replay | Sync | Quality
-STORAGE PLANE   SQLite | Parquet | DuckDB | Cache | Archive
-REPRESENTATION  Candle | Tick | Structure | Regime | Vol | DNA
-FEATURE PLANE   Raw | Derived | Statistical | Temporal | Cross-Market
-PREDICTION  ||  DISCOVERY  → Experiment → Validation → Knowledge
-SIGNAL → Strategy → Risk → Execution (Paper/Live) → Outcome → Error/Feedback → Learning
+CONTROL: Config | Scheduler | Safety | Resource
+DATA: MT5 | External | Replay | Sync | Quality
+STORAGE: SQLite | Parquet | DuckDB | Cache
+REPRESENTATION: Tick | Candle | Session | Regime | Structure
+FEATURE/LABEL: Raw | Derived | Statistical | Temporal | Cross
+PREDICTION (Predictor) || DISCOVERY (Discoverer)
+→ Experiment → Validation → Knowledge → Signal → Strategy → Risk
+→ Execution (Paper|Live) → Outcome → Error/Feedback → Learner
 ```
+
+## Responsibilities
+MT5 Adapter, Sync, Quality, Storage, Representation, Feature, Predictor, Learner, Discoverer, Experiment, Validator, Knowledge, Signal, Strategy, Risk, Execution — each bounded; no cross-skip to broker from Prediction/Discovery.

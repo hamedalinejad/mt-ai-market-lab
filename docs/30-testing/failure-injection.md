@@ -1,22 +1,12 @@
 ---
 id: DOC-TEST-003
-title: Failure Injection Testing
-status: draft
-version: 0.2
+title: Failure Injection
+status: reviewed
+version: 0.5
 phase: 0
 domain: 30-testing
-created: 2026-09-01
-updated: 2026-09-02
-depends_on: [DOC-TEST-001]
-related: [DOC-SAFE-002, DOC-OPS-001]
 ---
 
-# Failure Injection
+# Mandatory failure scenarios
 
-Simulate intentionally:
-
-```text
-MT5 disconnect | Database locked | Disk full
-Corrupt row | Missing tick | Duplicate tick
-Model crash | RAM exhaustion | Network failure | Order timeout
-```
+MT5 disconnect/timeout, invalid symbol, missing history, duplicate tick, corrupt candle, DB lock/corruption, disk full, publish crash, model load/degrade, discovery explosion, memory pressure, execution timeout, order rejection, partial fill, process crash, restart during sync/publish, restart after order send before ack

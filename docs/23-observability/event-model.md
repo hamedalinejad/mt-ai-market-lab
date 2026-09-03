@@ -1,53 +1,18 @@
 ---
 id: DOC-OBS-001
 title: Event Model
-status: draft
-version: 0.2
+status: reviewed
+version: 0.5
 phase: 0
 domain: 23-observability
-created: 2026-09-01
-updated: 2026-09-02
-depends_on: [DOC-OBS-002]
-related: [DOC-OPS-001, DOC-SIG-012]
 ---
 
-# Event Model
-
-## Purpose
-
-Important system changes are **events**, not only log lines.
-
-## Example Event Types
+# Event Schema
 
 ```text
-DATA_INGESTED
-DATA_GAP_FOUND
-SYNC_STARTED
-SYNC_COMPLETED
-MODEL_LOADED
-MODEL_REJECTED
-DISCOVERY_FOUND
-DISCOVERY_REJECTED
-SIGNAL_CREATED
-SIGNAL_EXPIRED
-RISK_DENIED
-ORDER_SENT
-ORDER_FILLED
-ORDER_FAILED
-MODEL_UPDATED
-MODEL_ROLLBACK
+event_id, event_type, timestamp, component, severity
+trace_id, correlation_id, payload, version
 ```
 
-## Payload (minimum)
-
-```text
-event_id, event_type, timestamp_utc
-severity, source_component
-correlation_ids (run_id, signal_id, model_version, …)
-payload (structured)
-```
-
-## Rules
-
-- Material Signal/Order/Model transitions must emit events.
-- Events feed observability and audit; they complement Signal Trace.
+## Minimum event types
+DATA_RECEIVED, DATA_PUBLISHED, DATA_GAP, SYNC_STARTED, SYNC_FINISHED, SYNC_FAILED, MODEL_LOADED, MODEL_PROMOTED, MODEL_ROLLBACK, DISCOVERY_CREATED, DISCOVERY_REJECTED, SIGNAL_CREATED, RISK_DENIED, ORDER_SENT, ORDER_FILLED, ORDER_REJECTED, SYSTEM_SAFE_MODE
