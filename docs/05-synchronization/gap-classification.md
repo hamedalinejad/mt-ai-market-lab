@@ -2,22 +2,12 @@
 id: DOC-SYNC-004
 title: Gap Classification
 status: reviewed
-version: 0.4
+version: 0.7
 phase: 0
-domain: 05-synchronization
 ---
 
-# Gap Classification (binding)
+# Gap ≠ automatic data loss
 
-| Class | expected? | auto-repairable? | alert |
-|-------|-----------|------------------|-------|
-| market_closed | yes | no fill needed | INFO |
-| holiday | yes | no | INFO |
-| session_break | yes | no | INFO |
-| source_unavailable | no | retry backfill | WATCH/HIGH |
-| transport_failure | no | retry | WATCH |
-| storage_failure | no | repair storage | RISK/SYSTEM |
-| corrupt_data | no | quarantine+resync | RISK |
-| unknown | no | escalate | WATCH+ |
+Classes: market_closed, holiday, session_break, source_unavailable, transport_failure, storage_failure, corrupt_data, unknown
 
-Each Gap row stores: class, expected flag, repair policy, severity, escalation.
+Gap fields: source, timeframe, expected_interval, actual_interval, class, confidence, first_detected_at, resolved_at, evidence_ref

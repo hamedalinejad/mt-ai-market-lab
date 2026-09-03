@@ -1,22 +1,15 @@
 ---
 id: DOC-SYNC-015
-title: Cursor Safety Transaction Boundary
+title: Cursor Safety Transaction Protocol
 status: reviewed
-version: 0.2
+version: 0.7
 phase: 0
-domain: 05-synchronization
 ---
 
-# Cursor Safety
+# Protocol
 
-## Only allowed order
-```text
-download → validate → publish → commit → advance cursor (last_persisted)
-```
+REQUEST → DOWNLOAD → RAW WRITE → RAW VALIDATE → CANONICAL TRANSFORM → CANONICAL VALIDATE → ATOMIC PUBLISH → CONTROL-PLANE COMMIT → CURSOR ADVANCE
 
-## Forbidden
-```text
-download → advance cursor → crash
-```
+Forbidden: DOWNLOAD → CURSOR ADVANCE → crash
 
-`last_seen` may move for diagnostics without implying durability.
+Failure codes per stage: SYNC_BAD_RANGE, PROVIDER_TIMEOUT, STORAGE_FULL, RAW_SCHEMA_FAIL, OHLC_INVARIANT, PUBLISH_FAIL, STATE_COMMIT_FAIL, …

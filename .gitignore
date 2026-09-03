@@ -22,17 +22,17 @@ dist/
 build/
 
 # Data & models (no production data in Phase 0)
-data/
+/data/
 *.parquet
 *.csv
 *.h5
 *.pkl
 *.joblib
-models/
-checkpoints/
+/models/
+/checkpoints/
 
 # Logs
-logs/
+/logs/
 *.log
 
 # Secrets
