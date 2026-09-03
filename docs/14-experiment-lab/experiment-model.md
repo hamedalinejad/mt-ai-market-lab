@@ -1,40 +1,31 @@
 ---
 id: DOC-EXPL-003
 title: Experiment Model
-status: draft
-version: 0.2
+status: reviewed
+version: 0.4
 phase: 0
 domain: 14-experiment-lab
-created: 2026-09-01
-updated: 2026-09-02
-depends_on: [DOC-EXPL-001]
-related: [DOC-VAL-021, DOC-EXPL-011, DOC-KNOW-001]
+updated: 2026-09-03
 ---
 
-# Experiment Model
+# Experiment Run (binding IDs)
 
-## Purpose
-
-An Experiment is a reproducible evaluation of a Hypothesis/Candidate with pinned data, code, and **cost** assumptions.
-
-## Minimum Fields
+Every run records:
 
 ```text
 experiment_id
 hypothesis_id
-candidate_refs
-dataset_version
-feature_set_id / feature_definition_version
+dataset_snapshot_id
+feature_set_id
+model_id
+config_version
 code_version
 seed
-metrics
-cost_bundle_id          # spread/slippage/commission/swap/execution/latency versions
-split_scheme_version
+hardware_profile
+cost_bundle_id
 status
 started_at / finished_at
 ```
 
-## Rules
-
-- Experiments without `cost_bundle_id` are non-comparable for trading claims.
-- All runs are registered; selective reporting without registry is invalid.
+## Failures
+`status=failed` experiments are **retained** (never deleted). Outcomes and error payloads stay in registry for learning and audit.
