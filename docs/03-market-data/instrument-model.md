@@ -2,30 +2,28 @@
 id: DOC-DATA-015
 title: Instrument Model
 status: reviewed
-version: 0.3
+version: 0.4
 phase: 0
 domain: 03-market-data
+updated: 2026-09-04
 ---
 
-# Instrument Model
+# Instrument Canonicalization (BUG-P0-013)
 
-## Canonical identity
+## Symbols that may differ
+`EURUSD`, `EURUSDm`, `EURUSD.a`, `EURUSD.raw`, …
+
+## Versioned mapping policy
 ```text
-instrument_id          # stable ULID/UUID
-broker_id
-server_id              # multi-server explicit
-broker_symbol
-canonical_asset_identity  # policy-normalized asset key for cross-broker joins
+raw_broker_symbol
+broker_family
+server
+canonical_instrument_family   # conceptual asset family
+tradable_instrument_id        # instrument_id used in pipelines
 ```
 
-## Metadata
-digits, point, tick_size, contract_size, volume_min/max/step, currencies, session_definition, timezone, **metadata_version** (required on material change)
+Mapping table is **versioned** (`instrument_map_version`). Engines never ad-hoc string-strip without policy version.
 
-## canonical_name algorithm (policy v1)
-1. Uppercase broker symbol
-2. Strip known suffixes (`m`, `.pro`, `.raw`, …) via versioned suffix table
-3. Map aliases via registry table
-4. Result stored; not recomputed ad hoc in engines
-
-## Multi-server
-Same broker_symbol on different server_id ⇒ **different** instrument_id bindings unless explicitly merged by operator registry rule.
+## Identity
+`instrument_id` stable ULID/UUID per tradable binding (broker+server+symbol unless operator merge rule).
+`metadata_version` increments on material metadata change.
