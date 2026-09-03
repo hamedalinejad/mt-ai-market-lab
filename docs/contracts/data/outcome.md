@@ -1,52 +1,20 @@
 ---
 id: DOC-CONTRACT-DATA-outcome
-title: Data Contract — outcome
+title: Data Contract — Outcome
 status: reviewed
-version: 0.7
+version: 0.8
 phase: 0
 domain: contracts
-updated: 2026-09-04
 ---
 
-# Data Contract: outcome
+# Outcome (linked, separate)
 
-## Purpose
-Binding schema for **outcome**.
+```text
+outcome_id
+subject_type            # prediction | signal | …
+subject_id              # e.g. prediction_id
+realized_metrics
+evaluated_at
+```
 
-## Identity
-See domain + identity layers (logical / source / physical).
-
-## Fields
-### Required
-Entity-specific required fields (see prior architecture docs; must be non-null).
-
-### Optional
-Entity-specific optional fields.
-
-## Types / Units / Timezone
-Timestamps as UTC fields per Time Model. Prices per price representation policy.
-
-## Validity interval
-Gated by quality_status and session rules where applicable.
-
-## Provenance
-source + source identity retained.
-
-## Version
-schema_version; major on identity/invariant breaks.
-
-## Nullability
-Required non-null; optional nullable.
-
-## Invariants
-Entity-specific invariants enforced at quality gate.
-
-## Examples
-### Valid
-Valid outcome instance satisfying invariants.
-
-### Invalid
-Violates invariants or missing required fields.
-
-## Compatibility policy
-Forward-compatible optional fields; no silent required-field removal.
+Immutable link for audit and learning. Prediction row stays unchanged.

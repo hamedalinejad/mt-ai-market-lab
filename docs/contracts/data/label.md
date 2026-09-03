@@ -1,52 +1,25 @@
 ---
 id: DOC-CONTRACT-DATA-label
-title: Data Contract — label
+title: Data Contract — Label
 status: reviewed
-version: 0.7
+version: 0.8
 phase: 0
 domain: contracts
 updated: 2026-09-04
 ---
 
-# Data Contract: label
+# Label Definition (BUG-AI-P0-003)
 
-## Purpose
-Binding schema for **label**.
+```text
+label_id
+version
+decision_time          # decision_point binding
+horizon
+target_definition      # exact formula
+price_definition       # which prices enter the formula
+cost_adjustment        # optional costs in target
+overlap_policy
+availability_rule      # when label becomes observable
+```
 
-## Identity
-See domain + identity layers (logical / source / physical).
-
-## Fields
-### Required
-Entity-specific required fields (see prior architecture docs; must be non-null).
-
-### Optional
-Entity-specific optional fields.
-
-## Types / Units / Timezone
-Timestamps as UTC fields per Time Model. Prices per price representation policy.
-
-## Validity interval
-Gated by quality_status and session rules where applicable.
-
-## Provenance
-source + source identity retained.
-
-## Version
-schema_version; major on identity/invariant breaks.
-
-## Nullability
-Required non-null; optional nullable.
-
-## Invariants
-Entity-specific invariants enforced at quality gate.
-
-## Examples
-### Valid
-Valid label instance satisfying invariants.
-
-### Invalid
-Violates invariants or missing required fields.
-
-## Compatibility policy
-Forward-compatible optional fields; no silent required-field removal.
+Example: `next_candle_return_h1` must state from-price → to-price (e.g. close→close of next H1 **closed** bar), timezone, and availability_rule.

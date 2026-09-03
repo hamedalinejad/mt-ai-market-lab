@@ -2,30 +2,32 @@
 id: DOC-AI-012
 title: Online Learning
 status: reviewed
-version: 0.4
+version: 0.6
 phase: 0
 domain: 10-ai-core
+updated: 2026-09-04
 ---
 
-# Online Learning Governance (binding)
+# Online Learning Governance
 
-## Pipeline
+Pipeline: Observation → Prediction → Outcome → Error → Candidate Update → Shadow → Validation → Promotion/Rollback  
+Forbidden: `candle → model.update() → production`
+
+## Catastrophic forgetting controls (BUG-AI-P0-007)
 ```text
-Observation → Prediction → Outcome → Error
-  → Candidate update → Shadow → Validation → Promotion / Rollback
-```
-
-## Forbidden
-`new candle → model.update() → production`
-
-## Policy parameters (versioned)
-```text
-minimum_sample
-minimum_time
-rollback_threshold
-drift_threshold
+replay_ratio
+historical_sample_floor
+recent_sample_floor
 update_frequency
-learning_budget          # CPU/RAM/step size caps
+max_parameter_delta
+rollback_threshold
 ```
 
-Live path: light updates only; full retrain offline.
+## Online learning budget (BUG-AI-P0-008)
+```text
+max_updates_per_day
+max_training_cpu_seconds
+max_ram
+max_candidate_promotions_per_day
+max_model_changes_per_day
+```

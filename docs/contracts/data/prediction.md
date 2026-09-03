@@ -1,52 +1,31 @@
 ---
 id: DOC-CONTRACT-DATA-prediction
-title: Data Contract — prediction
+title: Data Contract — Prediction
 status: reviewed
-version: 0.7
+version: 0.8
 phase: 0
 domain: contracts
 updated: 2026-09-04
 ---
 
-# Data Contract: prediction
+# Multi-dimensional Prediction (BUG-AI-P0-004)
 
-## Purpose
-Binding schema for **prediction**.
+Not “next price only”. Recommended outputs:
 
-## Identity
-See domain + identity layers (logical / source / physical).
+```text
+direction_probability
+expected_return
+expected_price_change
+expected_range
+expected_volatility
+quantiles
+confidence
+calibration_status
+decision_timestamp
+horizon
+model_version
+feature_set_version
+```
 
-## Fields
-### Required
-Entity-specific required fields (see prior architecture docs; must be non-null).
-
-### Optional
-Entity-specific optional fields.
-
-## Types / Units / Timezone
-Timestamps as UTC fields per Time Model. Prices per price representation policy.
-
-## Validity interval
-Gated by quality_status and session rules where applicable.
-
-## Provenance
-source + source identity retained.
-
-## Version
-schema_version; major on identity/invariant breaks.
-
-## Nullability
-Required non-null; optional nullable.
-
-## Invariants
-Entity-specific invariants enforced at quality gate.
-
-## Examples
-### Valid
-Valid prediction instance satisfying invariants.
-
-### Invalid
-Violates invariants or missing required fields.
-
-## Compatibility policy
-Forward-compatible optional fields; no silent required-field removal.
+## Immutability (BUG-AI-P0-005)
+A written Prediction is **immutable**. Outcomes are separate objects linked by `prediction_id` — never mutate the prediction row to store outcomes.
