@@ -1,22 +1,49 @@
 ---
 id: DOC-CONTRACT-IF-model
-title: Interface — Model Registry & Runtime
+title: Interface — model
 status: reviewed
-version: 0.4
+version: 0.6
 phase: 0
 domain: contracts
+updated: 2026-09-03
 ---
 
-# Model Registry & Runtime
-
-## Registry fields
-model_id, version, parent_model, status, artifact_uri, dataset_snapshot, feature_version, config_version, training_run, validation_run, metrics, created_at, promoted_at, retired_at
-
-## States
-CANDIDATE | VALIDATED | SHADOW | CHAMPION | DEGRADED | RETIRED | REJECTED
+# Interface: model
 
 ## Methods
-list_models, get_champion, promote, rollback, retire, compare, load, predict
+| Method | Input | Output | Errors |
+|--------|-------|--------|--------|
+| `list_models` | — | ModelMeta[] | — |
+| `get_champion` | slot? | ModelMeta | NotFound |
+| `promote` | version | void | PromotionDenied |
+| `rollback` | to_version | void | NotFound |
+| `retire` | version | void | — |
+| `load` | version | void | IncompatibleFeature |
+| `predict` | FeatureSnapshot | Prediction | InferenceError |
 
-## Roles
-Predictor uses load/predict only. Learner proposes candidate versions. Discoverer does not write registry champion.
+## Retry behavior
+load failure retry limited; promote non-retry without new validation
+
+## Idempotency
+promote/rollback once per transition event
+
+## Timeout
+predict latency budget from resource profile
+
+## Concurrency
+champion read concurrent; promote single-flight
+
+## Transaction boundary
+registry row update atomic with event
+
+## Observability
+MODEL_LOADED, MODEL_PROMOTED, MODEL_ROLLBACK
+
+## Cancellation
+predict cancel cooperative
+
+## Versioning
+model_version immutable artifact
+
+## Test double
+StubModelAdapter

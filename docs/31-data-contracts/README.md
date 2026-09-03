@@ -1,8 +1,8 @@
 ---
 id: DOC-31-README
 title: Data Contracts Index
-status: draft
-version: 0.2
+status: reviewed
+version: 0.3
 phase: 0
 domain: 31-data-contracts
 ---
@@ -11,4 +11,4 @@ domain: 31-data-contracts
 
 **Source of Truth:** [`docs/contracts/data/`](../contracts/data/)
 
-This folder does not own schemas. See contracts/data for Tick, Quote, Candle, …
+This folder does not own schemas.

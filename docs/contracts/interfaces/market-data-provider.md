@@ -1,26 +1,47 @@
 ---
-id: DOC-CONTRACT-IF-001
-title: Interface — MarketDataProvider
-status: draft
-version: 0.3
+id: DOC-CONTRACT-IF-market-data-provider
+title: Interface — market-data-provider
+status: reviewed
+version: 0.6
 phase: 0
 domain: contracts
+updated: 2026-09-03
 ---
 
-# MarketDataProvider
+# Interface: market-data-provider
 
 ## Methods
-- `list_instruments() -> Instrument[]`
-- `get_candles(instrument_id, timeframe, from, to) -> Candle[]`
-- `get_ticks(instrument_id, from, to) -> Tick[]`
-- `get_quote(instrument_id) -> Quote`
-- `health() -> ProviderHealth`
+| Method | Input | Output | Errors |
+|--------|-------|--------|--------|
+| `list_instruments` | — | Instrument[] | ProviderError |
+| `get_candles` | instrument_id,timeframe,from,to | Candle[] | Timeout,Empty,InvalidTF |
+| `get_ticks` | instrument_id,from,to | Tick[] | Timeout,Empty |
+| `get_quote` | instrument_id | Quote | NotFound |
+| `health` | — | ProviderHealth | — |
 
-## Errors
-retryable: timeout, disconnect | non_retryable: invalid symbol | recoverable: after reconnect
+## Retry behavior
+timeout/disconnect retryable with backoff; invalid symbol non-retryable
 
-## Semantics
-idempotent reads; no side effects on market; timeout per call; cancellation cooperative
+## Idempotency
+all reads idempotent
+
+## Timeout
+per-call timeout required
+
+## Concurrency
+thread-safe reads; no shared mutable cursor without lock
+
+## Transaction boundary
+none (read-only)
+
+## Observability
+emit DATA_RECEIVED on batches
+
+## Cancellation
+cooperative cancel between pages
+
+## Versioning
+returns canonical schema_version
 
 ## Test double
-`FakeMarketDataProvider` / `ReplayProvider`
+FakeMarketDataProvider, ReplayProvider

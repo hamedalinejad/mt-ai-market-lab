@@ -1,23 +1,44 @@
 ---
 id: DOC-CONTRACT-IF-strategy
-title: Interface — StrategyEngine
+title: Interface — strategy
 status: reviewed
-version: 0.3
+version: 0.6
 phase: 0
 domain: contracts
+updated: 2026-09-03
 ---
 
-# StrategyEngine
+# Interface: strategy
 
 ## Methods
-```text
-on_signal(signal) -> OrderIntent | None
-on_bar(closed_bar_context) -> OrderIntent | None
-validate_intent(intent) -> bool
-```
+| Method | Input | Output | Errors |
+|--------|-------|--------|--------|
+| `on_signal` | Signal | OrderIntent|None | — |
+| `on_bar` | context | OrderIntent|None | — |
 
-## Rules
-Never submits to broker; RiskEngine must evaluate intent.
+## Retry behavior
+—
+
+## Idempotency
+intent client_order_id unique
+
+## Timeout
+—
+
+## Concurrency
+per strategy instance
+
+## Transaction boundary
+does not touch broker
+
+## Observability
+—
+
+## Cancellation
+—
+
+## Versioning
+strategy version
 
 ## Test double
-PassthroughStrategy / NoopStrategy
+NoopStrategy
