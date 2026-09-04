@@ -1,21 +1,21 @@
 ---
 id: DOC-SAFE-003
-title: Kill Switch / Emergency Close
+title: Kill Switch
 status: reviewed
-version: 0.3
+version: 0.4
 phase: 0
 domain: 27-risk-and-safety
 updated: 2026-09-04
 ---
 
-# Emergency Close Independent of Model (BUG-TRD-P0-008)
+# Kill Switch (B-034)
 
-Kill switch / emergency close must operate even if:
+Independent of model/feature/discovery failures.
 
-```text
-model crash
-feature crash
-discovery deadlock
-```
+## State machine (binding)
+ARMABLE → ARMED → TRIGGERED → HALTED → (authorized) RESET
 
-Independent process/path from Predictor/Discoverer. Can HALT trading and force flatten/close per policy.
+## Policy numbers
+Thresholds (e.g. daily loss %) are **Candidate policy parameters** in `policy_version` — not hard-coded magic in architecture prose.
+
+Must define: account scope, session scope, realized vs unrealized, reset authorization, audit trail, fail-safe default **HALT**.
