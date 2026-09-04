@@ -1,16 +1,27 @@
 ---
 id: DOC-OBS-005
 title: Health Checks and Watchdog
-status: draft
-version: 0.2
+status: reviewed
+version: 0.4
 phase: 0
 domain: 23-observability
-created: 2026-09-02
-updated: 2026-09-02
-depends_on: [DOC-OBS-001, DOC-OPS-001]
-related: [DOC-SAFE-002]
+updated: 2026-09-04
 ---
 
-# Health Checks and Watchdog
+# Watchdog (BUG-OPS-P0-005)
 
-Periodic checks: MT5, storage, sync lag, model health, data health, resource budgets. Watchdog can trip circuit breakers → Safe Mode.
+Health score inputs:
+
+```text
+MT5
+data freshness
+queue lag
+disk
+DB
+model
+validation state
+execution
+latency
+```
+
+Watchdog may trip circuit breakers → Safe Mode.

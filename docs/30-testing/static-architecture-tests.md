@@ -2,19 +2,21 @@
 id: DOC-TEST-005
 title: Static Architecture Tests
 status: reviewed
-version: 0.3
+version: 0.4
 phase: 0
 domain: 30-testing
 updated: 2026-09-04
 ---
 
-# Static Architecture Tests
+# Executable Static Gates (BUG-TEST-P0-002)
 
-| ID | Rule |
-|----|------|
-| A | No non-MT5 domain imports MetaTrader5 |
-| B | No model code imports storage provider directly |
-| C | No material signal without valid trace_id |
-| D | No promotable artifact without decision_point |
-| E | No model promotion without validation_run |
-| F | **No random shuffle of temporal rows for promotable temporal claims** (BUG-VAL-P0-003) |
+1. No unauthorized MetaTrader5 import  
+2. No data domain direct broker calls outside adapter  
+3. No model direct storage access  
+4. No production model promotion without validation  
+5. No live trading in research mode  
+6. No feature access beyond availability time  
+7. No random shuffle in temporal promotable tests  
+8. No cursor advance before publish  
+9. No duplicate canonical identity  
+10. No schema mismatch without explicit migration  

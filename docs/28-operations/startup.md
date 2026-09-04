@@ -1,53 +1,31 @@
 ---
 id: DOC-OPS-001
-title: Startup
-status: draft
-version: 0.2
+title: Startup Sequence
+status: reviewed
+version: 0.5
 phase: 0
 domain: 28-operations
-created: 2026-09-01
-updated: 2026-09-02
-depends_on: [DOC-RUN-001]
-related: [DOC-OPS-002, DOC-SYNC-013, DOC-OBS-001]
+updated: 2026-09-04
 ---
 
-# Startup
-
-## Not Allowed
+# Startup Sequence (BUG-OPS-P0-002)
 
 ```text
-start → run
+Load config
+→ Validate config
+→ Acquire lock
+→ Open SQLite
+→ Run migrations
+→ Load registry
+→ Check filesystem
+→ Check disk space
+→ Initialize logging
+→ Connect MT5
+→ Validate broker/account
+→ Reconcile
+→ Load model
+→ Health checks
+→ Enter runtime mode
 ```
 
-## Recovery-Aware Sequence
-
-```text
-Environment Check
- ↓
-Storage Check
- ↓
-Database Recovery
- ↓
-MT5 Connection
- ↓
-Symbol Verification
- ↓
-Data Health
- ↓
-Sync
- ↓
-Model Load
- ↓
-Model Health
- ↓
-Live Mode
-```
-
-## Crash-Safe Continuity
-
-Reload `sync_state.last_persisted_*` and resume Live/Backfill from durable cursors only.
-
-## Rules
-
-- Fail closed on integrity/storage check failures.
-- Emit startup events to the immutable event log.
+Not `start → run`. Fail closed on integrity errors.
