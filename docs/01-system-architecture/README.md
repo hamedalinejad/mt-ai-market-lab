@@ -1,26 +1,10 @@
 ---
-id: DOC-ARCH-001
-title: System Architecture Overview
-status: draft
-version: 0.1
-phase: 0
-domain: 01-system-architecture
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+id: DOC-ARCH-README
+title: System Architecture Index
+status: reviewed
+version: 0.4
 ---
 
-# System Architecture Overview
+# System Architecture
 
-## Purpose
-
-Overview and entry point for the **01-system-architecture** domain of `mt-ai-market-lab`.
-
-## Scope
-
-Phase 0 — Documentation First. Specifications only; no production code.
-
-## Status
-
-All documents in this domain are currently in `draft` status.
+See [architecture-planes.md](architecture-planes.md).

@@ -1,22 +1,13 @@
 ---
-id: DOC-REPR-001
-title: Market Representation Overview
-status: draft
-version: 0.1
+id: DOC-README-06-market-representation
+title: 06-market-representation Index
+status: reviewed
+version: 0.4
 phase: 0
-domain: 06-market-representation
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
 ---
 
-# Market Representation Overview
+# 06-market-representation
 
-## Purpose
+Representation contracts and features: see `docs/contracts/data/feature.md`, vertical-slice feature path.
 
-Overview for the **06-market-representation** domain.
-
-## Scope
-
-Phase 0 — Documentation First.
+Binding specifications: `docs/contracts/`.

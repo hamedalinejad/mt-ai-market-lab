@@ -1,22 +1,12 @@
 ---
-id: DOC-OBS-001
-title: Observability Overview
-status: draft
-version: 0.1
-phase: 0
-domain: 23-observability
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+id: DOC-OBS-README
+title: Observability
+status: reviewed
+version: 0.4
 ---
 
-# Observability Overview
+# Observability
 
-## Purpose
-
-Overview for the **23-observability** domain.
-
-## Scope
-
-Phase 0 — Documentation First.
+- [logging-standard.md](logging-standard.md)  
+- [health-watchdog.md](health-watchdog.md) if present  
+- Event contracts: `docs/contracts/events/`

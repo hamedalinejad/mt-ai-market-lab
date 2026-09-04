@@ -1,22 +1,13 @@
 ---
-id: DOC-STRAT-001
-title: Strategy Engine Overview
-status: draft
-version: 0.1
+id: DOC-README-17-strategy-engine
+title: 17-strategy-engine Index
+status: reviewed
+version: 0.4
 phase: 0
-domain: 17-strategy-engine
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
 ---
 
-# Strategy Engine Overview
+# 17-strategy-engine
 
-## Purpose
+Binding: `docs/contracts/data/strategy.md`.
 
-Overview for the **17-strategy-engine** domain.
-
-## Scope
-
-Phase 0 — Documentation First.
+Binding specifications: `docs/contracts/`.

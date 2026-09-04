@@ -1,22 +1,13 @@
 ---
-id: DOC-EXPL-001
-title: Experiment Lab Overview
-status: draft
-version: 0.1
+id: DOC-README-14-experiment-lab
+title: 14-experiment-lab Index
+status: reviewed
+version: 0.4
 phase: 0
-domain: 14-experiment-lab
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
 ---
 
-# Experiment Lab Overview
+# 14-experiment-lab
 
-## Purpose
+Experiment pins and reproducibility: contracts/data/experiment.md and validation domain.
 
-Overview for the **14-experiment-lab** domain.
-
-## Scope
-
-Phase 0 — Documentation First.
+Binding specifications: `docs/contracts/`.

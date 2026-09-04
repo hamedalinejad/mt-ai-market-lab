@@ -1,22 +1,13 @@
 ---
-id: DOC-ANLY-001
-title: Analysis Engine Overview
-status: draft
-version: 0.1
+id: DOC-README-09-analysis-engine
+title: 09-analysis-engine Index
+status: reviewed
+version: 0.4
 phase: 0
-domain: 09-analysis-engine
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
 ---
 
-# Analysis Engine Overview
+# 09-analysis-engine
 
-## Purpose
+Analysis consumes canonical features/predictions; see contracts + validation domain.
 
-Overview for the **09-analysis-engine** domain.
-
-## Scope
-
-Phase 0 — Documentation First.
+Binding specifications: `docs/contracts/`.

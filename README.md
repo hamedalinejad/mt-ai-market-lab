@@ -136,3 +136,8 @@ Production Code: Not Written
 Live Trading: Disabled
 Phase: Documentation First
 ```
+
+
+## Risk disclosure
+
+This project is an **experimental laboratory**. Documentation and any future software do **not** guarantee profits. Automated trading can cause total loss of capital. Live trading requires Risk controls, legal compliance in your jurisdiction, and human accountability. Paper/research modes are preferred until gates are proven.

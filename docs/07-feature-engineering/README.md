@@ -1,22 +1,13 @@
 ---
-id: DOC-FEAT-001
-title: Feature Engineering Overview
-status: draft
-version: 0.1
+id: DOC-README-07-feature-engineering
+title: 07-feature-engineering Index
+status: reviewed
+version: 0.4
 phase: 0
-domain: 07-feature-engineering
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
 ---
 
-# Feature Engineering Overview
+# 07-feature-engineering
 
-## Purpose
+Binding: `docs/contracts/data/feature.md`, `feature-snapshot.md`, `label.md`.
 
-Overview for the **07-feature-engineering** domain.
-
-## Scope
-
-Phase 0 — Documentation First.
+Binding specifications: `docs/contracts/`.

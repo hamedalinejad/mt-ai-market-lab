@@ -1,13 +1,18 @@
 name: docs-gates
 on:
   push:
-    paths: ['docs/**', '.github/workflows/docs-gates.yml']
+    paths: ['docs/**', 'tools/**', '.github/workflows/docs-gates.yml']
   pull_request:
-    paths: ['docs/**']
+    paths: ['docs/**', 'tools/**']
 jobs:
   static:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run static documentation gates
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Static documentation gates
         run: bash docs/30-testing/scripts/check_static_gates.sh
+      - name: Validate document IDs
+        run: python tools/validate_docs.py

@@ -1,22 +1,13 @@
 ---
-id: DOC-CFG-001
-title: Configuration Overview
-status: draft
-version: 0.1
+id: DOC-README-24-configuration
+title: 24-configuration Index
+status: reviewed
+version: 0.4
 phase: 0
-domain: 24-configuration
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
 ---
 
-# Configuration Overview
+# 24-configuration
 
-## Purpose
+Config versioning and secrets: security-local.md + REQ-TECH-007.
 
-Overview for the **24-configuration** domain.
-
-## Scope
-
-Phase 0 — Documentation First.
+Binding specifications: `docs/contracts/`.

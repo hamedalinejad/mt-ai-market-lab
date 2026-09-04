@@ -1,22 +1,13 @@
 ---
-id: DOC-LEARN-001
-title: Learning and Self-Correction Overview
-status: draft
-version: 0.1
+id: DOC-README-11-learning-and-self-correction
+title: 11-learning-and-self-correction Index
+status: reviewed
+version: 0.4
 phase: 0
-domain: 11-learning-and-self-correction
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
 ---
 
-# Learning and Self-Correction Overview
+# 11-learning-and-self-correction
 
-## Purpose
+See `docs/10-ai-core/online-learning.md`, `failure-memory` concepts in learning governance ADR.
 
-Overview for the **11-learning-and-self-correction** domain.
-
-## Scope
-
-Phase 0 — Documentation First.
+Binding specifications: `docs/contracts/`.

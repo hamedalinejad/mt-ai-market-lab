@@ -2,12 +2,12 @@
 id: DOC-0002
 title: Documentation Index
 status: reviewed
-version: 0.7
+version: 0.8
 ---
 
 # INDEX
 
-**Count:** 244
+**Count:** 215
 
 - `00-project/README.md`
 - `00-project/REQUIREMENTS.md`
@@ -15,21 +15,18 @@ version: 0.7
 - `00-project/constraints.md`
 - `00-project/core-principles.md`
 - `00-project/goals.md`
+- `00-project/missing-requirements.md`
 - `00-project/phase0-definition-of-done.md`
 - `00-project/scope.md`
 - `00-project/vertical-slice.md`
-- `00-project/vision.md`
 - `01-system-architecture/README.md`
 - `01-system-architecture/architecture-planes.md`
-- `01-system-architecture/system-architecture.md`
 - `02-metatrader/README.md`
 - `02-metatrader/chart-management.md`
 - `02-metatrader/integration-boundary.md`
-- `02-metatrader/metatrader.md`
 - `03-market-data/README.md`
 - `03-market-data/candle-close-semantics.md`
 - `03-market-data/instrument-model.md`
-- `03-market-data/market-data.md`
 - `03-market-data/timestamp-model.md`
 - `03-market-data/volume-model.md`
 - `04-storage/README.md`
@@ -59,17 +56,11 @@ version: 0.7
 - `05-synchronization/cursor-safety.md`
 - `05-synchronization/gap-classification.md`
 - `05-synchronization/sync-state.md`
-- `05-synchronization/synchronization.md`
 - `06-market-representation/README.md`
-- `06-market-representation/representation.md`
 - `07-feature-engineering/README.md`
-- `07-feature-engineering/features.md`
 - `08-trading-knowledge/README.md`
-- `08-trading-knowledge/trading-knowledge.md`
 - `09-analysis-engine/README.md`
-- `09-analysis-engine/analysis.md`
 - `10-ai-core/README.md`
-- `10-ai-core/ai-core.md`
 - `10-ai-core/drift-detection.md`
 - `10-ai-core/model-lifecycle.md`
 - `10-ai-core/model-registry.md`
@@ -77,14 +68,11 @@ version: 0.7
 - `10-ai-core/predictor-learner-discoverer.md`
 - `10-ai-core/promotion-protocol.md`
 - `11-learning-and-self-correction/README.md`
-- `11-learning-and-self-correction/learning.md`
 - `12-prediction/README.md`
 - `12-prediction/confidence-calibration.md`
-- `12-prediction/prediction.md`
 - `13-discovery-engine/README.md`
 - `13-discovery-engine/discovery-pipeline.md`
 - `13-discovery-engine/discovery-space.md`
-- `13-discovery-engine/discovery.md`
 - `13-discovery-engine/equivalence-engine.md`
 - `13-discovery-engine/multiple-testing-discovery.md`
 - `13-discovery-engine/novelty-detection.md`
@@ -92,7 +80,6 @@ version: 0.7
 - `13-discovery-engine/search-strategy.md`
 - `13-discovery-engine/unit-semantics.md`
 - `14-experiment-lab/README.md`
-- `14-experiment-lab/experiment-lab.md`
 - `15-validation/README.md`
 - `15-validation/decision-point-propagation.md`
 - `15-validation/deterministic-replay-equality.md`
@@ -105,42 +92,29 @@ version: 0.7
 - `15-validation/statistical-uncertainty.md`
 - `15-validation/validation-architecture.md`
 - `15-validation/validation-gates-framework.md`
-- `15-validation/validation.md`
 - `16-signal-engine/README.md`
-- `16-signal-engine/signal.md`
 - `17-strategy-engine/README.md`
-- `17-strategy-engine/strategy.md`
 - `18-risk-engine/README.md`
 - `18-risk-engine/risk-architecture.md`
 - `19-execution/README.md`
 - `19-execution/broker-reconciliation.md`
-- `19-execution/execution.md`
 - `19-execution/order-lifecycle.md`
 - `19-execution/position-state-machine.md`
 - `20-knowledge-base/README.md`
-- `20-knowledge-base/knowledge.md`
 - `21-runtime-modes/README.md`
-- `21-runtime-modes/modes.md`
 - `21-runtime-modes/safe-mode.md`
 - `22-resource-management/README.md`
-- `22-resource-management/resources.md`
 - `23-observability/README.md`
-- `23-observability/health.md`
+- `23-observability/logging-standard.md`
 - `23-observability/observability-architecture.md`
-- `23-observability/telemetry.md`
 - `24-configuration/README.md`
-- `24-configuration/configuration.md`
 - `25-ingestion-and-external-data/README.md`
-- `25-ingestion-and-external-data/external-data.md`
 - `26-research/README.md`
-- `26-research/research.md`
 - `27-risk-and-safety/README.md`
 - `27-risk-and-safety/kill-switch.md`
-- `27-risk-and-safety/safety.md`
 - `28-operations/README.md`
 - `28-operations/crash-recovery.md`
 - `28-operations/disk-full-policy.md`
-- `28-operations/operations.md`
 - `28-operations/security-local.md`
 - `28-operations/startup.md`
 - `29-roadmap/README.md`
@@ -160,7 +134,6 @@ version: 0.7
 - `GLOSSARY.md`
 - `INDEX.md`
 - `MASTER-BLUEPRINT.md`
-- `README.md`
 - `REGISTRY.md`
 - `contracts/README.md`
 - `contracts/data/account-state.md`
@@ -191,7 +164,6 @@ version: 0.7
 - `contracts/data/tick.md`
 - `contracts/data/time-fields.md`
 - `contracts/data/timeframe.md`
-- `contracts/database/sqlite-schema.md`
 - `contracts/errors/error-taxonomy.md`
 - `contracts/errors/retry-policy.md`
 - `contracts/events/data-events.md`
@@ -207,7 +179,6 @@ version: 0.7
 - `contracts/interfaces/discovery.md`
 - `contracts/interfaces/execution.md`
 - `contracts/interfaces/market-data-provider.md`
-- `contracts/interfaces/model-adapter.md`
 - `contracts/interfaces/model.md`
 - `contracts/interfaces/mt5-data-api.md`
 - `contracts/interfaces/risk.md`

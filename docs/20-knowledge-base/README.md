@@ -1,22 +1,13 @@
 ---
-id: DOC-KNOW-001
-title: Knowledge Base Overview
-status: draft
-version: 0.1
+id: DOC-README-20-knowledge-base
+title: 20-knowledge-base Index
+status: reviewed
+version: 0.4
 phase: 0
-domain: 20-knowledge-base
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
 ---
 
-# Knowledge Base Overview
+# 20-knowledge-base
 
-## Purpose
+Binding: `docs/contracts/data/knowledge.md`.
 
-Overview for the **20-knowledge-base** domain.
-
-## Scope
-
-Phase 0 — Documentation First.
+Binding specifications: `docs/contracts/`.

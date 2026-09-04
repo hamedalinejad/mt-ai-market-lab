@@ -1,22 +1,13 @@
 ---
-id: DOC-RSH-001
-title: Research Overview
-status: draft
-version: 0.1
+id: DOC-README-26-research
+title: 26-research Index
+status: reviewed
+version: 0.4
 phase: 0
-domain: 26-research
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
 ---
 
-# Research Overview
+# 26-research
 
-## Purpose
+Research methodology after vertical slice.
 
-Overview for the **26-research** domain.
-
-## Scope
-
-Phase 0 — Documentation First.
+Binding specifications: `docs/contracts/`.

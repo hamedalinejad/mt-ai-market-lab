@@ -1,22 +1,13 @@
 ---
-id: DOC-RES-001
-title: Resource Management Overview
-status: draft
-version: 0.1
+id: DOC-README-22-resource-management
+title: 22-resource-management Index
+status: reviewed
+version: 0.4
 phase: 0
-domain: 22-resource-management
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
 ---
 
-# Resource Management Overview
+# 22-resource-management
 
-## Purpose
+See resources policy notes in budget-semantics if present; profile budgets candidate until benchmark.
 
-Overview for the **22-resource-management** domain.
-
-## Scope
-
-Phase 0 — Documentation First.
+Binding specifications: `docs/contracts/`.
