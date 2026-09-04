@@ -2,25 +2,14 @@
 id: DOC-VAL-022
 title: Validation Architecture
 status: reviewed
-version: 0.4
+version: 0.5
 phase: 0
 domain: 15-validation
+updated: 2026-09-04
 ---
 
-# Validation Pipeline (binding)
+# Validation Architecture
 
-```text
-Train
- → Validation
- → OOS
- → Walk Forward
- → Regime Validation
- → Cost Model
- → Slippage
- → Replay
- → Stress
- → Adversarial
- → Promotion Gate
-```
+Pipeline: Train → Validation → OOS → Walk-Forward → Regime → Cost → Slippage → Replay → Stress → Adversarial → Promotion Gate
 
-Gate sets may subset stages by artifact type; search-origin candidates cannot skip multiplicity / leakage controls.
+See also: decision-point-propagation, embargo-and-purging, nested-validation, statistical-uncertainty, cost-bundle.

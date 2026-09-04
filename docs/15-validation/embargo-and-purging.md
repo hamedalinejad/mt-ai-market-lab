@@ -1,21 +1,23 @@
 ---
 id: DOC-VAL-025
-title: Embargo and Purging
+title: Embargo and Purging Contract
 status: reviewed
-version: 0.3
+version: 0.4
 phase: 0
 domain: 15-validation
+updated: 2026-09-04
 ---
 
-# Embargo / Purge (machine-readable)
+# Purging / Embargo Contract (BUG-VAL-P0-002)
 
-For overlapping labels, split config must include:
+Not “use embargo” narrative only. Binding fields:
 
 ```text
-purge_window
-embargo_window
-horizon_aware_split: true
-overlap_group          # from label contract
+overlap_interval
+label_horizon
+purge_rule
+embargo_rule
+split_generator
 ```
 
-Serializable in experiment/validation config; enforced by ValidationEngine.
+Machine-readable in experiment/validation config; enforced by ValidationEngine and split generators.
