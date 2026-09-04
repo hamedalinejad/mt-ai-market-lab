@@ -1,38 +1,33 @@
 ---
-id: DOC-MT5-009
-title: Integration Boundary
+id: DOC-MT5-001
+title: MT5 Integration Boundary
 status: approved
-version: 0.4
+version: 1.0
 phase: 0
 domain: 02-metatrader
-updated: 2026-09-02
-depends_on: [ADR-0008]
-related: [DOC-CONTRACT-IF-001]
+created: 2026-09-04
+updated: 2026-09-04
+depends_on: ['DOC-PROJ-050']
+related: ['ADR-0008']
 ---
 
-# MT5 Boundary (binding)
-
-Only **MT5Adapter / MarketDataProvider implementations** may `import MetaTrader5`.
-
-## Enforcement
-Static test / CI grep: fail if `MetaTrader5` or `import mt5` appears outside approved adapter packages/modules.
-
-Downstream domains consume Canonical schemas only.
-
-## Acceptance Criteria
+# MT5 Integration Boundary
 
 ```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
+Application → MarketDataProvider interface → MT5 adapter → MetaTrader 5 terminal
 ```
 
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
+Application code must **not** scatter direct broker API calls.
 
+## Adapter responsibilities
+connect/disconnect; health; symbol discovery/selection; rates; ticks where available; broker/server metadata; history availability; error taxonomy translation; bounded retry; reconnect signaling to sync.
+
+## Non-assumptions
+- identical history depth per symbol
+- identical TF availability
+- identical session hours across brokers
+- unlimited history regardless of terminal config
+- 1:1 symbol map across brokers
+- source-native HTF always ≡ locally derived HTF
+
+Chart-open is adapter/bridge capability, **not** a prerequisite for core ingestion correctness.

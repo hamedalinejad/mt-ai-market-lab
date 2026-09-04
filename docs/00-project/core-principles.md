@@ -112,3 +112,7 @@ When production code for this scope is proposed
 Then it must be rejected until status reaches approved
 ```
 
+
+
+Formal binding rules: [architectural-constitution.md](architectural-constitution.md)
+System identity: [system-identity.md](system-identity.md)

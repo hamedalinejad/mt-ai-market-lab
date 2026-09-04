@@ -135,3 +135,6 @@ Given a technology choice without benchmark evidence
 When used in code
 Then it must remain behind an interface and status candidate
 ```
+
+
+See also: [architectural-constitution.md](architectural-constitution.md), [system-identity.md](system-identity.md), [layered-architecture.md](../01-system-architecture/layered-architecture.md).

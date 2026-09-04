@@ -1,53 +1,27 @@
 ---
-depends_on: ['DOC-SYNC-004']
 id: DOC-SYNC-015
-title: Cursor Safety Transaction Protocol
+title: Cursor Safety
 status: approved
-version: 0.7
+version: 1.0
 phase: 0
+domain: 05-synchronization
+created: 2026-09-04
+updated: 2026-09-04
+depends_on: ['DOC-SYNC-004']
 ---
 
-# Protocol
+# Cursor Safety
 
-REQUEST → DOWNLOAD → RAW WRITE → RAW VALIDATE → CANONICAL TRANSFORM → CANONICAL VALIDATE → ATOMIC PUBLISH → CONTROL-PLANE COMMIT → CURSOR ADVANCE
-
-Forbidden: DOWNLOAD → CURSOR ADVANCE → crash
-
-Failure codes per stage: SYNC_BAD_RANGE, PROVIDER_TIMEOUT, STORAGE_FULL, RAW_SCHEMA_FAIL, OHLC_INVARIANT, PUBLISH_FAIL, STATE_COMMIT_FAIL, …
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-## Domain Acceptance Criteria
+See gap-classification recovery section for full protocol.
 
 ```text
 AC-SYNC-01
-Given DOWNLOAD succeeds but PUBLISH fails
-When process crashes
-Then last_persisted must remain at previous committed cursor
+Given publish fails after download
+When process restarts
+Then last_persisted is unchanged
 
 AC-SYNC-02
-Given atomic publish completes
+Given publish succeeds
 When cursor advances
-Then last_persisted equals published watermark
-
-AC-SYNC-03
-Given operator attempts cursor advance before publish
-When static/runtime gate runs
-Then operation is rejected
+Then published batch is fully visible to readers
 ```

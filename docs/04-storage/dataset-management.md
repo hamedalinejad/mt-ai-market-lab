@@ -1,13 +1,21 @@
 ---
 id: DOC-STOR-DATASET
-title: Dataset Management
+title: Dataset Versioning
 status: approved
-version: 0.3
+version: 1.0
 phase: 0
+domain: 04-storage
+created: 2026-09-04
+updated: 2026-09-04
 ---
 
-# Dataset Management (consolidated)
+# Dataset Snapshot Identity
 
-Identity, snapshot, manifest, partitions, labels membership, lineage, version, checksum, train/val/test membership, embargo/purge, availability timestamp, reproducibility.
+```text
+dataset_snapshot_id, schema_version, source set, partition set/URIs,
+coverage interval, instrument set, timeframe set,
+quality policy version, feature-set version, label-set version,
+code version, creation timestamp, checksums
+```
 
-See also: contracts/data/dataset-snapshot.md, contracts/schemas/dataset-manifest.md
+**Rule:** A model result without a dataset snapshot is not reproducible evidence.

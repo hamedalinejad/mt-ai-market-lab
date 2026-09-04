@@ -1,41 +1,56 @@
 ---
-depends_on: []
 id: DOC-CONTRACT-DATA-time
-title: Time Fields Contract
+title: Time Semantics — Final Contract
 status: approved
-version: 0.7
+version: 1.0
 phase: 0
 domain: contracts
+created: 2026-09-04
 updated: 2026-09-04
+depends_on: ['DOC-PROJ-052']
 ---
 
-# Data Time Model — locked
+# Time Semantics
 
+## Canonical clock
+Internal reasoning uses **UTC**. Source-local time retained for provenance/session interpretation.
+
+## Fields
 ```text
-source_timestamp
-source_timezone
-event_time_utc
+source_timestamp, source_timezone
+event_time_utc / market_time
 availability_time_utc
 ingestion_time_utc
 processing_time_utc
 ```
 
-**ML/Validation:** `availability_time_utc` dominates for leakage. Feature usable at T only if `availability_time_utc <= T`.
+## Candle
+```text
+open_time_utc, close_time_utc
+CANDLE_CLOSED ⇒ close_time_utc > open_time_utc
+```
+Partial/current candles marked explicitly; must not leak into closed-bar decisions.
+
+## Availability-time safety
+Backtests use availability semantics of the original decision point, not market timestamp alone.
+
+## Forbidden lookahead (examples)
+- HTF close before HTF is closed
+- revised candle value at earlier decision
+- normalization using future observations
+- cross-market join without availability alignment
+- label horizon overlap without embargo/purge
 
 ## Acceptance Criteria
 
 ```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
+AC-TIME-01
+Given decision_point requires closed bar
+When feature uses CANDLE_PARTIAL
+Then validation fails for promotable path
 
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
+AC-TIME-02
+Given availability_time_utc > decision time T
+When used in feature at T
+Then the sample is invalid for that decision
 ```
-
