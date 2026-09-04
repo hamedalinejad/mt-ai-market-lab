@@ -2,44 +2,36 @@
 id: DOC-0003
 title: Registry
 status: reviewed
-version: 0.5
+version: 0.6
 phase: 0
-domain: docs
 updated: 2026-09-04
 ---
 
-# Registry (auto-generated)
-
-**Files:** 670
-**Duplicate ids remaining:** 0
+# Registry
+**Files:** 665
 
 | ID | Status | Title | Path |
 |----|--------|-------|------|
 | `DOC-PROJ-001` | draft | Project Overview | `docs/00-project/README.md` |
 | `DOC-PROJ-031` | reviewed | Requirements System | `docs/00-project/REQUIREMENTS.md` |
 | `DOC-PROJ-032` | reviewed | Traceability | `docs/00-project/TRACEABILITY.md` |
-| `DOC-PROJ-034` | reviewed | Architecture Baseline Language | `docs/00-project/architecture-baseline-language.md` |
 | `DOC-PROJ-022` | reviewed | Pre-Code Architecture Summary | `docs/00-project/architecture-planes-summary.md` |
 | `DOC-PROJ-002` | draft | Assumptions | `docs/00-project/assumptions.md` |
 | `DOC-PROJ-003` | draft | Constraints | `docs/00-project/constraints.md` |
-| `DOC-PROJ-030` | reviewed | Core Principles — Single Constitution | `docs/00-project/core-principles.md` |
-| `DOC-PROJ-035` | reviewed | Deferred Requirements P1/P2 | `docs/00-project/deferred-requirements.md` |
+| `DOC-PROJ-030` | approved | Core Principles — Single Constitution | `docs/00-project/core-principles.md` |
 | `DOC-PROJ-004` | draft | Goals | `docs/00-project/goals.md` |
 | `DOC-PROJ-005` | draft | Mission | `docs/00-project/mission.md` |
 | `DOC-PROJ-006` | draft | Non Goals | `docs/00-project/non-goals.md` |
 | `DOC-PROJ-007` | draft | Open Questions | `docs/00-project/open-questions.md` |
-| `DOC-PROJ-010` | draft | Phase 0 Coverage Matrix (Gaps Checklist) | `docs/00-project/phase0-coverage-matrix.md` |
 | `DOC-PROJ-013` | draft | Phase 0 Definition of Done | `docs/00-project/phase0-definition-of-done.md` |
-| `DOC-PROJ-011` | draft | Phase 0 Priorities P0 P1 P2 | `docs/00-project/phase0-priorities.md` |
 | `DOC-PROJ-008` | draft | Principles | `docs/00-project/principles.md` |
 | `DOC-PROD-001` | draft | Product Boundary | `docs/00-project/product-boundary.md` |
-| `DOC-PROJ-014` | reviewed | Remaining Spec Gaps Checklist | `docs/00-project/remaining-gaps.md` |
 | `DOC-PROJ-020` | reviewed | Requirements Catalog Index | `docs/00-project/requirements-catalog.md` |
 | `DOC-PROJ-033` | reviewed | Scope and Non-Goals | `docs/00-project/scope-and-non-goals.md` |
 | `DOC-PROJ-009` | draft | Scope | `docs/00-project/scope.md` |
-| `DOC-PROJ-012` | draft | Specification Depth Ladder | `docs/00-project/specification-depth.md` |
 | `DOC-PATH-00-PROJECT-SUCCESS-CRITERIA-MD` | draft | Success Criteria | `docs/00-project/success-criteria.md` |
-| `DOC-PROJ-021` | reviewed | Vertical Slice Before Advanced AI | `docs/00-project/vertical-slice.md` |
+| `DOC-PROJ-036` | approved | Vertical Slice Approval Package | `docs/00-project/vertical-slice-approval.md` |
+| `DOC-PROJ-021` | approved | Vertical Slice Before Advanced AI | `docs/00-project/vertical-slice.md` |
 | `DOC-PATH-00-PROJECT-VISION-MD` | draft | Vision | `docs/00-project/vision.md` |
 | `DOC-ARCH-001` | draft | System Architecture Overview | `docs/01-system-architecture/README.md` |
 | `DOC-ARCH-002` | draft | Architecture Overview | `docs/01-system-architecture/architecture-overview.md` |
@@ -68,7 +60,7 @@ updated: 2026-09-04
 | `DOC-MT5-007` | draft | Data Availability | `docs/02-metatrader/data-availability.md` |
 | `DOC-PATH-02-METATRADER-ERROR-HANDLING-MD` | draft | Error Handling | `docs/02-metatrader/error-handling.md` |
 | `DOC-MT5-008` | draft | Historical Retrieval | `docs/02-metatrader/historical-retrieval.md` |
-| `DOC-MT5-009` | reviewed | Integration Boundary | `docs/02-metatrader/integration-boundary.md` |
+| `DOC-MT5-009` | approved | Integration Boundary | `docs/02-metatrader/integration-boundary.md` |
 | `DOC-MT5-010` | draft | Integration Overview | `docs/02-metatrader/integration-overview.md` |
 | `DOC-MT5-011` | draft | Live Feed | `docs/02-metatrader/live-feed.md` |
 | `DOC-MT5-012` | draft | Market Sessions | `docs/02-metatrader/market-sessions.md` |
@@ -110,16 +102,17 @@ updated: 2026-09-04
 | `DOC-DATA-028` | reviewed | Volume Model | `docs/03-market-data/volume-model.md` |
 | `DOC-STOR-001` | draft | Storage Overview | `docs/04-storage/README.md` |
 | `DOC-STOR-002` | draft | archival | `docs/04-storage/archival.md` |
-| `DOC-STOR-027` | reviewed | Atomic Publish | `docs/04-storage/atomic-publish.md` |
+| `DOC-STOR-027` | approved | Atomic Publish | `docs/04-storage/atomic-publish.md` |
 | `DOC-STOR-017` | draft | Backup Architecture | `docs/04-storage/backup-architecture.md` |
 | `DOC-STOR-003` | draft | backup | `docs/04-storage/backup.md` |
+| `DOC-STOR-032` | approved | Storage Benchmark Protocol | `docs/04-storage/benchmark-protocol.md` |
 | `DOC-STOR-004` | draft | caching | `docs/04-storage/caching.md` |
 | `DOC-STOR-018` | draft | Checksums | `docs/04-storage/checksums.md` |
 | `DOC-STOR-024` | reviewed | Compaction Engine | `docs/04-storage/compaction-engine.md` |
 | `DOC-STOR-022` | draft | Compaction Engine | `docs/04-storage/compaction.md` |
 | `DOC-STOR-005` | draft | compression | `docs/04-storage/compression.md` |
 | `DOC-STOR-019` | draft | Data Corruption Recovery | `docs/04-storage/corruption-recovery.md` |
-| `DOC-STOR-030` | reviewed | Data Lifecycle Layout | `docs/04-storage/data-lifecycle-layout.md` |
+| `DOC-STOR-030` | approved | Data Lifecycle Layout | `docs/04-storage/data-lifecycle-layout.md` |
 | `DOC-STOR-006` | draft | experiment storage | `docs/04-storage/experiment-storage.md` |
 | `DOC-STOR-007` | draft | feature storage | `docs/04-storage/feature-storage.md` |
 | `DOC-STOR-008` | draft | indexing | `docs/04-storage/indexing.md` |
@@ -137,7 +130,7 @@ updated: 2026-09-04
 | `DOC-STOR-025` | draft | Data Retention Policy | `docs/04-storage/retention-policy.md` |
 | `DOC-STOR-031` | reviewed | Data Revision Policy | `docs/04-storage/revision-policy.md` |
 | `DOC-STOR-016` | draft | SQLite WAL Policy | `docs/04-storage/sqlite-wal-policy.md` |
-| `DOC-STOR-014` | reviewed | Storage Architecture | `docs/04-storage/storage-architecture.md` |
+| `DOC-STOR-014` | approved | Storage Architecture | `docs/04-storage/storage-architecture.md` |
 | `DOC-STOR-015` | draft | Storage Benchmark | `docs/04-storage/storage-benchmark.md` |
 | `DOC-PATH-04-STORAGE-STORAGE-BENCHMARKS-MD` | draft | Storage Benchmarks | `docs/04-storage/storage-benchmarks.md` |
 | `DOC-PATH-04-STORAGE-STORAGE-CANDIDATES-MD` | draft | Storage Candidates | `docs/04-storage/storage-candidates.md` |
@@ -145,9 +138,9 @@ updated: 2026-09-04
 | `DOC-STOR-021` | draft | Writer Policy | `docs/04-storage/writer-policy.md` |
 | `DOC-SYNC-001` | draft | Synchronization Overview | `docs/05-synchronization/README.md` |
 | `DOC-SYNC-002` | draft | Conflict Resolution | `docs/05-synchronization/conflict-resolution.md` |
-| `DOC-SYNC-015` | reviewed | Cursor Safety Transaction Protocol | `docs/05-synchronization/cursor-safety.md` |
+| `DOC-SYNC-015` | approved | Cursor Safety Transaction Protocol | `docs/05-synchronization/cursor-safety.md` |
 | `DOC-SYNC-007` | draft | Duplicate Prevention | `docs/05-synchronization/duplicate-prevention.md` |
-| `DOC-SYNC-004` | reviewed | Gap Classification | `docs/05-synchronization/gap-classification.md` |
+| `DOC-SYNC-004` | approved | Gap Classification | `docs/05-synchronization/gap-classification.md` |
 | `DOC-SYNC-003` | draft | Gap Detection | `docs/05-synchronization/gap-detection.md` |
 | `DOC-SYNC-006` | draft | historical backfill | `docs/05-synchronization/historical-backfill.md` |
 | `DOC-PATH-05-SYNCHRONIZATION-INCREMENTAL-SYNC-MD` | draft | incremental sync | `docs/05-synchronization/incremental-sync.md` |
@@ -327,7 +320,7 @@ updated: 2026-09-04
 | `DOC-VAL-004` | draft | Backtesting | `docs/15-validation/backtesting.md` |
 | `DOC-VAL-005` | draft | candidate validation | `docs/15-validation/candidate-validation.md` |
 | `DOC-VAL-026` | reviewed | Decision Point Propagation | `docs/15-validation/decision-point-propagation.md` |
-| `DOC-VAL-029` | reviewed | Deterministic Replay Equality Policy | `docs/15-validation/deterministic-replay-equality.md` |
+| `DOC-VAL-029` | approved | Deterministic Replay Equality Policy | `docs/15-validation/deterministic-replay-equality.md` |
 | `DOC-VAL-025` | reviewed | Embargo and Purging Contract | `docs/15-validation/embargo-and-purging.md` |
 | `DOC-VAL-006` | draft | forward testing | `docs/15-validation/forward-testing.md` |
 | `DOC-VAL-007` | draft | historical validation | `docs/15-validation/historical-validation.md` |
@@ -392,14 +385,14 @@ updated: 2026-09-04
 | `DOC-RISK-008` | draft | exposure control | `docs/18-risk-engine/exposure-control.md` |
 | `DOC-RISK-009` | draft | model risk | `docs/18-risk-engine/model-risk.md` |
 | `DOC-RISK-010` | draft | position sizing | `docs/18-risk-engine/position-sizing.md` |
-| `DOC-PATH-18-RISK-ENGINE-RISK-ARCHITECTURE-MD` | reviewed | Risk Architecture | `docs/18-risk-engine/risk-architecture.md` |
+| `DOC-PATH-18-RISK-ENGINE-RISK-ARCHITECTURE-MD` | approved | Risk Architecture | `docs/18-risk-engine/risk-architecture.md` |
 | `DOC-RISK-013` | draft | Risk Gates | `docs/18-risk-engine/risk-gates.md` |
 | `DOC-PATH-18-RISK-ENGINE-SIGNAL-RISK-MD` | draft | signal risk | `docs/18-risk-engine/signal-risk.md` |
 | `DOC-RISK-014` | draft | strategy risk | `docs/18-risk-engine/strategy-risk.md` |
 | `DOC-RISK-015` | draft | volatility risk | `docs/18-risk-engine/volatility-risk.md` |
 | `DOC-EXEC-001` | draft | Execution Overview | `docs/19-execution/README.md` |
 | `DOC-EXEC-016` | draft | Account State | `docs/19-execution/account-state.md` |
-| `DOC-EXEC-020` | reviewed | Broker Reconciliation | `docs/19-execution/broker-reconciliation.md` |
+| `DOC-EXEC-020` | approved | Broker Reconciliation | `docs/19-execution/broker-reconciliation.md` |
 | `DOC-EXEC-002` | draft | entry model | `docs/19-execution/entry-model.md` |
 | `DOC-PATH-19-EXECUTION-EXECUTION-ARCHITECTURE-MD` | reviewed | Execution Architecture | `docs/19-execution/execution-architecture.md` |
 | `DOC-PATH-19-EXECUTION-EXECUTION-BOUNDARY-MD` | draft | Execution Boundary | `docs/19-execution/execution-boundary.md` |
@@ -444,7 +437,7 @@ updated: 2026-09-04
 | `DOC-RUN-006` | draft | paper trading mode | `docs/21-runtime-modes/paper-trading-mode.md` |
 | `DOC-RUN-007` | draft | priority policy | `docs/21-runtime-modes/priority-policy.md` |
 | `DOC-RUN-008` | draft | research mode | `docs/21-runtime-modes/research-mode.md` |
-| `DOC-RUN-009` | reviewed | Safe Mode Operational Contract | `docs/21-runtime-modes/safe-mode.md` |
+| `DOC-RUN-009` | approved | Safe Mode Operational Contract | `docs/21-runtime-modes/safe-mode.md` |
 | `DOC-PATH-21-RUNTIME-MODES-TRAINING-MODE-MD` | draft | Training Mode | `docs/21-runtime-modes/training-mode.md` |
 | `DOC-PATH-21-RUNTIME-MODES-VALIDATION-MODE-MD` | draft | validation mode | `docs/21-runtime-modes/validation-mode.md` |
 | `DOC-RES-001` | draft | Resource Management Overview | `docs/22-resource-management/README.md` |
@@ -581,8 +574,8 @@ updated: 2026-09-04
 | `DOC-31-README` | reviewed | Data Contracts Index | `docs/31-data-contracts/README.md` |
 | `DOC-32-README` | reviewed | Interfaces Index | `docs/32-interfaces/README.md` |
 | `DOC-33-README` | reviewed | Database Schema Domain | `docs/33-database-schema/README.md` |
-| `DOC-DB-002` | reviewed | Database Migration Contract | `docs/33-database-schema/migration-contract.md` |
-| `DOC-DB-001` | reviewed | SQLite Logical Schema | `docs/33-database-schema/sqlite-schema.md` |
+| `DOC-DB-002` | approved | Database Migration Contract | `docs/33-database-schema/migration-contract.md` |
+| `DOC-DB-001` | approved | SQLite Logical Schema | `docs/33-database-schema/sqlite-schema.md` |
 | `DOC-34-README` | draft | Replay Engine Index | `docs/34-replay-engine/README.md` |
 | `DOC-REPLAY-001` | draft | Replay Engine Specification | `docs/34-replay-engine/replay-specification.md` |
 | `DOC-35-README` | draft | Dataset Management Index | `docs/35-dataset-management/README.md` |
@@ -596,11 +589,10 @@ updated: 2026-09-04
 | `DOC-0001` | draft | Documentation Home | `docs/README.md` |
 | `DOC-0003` | reviewed | Registry | `docs/REGISTRY.md` |
 | `DOC-CONTRACT-001` | reviewed | Contracts — Source of Truth | `docs/contracts/README.md` |
-| `DOC-CONTRACT-TREE` | reviewed | Contracts Tree Integrity | `docs/contracts/TREE-INTEGRITY.md` |
 | `DOC-CONTRACT-DATA-account-state` | reviewed | Data Contract — Account State | `docs/contracts/data/account-state.md` |
 | `DOC-CONTRACT-DATA-broker-order` | reviewed | Data Contract — broker-order | `docs/contracts/data/broker-order.md` |
 | `DOC-CONTRACT-DATA-candle-lifecycle` | reviewed | Candle Lifecycle States | `docs/contracts/data/candle-lifecycle.md` |
-| `DOC-CONTRACT-DATA-candle` | reviewed | Data Contract — Candle | `docs/contracts/data/candle.md` |
+| `DOC-CONTRACT-DATA-candle` | approved | Data Contract — Candle | `docs/contracts/data/candle.md` |
 | `DOC-CONTRACT-DATA-dataset-snapshot` | reviewed | Data Contract — dataset-snapshot | `docs/contracts/data/dataset-snapshot.md` |
 | `DOC-CONTRACT-DATA-derived-tf` | reviewed | Derived Timeframes | `docs/contracts/data/derived-timeframes.md` |
 | `DOC-CONTRACT-DATA-discovery-candidate` | reviewed | Data Contract — Discovery Candidate | `docs/contracts/data/discovery-candidate.md` |
@@ -608,22 +600,22 @@ updated: 2026-09-04
 | `DOC-CONTRACT-DATA-experiment` | reviewed | Data Contract — experiment | `docs/contracts/data/experiment.md` |
 | `DOC-CONTRACT-DATA-failure` | reviewed | Data Contract — failure | `docs/contracts/data/failure.md` |
 | `DOC-CONTRACT-DATA-feature-snapshot` | reviewed | Data Contract — feature-snapshot | `docs/contracts/data/feature-snapshot.md` |
-| `DOC-CONTRACT-DATA-feature` | reviewed | Data Contract — feature | `docs/contracts/data/feature.md` |
-| `DOC-CONTRACT-DATA-identity` | reviewed | Logical vs Source Identity | `docs/contracts/data/identity.md` |
+| `DOC-CONTRACT-DATA-feature` | approved | Data Contract — feature | `docs/contracts/data/feature.md` |
+| `DOC-CONTRACT-DATA-identity` | approved | Logical vs Source Identity | `docs/contracts/data/identity.md` |
 | `DOC-CONTRACT-DATA-instrument` | reviewed | Data Contract — instrument | `docs/contracts/data/instrument.md` |
 | `DOC-CONTRACT-DATA-knowledge` | reviewed | Data Contract — knowledge | `docs/contracts/data/knowledge.md` |
-| `DOC-CONTRACT-DATA-label` | reviewed | Data Contract — Label | `docs/contracts/data/label.md` |
+| `DOC-CONTRACT-DATA-label` | approved | Data Contract — Label | `docs/contracts/data/label.md` |
 | `DOC-CONTRACT-DATA-market-session` | reviewed | Data Contract — market-session | `docs/contracts/data/market-session.md` |
-| `DOC-CONTRACT-DATA-order-intent` | reviewed | Data Contract — Order Intent | `docs/contracts/data/order-intent.md` |
+| `DOC-CONTRACT-DATA-order-intent` | approved | Data Contract — Order Intent | `docs/contracts/data/order-intent.md` |
 | `DOC-CONTRACT-DATA-outcome` | reviewed | Data Contract — Outcome | `docs/contracts/data/outcome.md` |
 | `DOC-CONTRACT-DATA-position` | reviewed | Data Contract — position | `docs/contracts/data/position.md` |
-| `DOC-CONTRACT-DATA-prediction` | reviewed | Data Contract — Prediction | `docs/contracts/data/prediction.md` |
-| `DOC-CONTRACT-DATA-quote` | reviewed | Data Contract — Quote | `docs/contracts/data/quote.md` |
-| `DOC-CONTRACT-DATA-risk-decision` | reviewed | Data Contract — risk-decision | `docs/contracts/data/risk-decision.md` |
-| `DOC-CONTRACT-DATA-signal` | reviewed | Data Contract — signal | `docs/contracts/data/signal.md` |
+| `DOC-CONTRACT-DATA-prediction` | approved | Data Contract — Prediction | `docs/contracts/data/prediction.md` |
+| `DOC-CONTRACT-DATA-quote` | approved | Data Contract — Quote | `docs/contracts/data/quote.md` |
+| `DOC-CONTRACT-DATA-risk-decision` | approved | Data Contract — risk-decision | `docs/contracts/data/risk-decision.md` |
+| `DOC-CONTRACT-DATA-signal` | approved | Data Contract — signal | `docs/contracts/data/signal.md` |
 | `DOC-CONTRACT-DATA-strategy` | reviewed | Data Contract — strategy | `docs/contracts/data/strategy.md` |
-| `DOC-CONTRACT-DATA-tick` | reviewed | Data Contract — Tick | `docs/contracts/data/tick.md` |
-| `DOC-CONTRACT-DATA-time` | reviewed | Time Fields Contract | `docs/contracts/data/time-fields.md` |
+| `DOC-CONTRACT-DATA-tick` | approved | Data Contract — Tick | `docs/contracts/data/tick.md` |
+| `DOC-CONTRACT-DATA-time` | approved | Time Fields Contract | `docs/contracts/data/time-fields.md` |
 | `DOC-CONTRACT-DATA-timeframe` | reviewed | Data Contract — timeframe | `docs/contracts/data/timeframe.md` |
 | `DOC-CONTRACT-DB-001` | draft | SQLite Logical Schema | `docs/contracts/database/sqlite-schema.md` |
 | `DOC-CONTRACT-ERR-001` | draft | Error Taxonomy | `docs/contracts/errors/error-taxonomy.md` |
@@ -640,15 +632,15 @@ updated: 2026-09-04
 | `DOC-CONTRACT-EVT-system-events` | reviewed | Events — system-events | `docs/contracts/events/system-events.md` |
 | `DOC-CONTRACT-IF-discovery` | reviewed | Interface — DiscoveryEngine | `docs/contracts/interfaces/discovery.md` |
 | `DOC-CONTRACT-IF-execution` | reviewed | Interface — execution | `docs/contracts/interfaces/execution.md` |
-| `DOC-CONTRACT-IF-market-data-provider` | reviewed | Interface — market-data-provider | `docs/contracts/interfaces/market-data-provider.md` |
+| `DOC-CONTRACT-IF-market-data-provider` | approved | Interface — market-data-provider | `docs/contracts/interfaces/market-data-provider.md` |
 | `DOC-CONTRACT-IF-model` | reviewed | Interface — model | `docs/contracts/interfaces/model-adapter.md` |
 | `DOC-PATH-CONTRACTS-INTERFACES-MODEL-MD` | reviewed | Interface — model | `docs/contracts/interfaces/model.md` |
 | `DOC-CONTRACT-IF-mt5-api` | reviewed | Interface — MT5 Data API Map | `docs/contracts/interfaces/mt5-data-api.md` |
 | `DOC-CONTRACT-IF-risk` | reviewed | Interface — risk | `docs/contracts/interfaces/risk.md` |
 | `DOC-CONTRACT-IF-signal` | reviewed | Interface — signal | `docs/contracts/interfaces/signal.md` |
-| `DOC-CONTRACT-IF-storage` | reviewed | Interface — storage | `docs/contracts/interfaces/storage.md` |
+| `DOC-CONTRACT-IF-storage` | approved | Interface — storage | `docs/contracts/interfaces/storage.md` |
 | `DOC-CONTRACT-IF-strategy` | reviewed | Interface — strategy | `docs/contracts/interfaces/strategy.md` |
-| `DOC-CONTRACT-IF-sync-engine` | reviewed | Interface — sync-engine | `docs/contracts/interfaces/sync-engine.md` |
+| `DOC-CONTRACT-IF-sync-engine` | approved | Interface — sync-engine | `docs/contracts/interfaces/sync-engine.md` |
 | `DOC-CONTRACT-IF-validation` | reviewed | Interface — validation | `docs/contracts/interfaces/validation.md` |
 | `DOC-SCHEMA-dataset-mgmt` | reviewed | Dataset Management Schema Notes | `docs/contracts/schemas/dataset-management.md` |
 | `DOC-SCHEMA-dataset-manifest` | reviewed | Dataset Manifest | `docs/contracts/schemas/dataset-manifest.md` |

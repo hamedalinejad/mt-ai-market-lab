@@ -2,17 +2,15 @@
 id: DOC-0002
 title: Documentation Index
 status: reviewed
-version: 0.3
+version: 0.4
 phase: 0
 domain: docs
 updated: 2026-09-04
 ---
 
-# INDEX (generated listing)
+# INDEX
 
-**Count:** 667 markdown files under `docs/`.
-
-> Generated for completeness (B-002). Prefer REGISTRY for IDs; this INDEX lists paths.
+**Count:** 665
 
 ## Paths
 
@@ -27,17 +25,14 @@ updated: 2026-09-04
 - `00-project/mission.md`
 - `00-project/non-goals.md`
 - `00-project/open-questions.md`
-- `00-project/phase0-coverage-matrix.md`
 - `00-project/phase0-definition-of-done.md`
-- `00-project/phase0-priorities.md`
 - `00-project/principles.md`
 - `00-project/product-boundary.md`
-- `00-project/remaining-gaps.md`
 - `00-project/requirements-catalog.md`
 - `00-project/scope-and-non-goals.md`
 - `00-project/scope.md`
-- `00-project/specification-depth.md`
 - `00-project/success-criteria.md`
+- `00-project/vertical-slice-approval.md`
 - `00-project/vertical-slice.md`
 - `00-project/vision.md`
 - `01-system-architecture/README.md`
@@ -112,6 +107,7 @@ updated: 2026-09-04
 - `04-storage/atomic-publish.md`
 - `04-storage/backup-architecture.md`
 - `04-storage/backup.md`
+- `04-storage/benchmark-protocol.md`
 - `04-storage/caching.md`
 - `04-storage/checksums.md`
 - `04-storage/compaction-engine.md`
@@ -494,6 +490,7 @@ updated: 2026-09-04
 - `24-configuration/system-configuration.md`
 - `24-configuration/timeframe-configuration.md`
 - `24-configuration/validation-configuration.md`
+- `25-decisions/README.md`
 - `25-ingestion-and-external-data/README.md`
 - `25-ingestion-and-external-data/csv-import.md`
 - `25-ingestion-and-external-data/data-lineage.md`
@@ -594,7 +591,6 @@ updated: 2026-09-04
 - `README.md`
 - `REGISTRY.md`
 - `contracts/README.md`
-- `contracts/TREE-INTEGRITY.md`
 - `contracts/data/account-state.md`
 - `contracts/data/broker-order.md`
 - `contracts/data/candle-lifecycle.md`
