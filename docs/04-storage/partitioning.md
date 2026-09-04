@@ -8,8 +8,7 @@ domain: 04-storage
 created: 2026-09-01
 updated: 2026-09-02
 depends_on: [DOC-STOR-014]
-related: [DOC-STOR-015]
----
+related: [DOC-STOR-015]---
 
 # Data Partitioning
 

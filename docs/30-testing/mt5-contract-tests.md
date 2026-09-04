@@ -8,6 +8,7 @@ domain: 30-testing
 created: 2026-09-01
 updated: 2026-09-02
 depends_on: [DOC-TEST-001, DOC-MT5-009]
+related: []
 ---
 
 # MT5 Contract Tests

@@ -6,6 +6,9 @@ version: 0.4
 phase: 0
 domain: 27-risk-and-safety
 updated: 2026-09-04
+created: 2026-09-04
+depends_on: []
+related: []
 ---
 
 # Kill Switch (B-034)

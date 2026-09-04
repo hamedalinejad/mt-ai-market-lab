@@ -5,6 +5,10 @@ status: reviewed
 version: 0.5
 phase: 0
 domain: 01-system-architecture
+created: 2026-09-04
+updated: 2026-09-04
+depends_on: []
+related: []
 ---
 
 # Final Plane Layout

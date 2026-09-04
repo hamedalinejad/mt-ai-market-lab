@@ -6,6 +6,9 @@ version: 0.3
 phase: 0
 domain: 10-ai-core
 updated: 2026-09-03
+created: 2026-09-04
+depends_on: []
+related: []
 ---
 
 # Three Roles (binding)

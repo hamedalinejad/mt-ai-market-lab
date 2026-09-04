@@ -6,6 +6,9 @@ version: 0.2
 phase: 0
 domain: 29-roadmap
 updated: 2026-09-04
+created: 2026-09-04
+depends_on: []
+related: []
 ---
 
 # Implementation Order (post Phase 0 approve)

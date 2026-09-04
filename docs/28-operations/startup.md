@@ -6,6 +6,9 @@ version: 0.5
 phase: 0
 domain: 28-operations
 updated: 2026-09-04
+created: 2026-09-04
+depends_on: []
+related: []
 ---
 
 # Startup Sequence (BUG-OPS-P0-002)

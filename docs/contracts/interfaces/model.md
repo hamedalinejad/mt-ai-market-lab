@@ -6,6 +6,9 @@ version: 0.6
 phase: 0
 domain: contracts
 updated: 2026-09-03
+created: 2026-09-04
+depends_on: []
+related: []
 ---
 
 # Interface: model

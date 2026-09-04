@@ -6,6 +6,9 @@ version: 0.6
 phase: 0
 domain: 10-ai-core
 updated: 2026-09-04
+created: 2026-09-04
+depends_on: []
+related: []
 ---
 
 # Online Learning Governance

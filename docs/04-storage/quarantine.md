@@ -8,6 +8,7 @@ domain: 04-storage
 created: 2026-09-01
 updated: 2026-09-02
 depends_on: [DOC-DATA-007]
+related: []
 ---
 
 # Quarantine Layer

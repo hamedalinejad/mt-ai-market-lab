@@ -3,6 +3,10 @@ id: DOC-ARCH-MERGED-001
 title: system-architecture
 status: reviewed
 phase: 0
+created: 2026-09-04
+updated: 2026-09-04
+depends_on: []
+related: []
 ---
 > **Note:** Domain narrative consolidated from multiple former files. Binding contracts remain under `docs/contracts/`. Sections marked TBD are not Phase-0 binding.
 
