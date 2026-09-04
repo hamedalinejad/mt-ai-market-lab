@@ -1,47 +1,22 @@
 ---
 id: DOC-CONTRACT-DATA-order-intent
-title: Data Contract — Order Intent
+title: Order Intent Contract
 status: approved
-version: 0.8
+version: 1.0
 phase: 0
 domain: contracts
+created: 2026-09-04
 updated: 2026-09-04
+depends_on: ['DOC-CONTRACT-DATA-risk-decision']
 ---
 
-# Order Intent + Idempotency (BUG-TRD-P0-006)
+# Order Intent
 
 ```text
-intent_id
-client_order_id
-broker_ticket?
-parent_intent_id?
-created_at
-expires_at
-signal_id
-strategy_id
-risk_decision_id
-instrument
-side
-size
-execution_state
+intent_id, client_order_id, broker_ticket?,
+signal_id, strategy_id, risk_decision_id,
+instrument, side, size, price?, stop?, take_profit?,
+execution_state, created_at, expires_at
 ```
 
 Same `intent_id` / `client_order_id` must not create a second broker order.
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-

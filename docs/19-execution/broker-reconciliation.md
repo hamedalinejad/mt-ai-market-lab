@@ -1,33 +1,29 @@
 ---
 id: DOC-EXEC-020
-title: Broker Reconciliation
+title: Execution Reconciliation
 status: approved
-version: 0.2
+version: 1.0
 phase: 0
 domain: 19-execution
+created: 2026-09-04
 updated: 2026-09-04
+depends_on: ['DOC-EXEC-019']
 ---
 
-# Broker Reconciliation (BUG-TRD-P0-007)
-
-Periodic + **on startup after crash**.
-
-Local state is **not** assumed truth. Broker (or paper simulator books) is authoritative external state for orders, positions, deals, account — then reconcile into local control plane.
-
-## Acceptance Criteria
+# Required Reconciliation
 
 ```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
+local intent
+local expected state
+broker order state
+broker position state
+actual fills
+fees / spread / slippage
 ```
 
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
+Restart must **not** duplicate an order if a previous response was not observed locally.
 
+**Idempotent client order IDs** are required.
+
+## Netting vs hedging
+Execution layer must detect account model and broker semantics. No strategy may assume “open position” means the same thing across all account configurations.
