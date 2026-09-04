@@ -1,67 +1,13 @@
 ---
-id: DOC-CONTRACT-IF-model
-title: Interface — model
-status: reviewed
-version: 0.6
+id: DOC-CONTRACT-IF-model-adapter-redirect
+title: Model Adapter — Redirect
+status: deprecated
+version: 0.1
 phase: 0
-domain: contracts
-updated: 2026-09-03
 ---
 
-# Interface: model
+# Redirect
 
-## Methods
-| Method | Input | Output | Errors |
-|--------|-------|--------|--------|
-| `list_models` | — | ModelMeta[] | — |
-| `get_champion` | slot? | ModelMeta | NotFound |
-| `promote` | version | void | PromotionDenied |
-| `rollback` | to_version | void | NotFound |
-| `retire` | version | void | — |
-| `load` | version | void | IncompatibleFeature |
-| `predict` | FeatureSnapshot | Prediction | InferenceError |
+Canonical interface: [model.md](model.md)
 
-## Retry behavior
-load failure retry limited; promote non-retry without new validation
-
-## Idempotency
-promote/rollback once per transition event
-
-## Timeout
-predict latency budget from resource profile
-
-## Concurrency
-champion read concurrent; promote single-flight
-
-## Transaction boundary
-registry row update atomic with event
-
-## Observability
-MODEL_LOADED, MODEL_PROMOTED, MODEL_ROLLBACK
-
-## Cancellation
-predict cancel cooperative
-
-## Versioning
-model_version immutable artifact
-
-## Test double
-StubModelAdapter
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
+This filename is retained only as a stable link alias; do not add divergent content.

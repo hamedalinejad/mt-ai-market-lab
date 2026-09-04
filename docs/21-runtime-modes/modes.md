@@ -1,9 +1,11 @@
 ---
-id: DOC-MERGED
+id: DOC-RUN-MERGED-001
 title: modes
 status: reviewed
 phase: 0
 ---
+> **Note:** Domain narrative consolidated from multiple former files. Binding contracts remain under `docs/contracts/`. Sections marked TBD are not Phase-0 binding.
+
 
 # modes
 

@@ -1,9 +1,11 @@
 ---
-id: DOC-MERGED
+id: DOC-DATA-MERGED-001
 title: market-data
 status: reviewed
 phase: 0
 ---
+> **Note:** Domain narrative consolidated from multiple former files. Binding contracts remain under `docs/contracts/`. Sections marked TBD are not Phase-0 binding.
+
 
 # market-data
 

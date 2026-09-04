@@ -2,12 +2,12 @@
 id: DOC-0002
 title: Documentation Index
 status: reviewed
-version: 0.5
+version: 0.6
 ---
 
 # INDEX
 
-**Count:** 241
+**Count:** 243
 
 - `00-project/README.md`
 - `00-project/REQUIREMENTS.md`
@@ -43,6 +43,7 @@ version: 0.5
 - `04-storage/compression.md`
 - `04-storage/corruption-recovery.md`
 - `04-storage/data-lifecycle-layout.md`
+- `04-storage/dataset-management.md`
 - `04-storage/indexing.md`
 - `04-storage/manifest.md`
 - `04-storage/parquet-file-policy.md`
@@ -100,6 +101,7 @@ version: 0.5
 - `15-validation/multiple-testing-control.md`
 - `15-validation/nested-validation.md`
 - `15-validation/promotion-criteria.md`
+- `15-validation/replay-specification.md`
 - `15-validation/statistical-uncertainty.md`
 - `15-validation/validation-architecture.md`
 - `15-validation/validation-gates-framework.md`
@@ -145,7 +147,6 @@ version: 0.5
 - `29-roadmap/implementation-order.md`
 - `29-roadmap/phases.md`
 - `30-testing/README.md`
-- `30-testing/contract-tests-mt5.md`
 - `30-testing/failure-injection.md`
 - `30-testing/mt5-contract-tests.md`
 - `30-testing/performance-benchmarks.md`
@@ -231,6 +232,7 @@ version: 0.5
 - `conventions/folder-readme-policy.md`
 - `conventions/frontmatter-standard.md`
 - `conventions/naming-conventions.md`
+- `conventions/narrative-vs-binding.md`
 - `conventions/open-questions.md`
 - `conventions/status-model.md`
 - `conventions/technology-decision-state.md`

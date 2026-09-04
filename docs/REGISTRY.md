@@ -2,12 +2,12 @@
 id: DOC-0003
 title: Registry
 status: reviewed
-version: 0.7
+version: 0.8
 ---
 
 # Registry
-
-**Files:** 241
+**Files:** 243
+**Duplicate IDs:** 0
 
 | ID | Status | Title | Path |
 |----|--------|-------|------|
@@ -23,15 +23,15 @@ version: 0.7
 | `DOC-PATH-00-PROJECT-VISION-MD` | draft | Vision | `docs/00-project/vision.md` |
 | `DOC-ARCH-001` | draft | System Architecture Overview | `docs/01-system-architecture/README.md` |
 | `DOC-PATH-01-SYSTEM-ARCHITECTURE-ARCHITECTURE-PLANES-MD` | reviewed | Architecture Planes | `docs/01-system-architecture/architecture-planes.md` |
-| `DOC-MERGED` | reviewed | system-architecture | `docs/01-system-architecture/system-architecture.md` |
+| `DOC-ARCH-MERGED-001` | reviewed | system-architecture | `docs/01-system-architecture/system-architecture.md` |
 | `DOC-MT5-001` | draft | MetaTrader Integration Overview | `docs/02-metatrader/README.md` |
 | `DOC-MT5-005` | reviewed | Chart Management | `docs/02-metatrader/chart-management.md` |
 | `DOC-MT5-009` | approved | Integration Boundary | `docs/02-metatrader/integration-boundary.md` |
-| `DOC-MERGED` | reviewed | metatrader | `docs/02-metatrader/metatrader.md` |
+| `DOC-MT5-MERGED-001` | reviewed | metatrader | `docs/02-metatrader/metatrader.md` |
 | `DOC-DATA-001` | draft | Market Data Overview | `docs/03-market-data/README.md` |
 | `DOC-DATA-004` | reviewed | Candle Close Semantics | `docs/03-market-data/candle-close-semantics.md` |
 | `DOC-DATA-015` | reviewed | Instrument Model | `docs/03-market-data/instrument-model.md` |
-| `DOC-MERGED` | reviewed | market-data | `docs/03-market-data/market-data.md` |
+| `DOC-DATA-MERGED-001` | reviewed | market-data | `docs/03-market-data/market-data.md` |
 | `DOC-DATA-022` | reviewed | Timestamp Model | `docs/03-market-data/timestamp-model.md` |
 | `DOC-DATA-028` | reviewed | Volume Model | `docs/03-market-data/volume-model.md` |
 | `DOC-STOR-001` | draft | Storage Overview | `docs/04-storage/README.md` |
@@ -45,6 +45,7 @@ version: 0.7
 | `DOC-STOR-005` | draft | compression | `docs/04-storage/compression.md` |
 | `DOC-STOR-019` | draft | Data Corruption Recovery | `docs/04-storage/corruption-recovery.md` |
 | `DOC-STOR-030` | approved | Data Lifecycle Layout | `docs/04-storage/data-lifecycle-layout.md` |
+| `DOC-STOR-DATASET` | approved | Dataset Management | `docs/04-storage/dataset-management.md` |
 | `DOC-STOR-008` | draft | indexing | `docs/04-storage/indexing.md` |
 | `DOC-STOR-028` | reviewed | Dataset / Partition Manifest | `docs/04-storage/manifest.md` |
 | `DOC-STOR-023` | draft | Parquet File Policy | `docs/04-storage/parquet-file-policy.md` |
@@ -60,17 +61,17 @@ version: 0.7
 | `DOC-SYNC-015` | approved | Cursor Safety Transaction Protocol | `docs/05-synchronization/cursor-safety.md` |
 | `DOC-SYNC-004` | approved | Gap Classification | `docs/05-synchronization/gap-classification.md` |
 | `DOC-SYNC-013` | reviewed | Sync State | `docs/05-synchronization/sync-state.md` |
-| `DOC-MERGED` | reviewed | synchronization | `docs/05-synchronization/synchronization.md` |
+| `DOC-SYNC-MERGED-001` | reviewed | synchronization | `docs/05-synchronization/synchronization.md` |
 | `DOC-REPR-001` | draft | Market Representation Overview | `docs/06-market-representation/README.md` |
-| `DOC-MERGED` | reviewed | representation | `docs/06-market-representation/representation.md` |
+| `DOC-REPR-MERGED-001` | reviewed | representation | `docs/06-market-representation/representation.md` |
 | `DOC-FEAT-001` | draft | Feature Engineering Overview | `docs/07-feature-engineering/README.md` |
-| `DOC-MERGED` | reviewed | features | `docs/07-feature-engineering/features.md` |
+| `DOC-FEAT-MERGED-001` | reviewed | features | `docs/07-feature-engineering/features.md` |
 | `DOC-TKNW-001` | draft | Trading Knowledge Overview | `docs/08-trading-knowledge/README.md` |
-| `DOC-MERGED` | reviewed | trading-knowledge | `docs/08-trading-knowledge/trading-knowledge.md` |
+| `DOC-TKNW-MERGED-001` | reviewed | trading-knowledge | `docs/08-trading-knowledge/trading-knowledge.md` |
 | `DOC-ANLY-001` | draft | Analysis Engine Overview | `docs/09-analysis-engine/README.md` |
-| `DOC-MERGED` | reviewed | analysis | `docs/09-analysis-engine/analysis.md` |
+| `DOC-ANLY-MERGED-001` | reviewed | analysis | `docs/09-analysis-engine/analysis.md` |
 | `DOC-AI-001` | draft | AI Core Overview | `docs/10-ai-core/README.md` |
-| `DOC-MERGED` | reviewed | ai-core | `docs/10-ai-core/ai-core.md` |
+| `DOC-AI-MERGED-001` | reviewed | ai-core | `docs/10-ai-core/ai-core.md` |
 | `DOC-AI-017` | reviewed | Drift Detection | `docs/10-ai-core/drift-detection.md` |
 | `DOC-AI-013` | reviewed | Model Lifecycle | `docs/10-ai-core/model-lifecycle.md` |
 | `DOC-AI-015` | reviewed | Model Registry | `docs/10-ai-core/model-registry.md` |
@@ -78,14 +79,14 @@ version: 0.7
 | `DOC-PATH-10-AI-CORE-PREDICTOR-LEARNER-DISCOVERER-MD` | reviewed | Predictor Learner Discoverer | `docs/10-ai-core/predictor-learner-discoverer.md` |
 | `DOC-AI-018` | reviewed | Promotion Protocol Gates | `docs/10-ai-core/promotion-protocol.md` |
 | `DOC-LEARN-001` | draft | Learning and Self-Correction Overview | `docs/11-learning-and-self-correction/README.md` |
-| `DOC-MERGED` | reviewed | learning | `docs/11-learning-and-self-correction/learning.md` |
+| `DOC-LEARN-MERGED-001` | reviewed | learning | `docs/11-learning-and-self-correction/learning.md` |
 | `DOC-PRED-001` | draft | Prediction Overview | `docs/12-prediction/README.md` |
 | `DOC-PRED-003` | reviewed | Confidence Calibration | `docs/12-prediction/confidence-calibration.md` |
-| `DOC-MERGED` | reviewed | prediction | `docs/12-prediction/prediction.md` |
+| `DOC-PRED-MERGED-001` | reviewed | prediction | `docs/12-prediction/prediction.md` |
 | `DOC-DISC-001` | draft | Discovery Engine Overview | `docs/13-discovery-engine/README.md` |
 | `DOC-DISC-027` | reviewed | Discovery Pipeline | `docs/13-discovery-engine/discovery-pipeline.md` |
 | `DOC-DISC-006` | reviewed | Discovery Space | `docs/13-discovery-engine/discovery-space.md` |
-| `DOC-MERGED` | reviewed | discovery | `docs/13-discovery-engine/discovery.md` |
+| `DOC-DISC-MERGED-001` | reviewed | discovery | `docs/13-discovery-engine/discovery.md` |
 | `DOC-DISC-026` | reviewed | Equivalence Engine | `docs/13-discovery-engine/equivalence-engine.md` |
 | `DOC-DISC-023` | reviewed | Discovery Multiple Testing | `docs/13-discovery-engine/multiple-testing-discovery.md` |
 | `DOC-DISC-013` | reviewed | Novelty Detection | `docs/13-discovery-engine/novelty-detection.md` |
@@ -93,7 +94,7 @@ version: 0.7
 | `DOC-DISC-017` | reviewed | Search Strategy & Budget | `docs/13-discovery-engine/search-strategy.md` |
 | `DOC-DISC-025` | reviewed | Unit / Semantic Types | `docs/13-discovery-engine/unit-semantics.md` |
 | `DOC-EXPL-001` | draft | Experiment Lab Overview | `docs/14-experiment-lab/README.md` |
-| `DOC-MERGED` | reviewed | experiment-lab | `docs/14-experiment-lab/experiment-lab.md` |
+| `DOC-EXPL-MERGED-001` | reviewed | experiment-lab | `docs/14-experiment-lab/experiment-lab.md` |
 | `DOC-VAL-001` | draft | Validation Overview | `docs/15-validation/README.md` |
 | `DOC-VAL-026` | reviewed | Decision Point Propagation | `docs/15-validation/decision-point-propagation.md` |
 | `DOC-VAL-029` | approved | Deterministic Replay Equality Policy | `docs/15-validation/deterministic-replay-equality.md` |
@@ -102,52 +103,52 @@ version: 0.7
 | `DOC-VAL-014` | reviewed | Multiple Testing Control | `docs/15-validation/multiple-testing-control.md` |
 | `DOC-VAL-027` | reviewed | Nested Validation Pipeline | `docs/15-validation/nested-validation.md` |
 | `DOC-VAL-015` | reviewed | Promotion Criteria | `docs/15-validation/promotion-criteria.md` |
+| `DOC-VAL-REPLAY` | approved | Replay Specification | `docs/15-validation/replay-specification.md` |
 | `DOC-VAL-028` | reviewed | Statistical Uncertainty Reporting | `docs/15-validation/statistical-uncertainty.md` |
 | `DOC-VAL-022` | reviewed | Validation Architecture | `docs/15-validation/validation-architecture.md` |
 | `DOC-VAL-030` | reviewed | Validation Gates Framework | `docs/15-validation/validation-gates-framework.md` |
-| `DOC-MERGED` | reviewed | validation | `docs/15-validation/validation.md` |
+| `DOC-VAL-MERGED-001` | reviewed | validation | `docs/15-validation/validation.md` |
 | `DOC-SIG-001` | draft | Signal Engine Overview | `docs/16-signal-engine/README.md` |
-| `DOC-MERGED` | reviewed | signal | `docs/16-signal-engine/signal.md` |
+| `DOC-SIG-MERGED-001` | reviewed | signal | `docs/16-signal-engine/signal.md` |
 | `DOC-STRAT-001` | draft | Strategy Engine Overview | `docs/17-strategy-engine/README.md` |
-| `DOC-MERGED` | reviewed | strategy | `docs/17-strategy-engine/strategy.md` |
+| `DOC-STRAT-MERGED-001` | reviewed | strategy | `docs/17-strategy-engine/strategy.md` |
 | `DOC-RISK-001` | draft | Risk Engine Overview | `docs/18-risk-engine/README.md` |
 | `DOC-PATH-18-RISK-ENGINE-RISK-ARCHITECTURE-MD` | approved | Risk Architecture | `docs/18-risk-engine/risk-architecture.md` |
 | `DOC-EXEC-001` | draft | Execution Overview | `docs/19-execution/README.md` |
 | `DOC-EXEC-020` | approved | Broker Reconciliation | `docs/19-execution/broker-reconciliation.md` |
-| `DOC-MERGED` | reviewed | execution | `docs/19-execution/execution.md` |
+| `DOC-EXEC-MERGED-001` | reviewed | execution | `docs/19-execution/execution.md` |
 | `DOC-EXEC-019` | reviewed | Order Lifecycle | `docs/19-execution/order-lifecycle.md` |
 | `DOC-EXEC-018` | reviewed | Position State Machine | `docs/19-execution/position-state-machine.md` |
 | `DOC-KNOW-001` | draft | Knowledge Base Overview | `docs/20-knowledge-base/README.md` |
-| `DOC-MERGED` | reviewed | knowledge | `docs/20-knowledge-base/knowledge.md` |
+| `DOC-KNOW-MERGED-001` | reviewed | knowledge | `docs/20-knowledge-base/knowledge.md` |
 | `DOC-RUN-001` | draft | Runtime Modes Overview | `docs/21-runtime-modes/README.md` |
-| `DOC-MERGED` | reviewed | modes | `docs/21-runtime-modes/modes.md` |
+| `DOC-RUN-MERGED-001` | reviewed | modes | `docs/21-runtime-modes/modes.md` |
 | `DOC-RUN-009` | approved | Safe Mode Operational Contract | `docs/21-runtime-modes/safe-mode.md` |
 | `DOC-RES-001` | draft | Resource Management Overview | `docs/22-resource-management/README.md` |
-| `DOC-MERGED` | reviewed | resources | `docs/22-resource-management/resources.md` |
+| `DOC-RES-MERGED-001` | reviewed | resources | `docs/22-resource-management/resources.md` |
 | `DOC-OBS-001` | draft | Observability Overview | `docs/23-observability/README.md` |
-| `DOC-MERGED` | reviewed | health | `docs/23-observability/health.md` |
+| `DOC-OBS-HEALTH-MERGED` | reviewed | health | `docs/23-observability/health.md` |
 | `DOC-OBS-008` | draft | observability architecture | `docs/23-observability/observability-architecture.md` |
-| `DOC-MERGED` | reviewed | telemetry | `docs/23-observability/telemetry.md` |
+| `DOC-OBS-TELEM-MERGED` | reviewed | telemetry | `docs/23-observability/telemetry.md` |
 | `DOC-CFG-001` | draft | Configuration Overview | `docs/24-configuration/README.md` |
-| `DOC-MERGED` | reviewed | configuration | `docs/24-configuration/configuration.md` |
+| `DOC-CFG-MERGED-001` | reviewed | configuration | `docs/24-configuration/configuration.md` |
 | `DOC-ING-001` | draft | Ingestion and External Data Overview | `docs/25-ingestion-and-external-data/README.md` |
-| `DOC-MERGED` | reviewed | external-data | `docs/25-ingestion-and-external-data/external-data.md` |
+| `DOC-ING-MERGED-001` | reviewed | external-data | `docs/25-ingestion-and-external-data/external-data.md` |
 | `DOC-RSH-001` | draft | Research Overview | `docs/26-research/README.md` |
-| `DOC-MERGED` | reviewed | research | `docs/26-research/research.md` |
+| `DOC-RSH-MERGED-001` | reviewed | research | `docs/26-research/research.md` |
 | `DOC-SAFE-001` | draft | Risk and Safety Overview | `docs/27-risk-and-safety/README.md` |
 | `DOC-PATH-27-RISK-AND-SAFETY-KILL-SWITCH-MD` | reviewed | Kill Switch | `docs/27-risk-and-safety/kill-switch.md` |
-| `DOC-MERGED` | reviewed | safety | `docs/27-risk-and-safety/safety.md` |
+| `DOC-SAFE-MERGED-001` | reviewed | safety | `docs/27-risk-and-safety/safety.md` |
 | `DOC-OPS-001` | draft | Operations Overview | `docs/28-operations/README.md` |
 | `DOC-OPS-009` | reviewed | Crash Recovery Checkpoint Contract | `docs/28-operations/crash-recovery.md` |
 | `DOC-OPS-010` | reviewed | Disk Full Policy | `docs/28-operations/disk-full-policy.md` |
-| `DOC-MERGED` | reviewed | operations | `docs/28-operations/operations.md` |
+| `DOC-OPS-MERGED-001` | reviewed | operations | `docs/28-operations/operations.md` |
 | `DOC-OPS-011` | reviewed | Local Security Baseline | `docs/28-operations/security-local.md` |
 | `DOC-PATH-28-OPERATIONS-STARTUP-MD` | reviewed | Startup Sequence | `docs/28-operations/startup.md` |
 | `DOC-ROAD-001` | draft | Roadmap Overview | `docs/29-roadmap/README.md` |
 | `DOC-PATH-29-ROADMAP-IMPLEMENTATION-ORDER-MD` | reviewed | Implementation Order | `docs/29-roadmap/implementation-order.md` |
 | `DOC-ROAD-PHASES` | reviewed | Development Phases | `docs/29-roadmap/phases.md` |
 | `DOC-30-README` | reviewed | Testing Domain | `docs/30-testing/README.md` |
-| `DOC-TEST-002` | draft | MT5 Contract Tests | `docs/30-testing/contract-tests-mt5.md` |
 | `DOC-TEST-003` | reviewed | Failure Injection | `docs/30-testing/failure-injection.md` |
 | `DOC-PATH-30-TESTING-MT5-CONTRACT-TESTS-MD` | draft | MT5 Contract Tests | `docs/30-testing/mt5-contract-tests.md` |
 | `DOC-TEST-004` | draft | Performance Benchmarks | `docs/30-testing/performance-benchmarks.md` |
@@ -192,7 +193,7 @@ version: 0.7
 | `DOC-CONTRACT-DATA-tick` | approved | Data Contract — Tick | `docs/contracts/data/tick.md` |
 | `DOC-CONTRACT-DATA-time` | approved | Time Fields Contract | `docs/contracts/data/time-fields.md` |
 | `DOC-CONTRACT-DATA-timeframe` | reviewed | Data Contract — timeframe | `docs/contracts/data/timeframe.md` |
-| `DOC-CONTRACT-DB-001` | draft | SQLite Logical Schema | `docs/contracts/database/sqlite-schema.md` |
+| `DOC-CONTRACT-DB-sqlite-redirect` | deprecated | SQLite Schema — Redirect | `docs/contracts/database/sqlite-schema.md` |
 | `DOC-CONTRACT-ERR-001` | draft | Error Taxonomy | `docs/contracts/errors/error-taxonomy.md` |
 | `DOC-ERR-002` | draft | Retry Policy | `docs/contracts/errors/retry-policy.md` |
 | `DOC-CONTRACT-EVT-data-events` | reviewed | Events — data-events | `docs/contracts/events/data-events.md` |
@@ -208,7 +209,7 @@ version: 0.7
 | `DOC-CONTRACT-IF-discovery` | reviewed | Interface — DiscoveryEngine | `docs/contracts/interfaces/discovery.md` |
 | `DOC-CONTRACT-IF-execution` | reviewed | Interface — execution | `docs/contracts/interfaces/execution.md` |
 | `DOC-CONTRACT-IF-market-data-provider` | approved | Interface — market-data-provider | `docs/contracts/interfaces/market-data-provider.md` |
-| `DOC-CONTRACT-IF-model` | reviewed | Interface — model | `docs/contracts/interfaces/model-adapter.md` |
+| `DOC-CONTRACT-IF-model-adapter-redirect` | deprecated | Model Adapter — Redirect | `docs/contracts/interfaces/model-adapter.md` |
 | `DOC-PATH-CONTRACTS-INTERFACES-MODEL-MD` | reviewed | Interface — model | `docs/contracts/interfaces/model.md` |
 | `DOC-CONTRACT-IF-mt5-api` | reviewed | Interface — MT5 Data API Map | `docs/contracts/interfaces/mt5-data-api.md` |
 | `DOC-CONTRACT-IF-risk` | reviewed | Interface — risk | `docs/contracts/interfaces/risk.md` |
@@ -233,6 +234,7 @@ version: 0.7
 | `DOC-CONV-009` | reviewed | Folder README Policy | `docs/conventions/folder-readme-policy.md` |
 | `DOC-CONV-0004` | draft | Frontmatter Standard | `docs/conventions/frontmatter-standard.md` |
 | `DOC-CONV-0005` | draft | Naming Conventions | `docs/conventions/naming-conventions.md` |
+| `DOC-CONV-011` | reviewed | Narrative vs Binding | `docs/conventions/narrative-vs-binding.md` |
 | `DOC-CONV-007` | reviewed | Open Question Ownership | `docs/conventions/open-questions.md` |
 | `DOC-CONV-005` | reviewed | Document Status Model | `docs/conventions/status-model.md` |
 | `DOC-CONV-010` | reviewed | Technology Decision State | `docs/conventions/technology-decision-state.md` |
@@ -245,7 +247,7 @@ version: 0.7
 | `ADR-0006` | draft | Discovery Candidate Policy | `docs/decisions/ADR-0006-discovery-candidate-policy.md` |
 | `ADR-0007` | draft | Learning Governance | `docs/decisions/ADR-0007-learning-governance.md` |
 | `ADR-0008` | accepted | MT5 Integration Boundary | `docs/decisions/ADR-0008-mt5-integration-boundary.md` |
-| `ADR-0009` | draft | Automated Trading Boundaries | `docs/decisions/ADR-0009-automated-trading-boundaries.md` |
+| `ADR-0009` | accepted | Automated Trading Boundaries | `docs/decisions/ADR-0009-automated-trading-boundaries.md` |
 | `ADR-0010` | draft | Cross-Market Intelligence | `docs/decisions/ADR-0010-cross-market-intelligence.md` |
 | `ADR-0011` | draft | Mixture of Specialists | `docs/decisions/ADR-0011-mixture-of-specialists.md` |
 | `ADR-0012` | draft | Adversarial Validation | `docs/decisions/ADR-0012-adversarial-validation.md` |
