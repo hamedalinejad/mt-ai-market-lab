@@ -1,70 +1,34 @@
 ---
-id: DOC-PATH-CONTRACTS-INTERFACES-MODEL-MD
-title: Interface — model
-status: reviewed
-version: 0.6
+id: DOC-CONTRACT-IF-model
+title: Model-Agnostic Interface
+status: approved
+version: 1.0
 phase: 0
 domain: contracts
-updated: 2026-09-03
 created: 2026-09-04
-depends_on: []
-related: []
+updated: 2026-09-04
+depends_on: ['DOC-PROJ-050']
+related: ['ADR-0003']
 ---
 
-# Interface: model
-
-## Methods
-| Method | Input | Output | Errors |
-|--------|-------|--------|--------|
-| `list_models` | — | ModelMeta[] | — |
-| `get_champion` | slot? | ModelMeta | NotFound |
-| `promote` | version | void | PromotionDenied |
-| `rollback` | to_version | void | NotFound |
-| `retire` | version | void | — |
-| `load` | version | void | IncompatibleFeature |
-| `predict` | FeatureSnapshot | Prediction | InferenceError |
-
-## Retry behavior
-load failure retry limited; promote non-retry without new validation
-
-## Idempotency
-promote/rollback once per transition event
-
-## Timeout
-predict latency budget from resource profile
-
-## Concurrency
-champion read concurrent; promote single-flight
-
-## Transaction boundary
-registry row update atomic with event
-
-## Observability
-MODEL_LOADED, MODEL_PROMOTED, MODEL_ROLLBACK
-
-## Cancellation
-predict cancel cooperative
-
-## Versioning
-model_version immutable artifact
-
-## Test double
-StubModelAdapter
-
-## Acceptance Criteria
+# AI Core — Model Contract
 
 ```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
+fit(dataset, config) -> model_artifact
+predict(model, features) -> prediction
+score(model, dataset) -> evaluation
+explain(model, observation) -> trace
 ```
 
+Framework choice is subordinate to this interface and benchmarks.
+
+## Lightweight-first (live path)
+Prefer: classical statistics, tree models, linear/GLM, small ensembles, compact state-space/regime models.
+
+Large deep-learning systems are **not** required for the first production path and must not be introduced for fashion alone.
+
+## Model lifecycle
 ```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
+DRAFT → TRAINED → EVALUATED → CANDIDATE → VALIDATED → SHADOW → CHAMPION → DEGRADED / RETIRED
 ```
-
+Challenger does not replace champion without promotion gates.

@@ -1,40 +1,36 @@
 ---
-id: DOC-DISC-001
-title: Discovery Engine Overview
-status: draft
-version: 0.1
+id: DOC-DISC-README
+title: Discovery Engine
+status: approved
+version: 1.0
 phase: 0
 domain: 13-discovery-engine
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+created: 2026-09-04
+updated: 2026-09-04
+depends_on: ['DOC-PROJ-052']
 ---
 
-# Discovery Engine Overview
+# Discovery Engine
 
-## Purpose
+Constrained search — not uncontrolled creativity.
 
-Overview for the **13-discovery-engine** domain.
+## Search dimensions
+features, transformations, windows, lags, thresholds, sequence patterns,
+cross-TF/cross-symbol relations, volatility/regime conditions, formulas,
+symbolic expressions, strategy structures.
 
-## Scope
-
-Phase 0 — Documentation First.
-
-## Acceptance Criteria
-
+## Search budget (required per run)
 ```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
+max candidates, max wall time, max CPU, max memory,
+max expression depth, max validation attempts, max repeated-equivalent hypotheses
 ```
 
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
+## Formula safety
+Discovered formulas are **data**, not trusted code. Restricted expression language / sandbox:
+permitted operators only; no FS/network; no arbitrary imports; bounded recursion; timeout; memory bound; deterministic evaluation.
 
+## Complexity objective (conceptual)
+```text
+utility = predictive_value - cost - instability - complexity - multiplicity
+```
+Weights live in a **versioned discovery policy**.

@@ -1,33 +1,26 @@
 ---
 id: DOC-VAL-022
 title: Validation Architecture
-status: reviewed
-version: 0.5
+status: approved
+version: 1.0
 phase: 0
 domain: 15-validation
+created: 2026-09-04
 updated: 2026-09-04
+depends_on: ['DOC-PROJ-052']
 ---
 
 # Validation Architecture
 
-Pipeline: Train → Validation → OOS → Walk-Forward → Regime → Cost → Slippage → Replay → Stress → Adversarial → Promotion Gate
+Promotion system — not a single score.
 
-See also: decision-point-propagation, embargo-and-purging, nested-validation, statistical-uncertainty, cost-bundle.
+## Layers (where applicable)
+Schema/data validity → Temporal correctness → Leakage → Baseline comparison → OOS → Embargo/purge → Nested validation → Walk-forward → Regime → Cost model → Slippage → Execution realism → Statistical uncertainty → Multiple-testing → Stress/adversarial → Deterministic replay → **Promotion gate**
 
-## Acceptance Criteria
+## Baselines
+no-skill; persistence/naive; simple statistical; simple trading rule where relevant.
 
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
+## Calibration
+Probabilistic outputs: discrimination + calibration quality (Brier, reliability curves, ECE, confidence-stratified rates).
 
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
+No confidence may be treated as a probability without calibration evidence.
