@@ -1,28 +1,23 @@
 ---
 id: DOC-0005
 title: Documentation Changelog
-status: draft
-version: 0.2
+status: reviewed
+version: 0.3
 phase: 0
-domain: docs
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
+updated: 2026-09-04
 ---
 
-# Documentation Changelog
+# Changelog
 
-## 2026-09-01 (governance fix)
+## 2026-09-04
+- Vertical slice package marked **approved** (tick/candle/time/sync/risk/safe-mode/…)
+- Contracts SoT under `docs/contracts/`; domain narratives consolidated (~665→~243 files)
+- Unique IDs for merged domain docs; Registry regenerated (0 duplicate IDs)
+- Domain ACs for tick/candle/sync/risk; DDL `control_plane_v001.sql`; event/candle JSON schemas
+- CI workflow `docs-gates.yml` + `check_static_gates.sh`
+- Removed audit-only meta files; fixed REQUIREMENTS inline catalog/traceability
+- ADR-0009 → accepted; glossary expanded; narrative-vs-binding convention
+- Deduped mt5 contract test filenames; model-adapter/sqlite redirects
 
-- Assigned unique Document IDs to all domain files (removed all `DOC-PLACEHOLDER`)
-- Rebuilt `REGISTRY.md` with full catalog (~479 entries) + ID scheme
-- Documented high-level (PHASE 0–9) vs detailed (phase-0–11) roadmap mapping
-- Added Phase 0 honesty statement: file existence ≠ completed Specification
-
-## 2026-09-01 (initial)
-
-- Initial Phase 0 documentation structure created
-- Master Blueprint imported as reference
-- All domain folders and skeleton files generated
-- Initial ADRs (0001–0012) drafted
+## 2026-09-01
+- Phase 0 repository structure and Master Blueprint baseline

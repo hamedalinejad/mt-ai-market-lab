@@ -1,36 +1,17 @@
 ---
-id: DOC-CONV-0007
+id: DOC-CONV-003
 title: Versioning
-status: draft
-version: 0.1
+status: reviewed
+version: 0.2
 phase: 0
-domain: conventions
-created: 2026-09-01
-updated: 2026-09-01
-depends_on: []
-related: []
 ---
 
-# Versioning
+# Document Semantic Versioning
 
-- Documents use semantic versioning (MAJOR.MINOR).
-- Knowledge, Models and Strategies are versioned independently.
-- Every change that affects contracts or safety requires an ADR.
+For documentation:
 
-## Acceptance Criteria
+- **MAJOR** — breaking change to a binding contract or identity rule  
+- **MINOR** — additive compatible fields/sections  
+- **PATCH** — clarifications, typos, non-semantic edits  
 
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
+`status: approved` docs require explicit version bump on material change.

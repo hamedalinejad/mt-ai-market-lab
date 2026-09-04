@@ -1,7 +1,7 @@
 ---
 id: ADR-0003
 title: Model-Agnostic AI
-status: draft
+status: accepted
 version: 0.1
 phase: 0
 domain: decisions

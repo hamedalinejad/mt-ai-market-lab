@@ -1,4 +1,5 @@
 ---
+depends_on: ['DOC-RISK-001']
 id: DOC-RUN-009
 title: Safe Mode Operational Contract
 status: approved

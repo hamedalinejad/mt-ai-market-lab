@@ -1,4 +1,5 @@
 ---
+depends_on: ['DOC-CONTRACT-DATA-risk-decision']
 id: DOC-PATH-18-RISK-ENGINE-RISK-ARCHITECTURE-MD
 title: Risk Architecture
 status: approved

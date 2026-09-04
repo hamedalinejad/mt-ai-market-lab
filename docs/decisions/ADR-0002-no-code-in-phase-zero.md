@@ -1,7 +1,7 @@
 ---
 id: ADR-0002
 title: No Code in Phase Zero
-status: draft
+status: accepted
 version: 0.1
 phase: 0
 domain: decisions

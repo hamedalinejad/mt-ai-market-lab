@@ -1,7 +1,7 @@
 ---
 id: ADR-0004
 title: Storage Selection by Benchmark
-status: draft
+status: accepted
 version: 0.2
 phase: 0
 domain: decisions

@@ -1,4 +1,5 @@
 ---
+depends_on: ['DOC-CONTRACT-DATA-time', 'DOC-CONTRACT-DATA-tick']
 id: DOC-CONTRACT-DATA-candle
 title: Data Contract — Candle
 status: approved

@@ -2,37 +2,19 @@
 id: DOC-CONV-006
 title: Acceptance Criteria Template
 status: reviewed
-version: 0.2
+version: 0.3
 phase: 0
-domain: conventions
-updated: 2026-09-04
 ---
 
-# Acceptance Criteria (BUG-REPO-P0-002)
+# Acceptance Criteria
 
-Every P0 binding doc should include AC blocks:
+Binding documents **must** use domain-specific IDs:
 
 ```text
-AC-xxx-01
+AC-<DOMAIN>-NN
 Given …
 When …
 Then …
 ```
 
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
+Generic AC-01/AC-02 on narrative/merged files are placeholders only and are **not** sufficient for `approved` contracts.

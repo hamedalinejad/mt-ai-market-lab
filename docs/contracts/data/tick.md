@@ -1,4 +1,5 @@
 ---
+depends_on: ['DOC-CONTRACT-DATA-time', 'DOC-CONTRACT-DATA-identity']
 id: DOC-CONTRACT-DATA-tick
 title: Data Contract — Tick
 status: approved

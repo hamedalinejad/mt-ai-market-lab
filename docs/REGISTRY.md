@@ -2,11 +2,11 @@
 id: DOC-0003
 title: Registry
 status: reviewed
-version: 0.8
+version: 0.9
 ---
 
 # Registry
-**Files:** 243
+**Files:** 244
 **Duplicate IDs:** 0
 
 | ID | Status | Title | Path |
@@ -145,7 +145,7 @@ version: 0.8
 | `DOC-OPS-MERGED-001` | reviewed | operations | `docs/28-operations/operations.md` |
 | `DOC-OPS-011` | reviewed | Local Security Baseline | `docs/28-operations/security-local.md` |
 | `DOC-PATH-28-OPERATIONS-STARTUP-MD` | reviewed | Startup Sequence | `docs/28-operations/startup.md` |
-| `DOC-ROAD-001` | draft | Roadmap Overview | `docs/29-roadmap/README.md` |
+| `DOC-ROAD-README` | reviewed | Roadmap | `docs/29-roadmap/README.md` |
 | `DOC-PATH-29-ROADMAP-IMPLEMENTATION-ORDER-MD` | reviewed | Implementation Order | `docs/29-roadmap/implementation-order.md` |
 | `DOC-ROAD-PHASES` | reviewed | Development Phases | `docs/29-roadmap/phases.md` |
 | `DOC-30-README` | reviewed | Testing Domain | `docs/30-testing/README.md` |
@@ -158,11 +158,11 @@ version: 0.8
 | `DOC-33-README` | reviewed | Database Schema Domain | `docs/33-database-schema/README.md` |
 | `DOC-DB-002` | approved | Database Migration Contract | `docs/33-database-schema/migration-contract.md` |
 | `DOC-DB-001` | approved | SQLite Logical Schema | `docs/33-database-schema/sqlite-schema.md` |
-| `DOC-0005` | draft | Documentation Changelog | `docs/CHANGELOG.md` |
-| `DOC-0004` | draft | Glossary | `docs/GLOSSARY.md` |
+| `DOC-0005` | reviewed | Documentation Changelog | `docs/CHANGELOG.md` |
+| `DOC-0004` | reviewed | Glossary | `docs/GLOSSARY.md` |
 | `DOC-0002` | reviewed | Documentation Index | `docs/INDEX.md` |
 | `DOC-MASTER-001` | draft | Master Blueprint & Phase 0 Documentation Specification | `docs/MASTER-BLUEPRINT.md` |
-| `DOC-0001` | draft | Documentation Home | `docs/README.md` |
+| `DOC-DOCS-README` | reviewed | Docs Home | `docs/README.md` |
 | `DOC-0003` | reviewed | Registry | `docs/REGISTRY.md` |
 | `DOC-CONTRACT-001` | reviewed | Contracts — Source of Truth | `docs/contracts/README.md` |
 | `DOC-CONTRACT-DATA-account-state` | reviewed | Data Contract — Account State | `docs/contracts/data/account-state.md` |
@@ -233,24 +233,25 @@ version: 0.8
 | `DOC-CONV-0003` | draft | Documentation Guidelines | `docs/conventions/documentation-guidelines.md` |
 | `DOC-CONV-009` | reviewed | Folder README Policy | `docs/conventions/folder-readme-policy.md` |
 | `DOC-CONV-0004` | draft | Frontmatter Standard | `docs/conventions/frontmatter-standard.md` |
+| `DOC-CONV-012` | reviewed | Document ID Scheme | `docs/conventions/id-scheme.md` |
 | `DOC-CONV-0005` | draft | Naming Conventions | `docs/conventions/naming-conventions.md` |
 | `DOC-CONV-011` | reviewed | Narrative vs Binding | `docs/conventions/narrative-vs-binding.md` |
 | `DOC-CONV-007` | reviewed | Open Question Ownership | `docs/conventions/open-questions.md` |
 | `DOC-CONV-005` | reviewed | Document Status Model | `docs/conventions/status-model.md` |
 | `DOC-CONV-010` | reviewed | Technology Decision State | `docs/conventions/technology-decision-state.md` |
-| `DOC-CONV-0007` | draft | Versioning | `docs/conventions/versioning.md` |
-| `ADR-0001` | draft | Documentation First | `docs/decisions/ADR-0001-documentation-first.md` |
-| `ADR-0002` | draft | No Code in Phase Zero | `docs/decisions/ADR-0002-no-code-in-phase-zero.md` |
-| `ADR-0003` | draft | Model-Agnostic AI | `docs/decisions/ADR-0003-model-agnostic-ai.md` |
-| `ADR-0004` | draft | Storage Selection by Benchmark | `docs/decisions/ADR-0004-storage-selection-by-benchmark.md` |
-| `ADR-0005` | draft | Validation Before Promotion | `docs/decisions/ADR-0005-validation-before-promotion.md` |
-| `ADR-0006` | draft | Discovery Candidate Policy | `docs/decisions/ADR-0006-discovery-candidate-policy.md` |
-| `ADR-0007` | draft | Learning Governance | `docs/decisions/ADR-0007-learning-governance.md` |
+| `DOC-CONV-003` | reviewed | Versioning | `docs/conventions/versioning.md` |
+| `ADR-0001` | accepted | Documentation First | `docs/decisions/ADR-0001-documentation-first.md` |
+| `ADR-0002` | accepted | No Code in Phase Zero | `docs/decisions/ADR-0002-no-code-in-phase-zero.md` |
+| `ADR-0003` | accepted | Model-Agnostic AI | `docs/decisions/ADR-0003-model-agnostic-ai.md` |
+| `ADR-0004` | accepted | Storage Selection by Benchmark | `docs/decisions/ADR-0004-storage-selection-by-benchmark.md` |
+| `ADR-0005` | accepted | Validation Before Promotion | `docs/decisions/ADR-0005-validation-before-promotion.md` |
+| `ADR-0006` | accepted | Discovery Candidate Policy | `docs/decisions/ADR-0006-discovery-candidate-policy.md` |
+| `ADR-0007` | accepted | Learning Governance | `docs/decisions/ADR-0007-learning-governance.md` |
 | `ADR-0008` | accepted | MT5 Integration Boundary | `docs/decisions/ADR-0008-mt5-integration-boundary.md` |
 | `ADR-0009` | accepted | Automated Trading Boundaries | `docs/decisions/ADR-0009-automated-trading-boundaries.md` |
 | `ADR-0010` | draft | Cross-Market Intelligence | `docs/decisions/ADR-0010-cross-market-intelligence.md` |
 | `ADR-0011` | draft | Mixture of Specialists | `docs/decisions/ADR-0011-mixture-of-specialists.md` |
 | `ADR-0012` | draft | Adversarial Validation | `docs/decisions/ADR-0012-adversarial-validation.md` |
-| `ADR-0013` | draft | Canonical Timeframe and Derivation Policy | `docs/decisions/ADR-0013-timeframe-canonical-policy.md` |
+| `ADR-0013` | accepted | Canonical Timeframe and Derivation Policy | `docs/decisions/ADR-0013-timeframe-canonical-policy.md` |
 | `ADR-0014` | accepted | Chart Open via MQL5 Bridge | `docs/decisions/ADR-0014-chart-open-via-mql5.md` |
 | `DOC-ADR-0000` | draft | Architecture Decision Records | `docs/decisions/README.md` |

@@ -1,7 +1,7 @@
 ---
 id: ADR-0001
 title: Documentation First
-status: draft
+status: accepted
 version: 0.1
 phase: 0
 domain: decisions

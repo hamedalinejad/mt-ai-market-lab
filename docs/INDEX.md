@@ -2,12 +2,12 @@
 id: DOC-0002
 title: Documentation Index
 status: reviewed
-version: 0.6
+version: 0.7
 ---
 
 # INDEX
 
-**Count:** 243
+**Count:** 244
 
 - `00-project/README.md`
 - `00-project/REQUIREMENTS.md`
@@ -231,6 +231,7 @@ version: 0.6
 - `conventions/documentation-guidelines.md`
 - `conventions/folder-readme-policy.md`
 - `conventions/frontmatter-standard.md`
+- `conventions/id-scheme.md`
 - `conventions/naming-conventions.md`
 - `conventions/narrative-vs-binding.md`
 - `conventions/open-questions.md`

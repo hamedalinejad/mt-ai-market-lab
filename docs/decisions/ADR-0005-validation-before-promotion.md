@@ -1,7 +1,7 @@
 ---
 id: ADR-0005
 title: Validation Before Promotion
-status: draft
+status: accepted
 version: 0.1
 phase: 0
 domain: decisions

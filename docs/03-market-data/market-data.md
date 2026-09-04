@@ -374,7 +374,7 @@ Source
 | Entity | Doc |
 |--------|-----|
 | Instrument | instrument-model.md |
-| Tick | tick-model.md |
+| Tick | ../contracts/data/tick.md |
 | Candle | candle-model.md |
 | Quote | quote-model.md |
 | Timeframe | timeframe-model.md |
@@ -410,7 +410,7 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/03-market-data/tick-model.md -->
+<!-- merged from docs/03-market-data/../contracts/data/tick.md -->
 
 # Tick Model
 

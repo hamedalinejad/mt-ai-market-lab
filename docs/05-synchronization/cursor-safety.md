@@ -1,4 +1,5 @@
 ---
+depends_on: ['DOC-SYNC-004']
 id: DOC-SYNC-015
 title: Cursor Safety Transaction Protocol
 status: approved
