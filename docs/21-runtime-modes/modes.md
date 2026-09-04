@@ -1,68 +1,20 @@
 ---
-id: DOC-PATH-18-RISK-ENGINE-RISK-ARCHITECTURE-MD
-title: Risk Architecture
-status: approved
-version: 0.6
+id: DOC-MERGED
+title: modes
+status: reviewed
 phase: 0
-domain: 18-risk-engine
-updated: 2026-09-04
 ---
 
-# Risk Absolute Authority (BUG-TRD-P0-002)
-
-```text
-Prediction → Signal → Strategy → Risk → Execution
-```
-
-Risk returns `ALLOW | REDUCE | DENY | HALT`.
-
-**AI must never override Risk.** Even 99% model confidence cannot force ALLOW past Risk.
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
+# modes
 
 
-## Domain Acceptance Criteria
+<!-- merged from docs/21-runtime-modes/paper-trading-mode.md -->
 
-```text
-AC-RISK-01
-Given model confidence=0.99 and daily_loss limit breached
-When Risk.evaluate runs
-Then decision must be DENY or HALT, never ALLOW forced by AI
-
-AC-RISK-02
-Given Risk service unavailable
-When order path is requested
-Then default is DENY/HALT (fail-safe)
-
-AC-RISK-03
-Given risk_decision_id missing on intent
-When Execution.submit is called
-Then submit is rejected
-```
-
-
-<!-- merged from docs/18-risk-engine/correlation-risk.md -->
-
-# correlation risk
+# paper trading mode
 
 ## Purpose
 
-Specification for **correlation risk** within the 18-risk-engine domain.
+Specification for **paper trading mode** within the 21-runtime-modes domain.
 
 ## Scope
 
@@ -94,13 +46,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/exposure-control.md -->
+<!-- merged from docs/21-runtime-modes/priority-policy.md -->
 
-# exposure control
+# priority policy
 
 ## Purpose
 
-Specification for **exposure control** within the 18-risk-engine domain.
+Specification for **priority policy** within the 21-runtime-modes domain.
 
 ## Scope
 
@@ -132,13 +84,45 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/correlated-risk-budgeting.md -->
+<!-- merged from docs/21-runtime-modes/live-vs-research.md -->
 
-# correlated risk budgeting
+# Live vs Research
+
+## Live
+
+real-time analysis, light learning, prediction, signal, monitoring
+
+## Training / Research
+
+historical training, discovery, deep search, validation, model generation, strategy discovery
+
+Separate processes; Promotion is the bridge.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/21-runtime-modes/validation-mode.md -->
+
+# validation mode
 
 ## Purpose
 
-Specification for **correlated risk budgeting** within the 18-risk-engine domain.
+Specification for **validation mode** within the 21-runtime-modes domain.
 
 ## Scope
 
@@ -170,13 +154,54 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/volatility-risk.md -->
+<!-- merged from docs/21-runtime-modes/training-mode.md -->
 
-# volatility risk
+# Training Mode
+
+## Process
+
+Runs in the **TRAINING PROCESS** (separate from Live by default):
+
+```text
+Dataset → Training → Discovery (optional) → Validation → Model Candidate
+```
+
+## Promotion
+
+```text
+Candidate → Validation → Promotion → Live Model
+```
+
+## Rules
+
+- Must not share process with Live under default Laptop/Standard profiles.
+- May use Research / High Performance resource profile.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/21-runtime-modes/research-mode.md -->
+
+# research mode
 
 ## Purpose
 
-Specification for **volatility risk** within the 18-risk-engine domain.
+Specification for **research mode** within the 21-runtime-modes domain.
 
 ## Scope
 
@@ -208,13 +233,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/signal-risk.md -->
+<!-- merged from docs/21-runtime-modes/mode-switching.md -->
 
-# signal risk
+# mode switching
 
 ## Purpose
 
-Specification for **signal risk** within the 18-risk-engine domain.
+Specification for **mode switching** within the 21-runtime-modes domain.
 
 ## Scope
 
@@ -246,13 +271,37 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/strategy-risk.md -->
+<!-- merged from docs/21-runtime-modes/offline-research-mode.md -->
 
-# strategy risk
+# Offline Research Mode
+
+Fully independent of live MT5: uses **Dataset Snapshots** only. No trading, no live signals.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/21-runtime-modes/live-trading-mode.md -->
+
+# live trading mode
 
 ## Purpose
 
-Specification for **strategy risk** within the 18-risk-engine domain.
+Specification for **live trading mode** within the 21-runtime-modes domain.
 
 ## Scope
 
@@ -284,25 +333,21 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/position-sizing.md -->
+<!-- merged from docs/21-runtime-modes/mode-architecture.md -->
 
-# position sizing
+# Runtime Modes (minimum)
 
-## Purpose
+```text
+OFFLINE_RESEARCH
+TRAINING
+VALIDATION
+PAPER
+LIVE_ANALYSIS
+LIVE_TRADING
+SAFE_MODE
+```
 
-Specification for **position sizing** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+Each mode defines: allowed components, forbidden components, resource budget, state transitions, exit conditions.
 
 ## Acceptance Criteria
 
@@ -322,217 +367,30 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/execution-risk.md -->
+<!-- merged from docs/21-runtime-modes/live-analysis-mode.md -->
 
-# execution risk
+# Live Analysis Mode
 
-## Purpose
+## Process
 
-Specification for **execution risk** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
-
-## Acceptance Criteria
+Runs in the **LIVE PROCESS**:
 
 ```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
+MT5 → Data Collector → Feature Engine → Inference → Signal (+ light shadow learning)
 ```
 
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
+## Includes
 
+- MT5 connection, sync, live data
+- Analysis, prediction, signal
+- Light online learning **only** via shadow + governance
+- Monitoring
 
-<!-- merged from docs/18-risk-engine/drawdown-control.md -->
+## Excludes
 
-# drawdown control
-
-## Purpose
-
-Specification for **drawdown control** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/emergency-stop.md -->
-
-# emergency stop
-
-## Purpose
-
-Specification for **emergency stop** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/risk-gates.md -->
-
-# Risk Gates
-
-## Data Quality Gate
-
-```text
-data_health < threshold  →  NO TRADE
-```
-
-## AI Health Gate
-
-```text
-model calibration degraded  →  disable model / DENY signals from it
-```
-
-## Discovery Health Gate
-
-Thousands of unstable discoveries → **discovery circuit breaker**.
-
-Gates are independent of AI confidence.
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/model-risk.md -->
-
-# model risk
-
-## Purpose
-
-Specification for **model risk** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/causal-cluster-risk.md -->
-
-# causal cluster risk
-
-## Purpose
-
-Specification for **causal cluster risk** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+- Heavy training
+- Full Discovery search
+- Adversarial campaigns that starve live resources
 
 ## Acceptance Criteria
 

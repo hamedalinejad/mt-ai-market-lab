@@ -1,22 +1,18 @@
 ---
-id: DOC-PATH-18-RISK-ENGINE-RISK-ARCHITECTURE-MD
-title: Risk Architecture
-status: approved
-version: 0.6
+id: DOC-MERGED
+title: ai-core
+status: reviewed
 phase: 0
-domain: 18-risk-engine
-updated: 2026-09-04
 ---
 
-# Risk Absolute Authority (BUG-TRD-P0-002)
+# ai-core
 
-```text
-Prediction → Signal → Strategy → Risk → Execution
-```
 
-Risk returns `ALLOW | REDUCE | DENY | HALT`.
+<!-- merged from docs/10-ai-core/ai-architecture.md -->
 
-**AI must never override Risk.** Even 99% model confidence cannot force ALLOW past Risk.
+# AI Architecture
+
+AI consumes **Market State / Feature Set**, not MT5/CSV/Parquet source details. Source-agnostic by contract.
 
 ## Acceptance Criteria
 
@@ -36,33 +32,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-## Domain Acceptance Criteria
+<!-- merged from docs/10-ai-core/ai-objectives.md -->
 
-```text
-AC-RISK-01
-Given model confidence=0.99 and daily_loss limit breached
-When Risk.evaluate runs
-Then decision must be DENY or HALT, never ALLOW forced by AI
-
-AC-RISK-02
-Given Risk service unavailable
-When order path is requested
-Then default is DENY/HALT (fail-safe)
-
-AC-RISK-03
-Given risk_decision_id missing on intent
-When Execution.submit is called
-Then submit is rejected
-```
-
-
-<!-- merged from docs/18-risk-engine/correlation-risk.md -->
-
-# correlation risk
+# ai objectives
 
 ## Purpose
 
-Specification for **correlation risk** within the 18-risk-engine domain.
+Specification for **ai objectives** within the 10-ai-core domain.
 
 ## Scope
 
@@ -94,13 +70,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/exposure-control.md -->
+<!-- merged from docs/10-ai-core/incremental-learning.md -->
 
-# exposure control
+# incremental learning
 
 ## Purpose
 
-Specification for **exposure control** within the 18-risk-engine domain.
+Specification for **incremental learning** within the 10-ai-core domain.
 
 ## Scope
 
@@ -132,13 +108,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/correlated-risk-budgeting.md -->
+<!-- merged from docs/10-ai-core/model-selection.md -->
 
-# correlated risk budgeting
+# model selection
 
 ## Purpose
 
-Specification for **correlated risk budgeting** within the 18-risk-engine domain.
+Specification for **model selection** within the 10-ai-core domain.
 
 ## Scope
 
@@ -170,13 +146,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/volatility-risk.md -->
+<!-- merged from docs/10-ai-core/model-types.md -->
 
-# volatility risk
+# model types
 
 ## Purpose
 
-Specification for **volatility risk** within the 18-risk-engine domain.
+Specification for **model types** within the 10-ai-core domain.
 
 ## Scope
 
@@ -208,13 +184,93 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/signal-risk.md -->
+<!-- merged from docs/10-ai-core/mixture-of-specialists.md -->
 
-# signal risk
+# Mixture of Specialists
 
 ## Purpose
 
-Specification for **signal risk** within the 18-risk-engine domain.
+AI Core must **not** be a single monolithic model. On a typical laptop, a large neural network is **not** the default direction.
+
+## Preferred Architecture
+
+```text
+                Market State
+                     │
+          ┌──────────┼──────────┐
+          ▼          ▼          ▼
+      Trend       Momentum    Volatility
+      Expert       Expert       Expert
+          │          │          │
+          └──────────┼──────────┘
+                     ▼
+              Meta / Gating
+                     │
+                     ▼
+              Final Forecast
+```
+
+## Example Specialists
+
+```text
+Trend Specialist
+Range Specialist
+Momentum Specialist
+Mean-Reversion Specialist
+Volatility Specialist
+Cross-Market Specialist
+Regime Transition Specialist
+```
+
+## Router
+
+```text
+Market State
+     ↓
+Regime
+     ↓
+Specialist Weights
+     ↓
+Ensemble / Decision Evidence
+```
+
+## Rules
+
+- Specialists are lightweight and independently versioned.
+- New specialists follow the same lifecycle: Candidate → Validation → Promotion / Retirement.
+- Gating produces **evidence for forecast**, not a direct order.
+- Model family remains candidate until Benchmark (ADR-0003 / ADR-0004 style governance).
+
+## Non-Goals (default laptop profile)
+
+- Single large end-to-end neural net as the only production model
+- Unbounded ensemble size
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/10-ai-core/ensemble-models.md -->
+
+# ensemble models
+
+## Purpose
+
+Specification for **ensemble models** within the 10-ai-core domain.
 
 ## Scope
 
@@ -246,13 +302,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/strategy-risk.md -->
+<!-- merged from docs/10-ai-core/continual-learning.md -->
 
-# strategy risk
+# continual learning
 
 ## Purpose
 
-Specification for **strategy risk** within the 18-risk-engine domain.
+Specification for **continual learning** within the 10-ai-core domain.
 
 ## Scope
 
@@ -284,13 +340,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/position-sizing.md -->
+<!-- merged from docs/10-ai-core/model-abstraction.md -->
 
-# position sizing
+# model abstraction
 
 ## Purpose
 
-Specification for **position sizing** within the 18-risk-engine domain.
+Specification for **model abstraction** within the 10-ai-core domain.
 
 ## Scope
 
@@ -322,13 +378,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/execution-risk.md -->
+<!-- merged from docs/10-ai-core/offline-training.md -->
 
-# execution risk
+# offline training
 
 ## Purpose
 
-Specification for **execution risk** within the 18-risk-engine domain.
+Specification for **offline training** within the 10-ai-core domain.
 
 ## Scope
 
@@ -360,13 +416,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/drawdown-control.md -->
+<!-- merged from docs/10-ai-core/model-monitoring.md -->
 
-# drawdown control
+# model monitoring
 
 ## Purpose
 
-Specification for **drawdown control** within the 18-risk-engine domain.
+Specification for **model monitoring** within the 10-ai-core domain.
 
 ## Scope
 
@@ -398,13 +454,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/emergency-stop.md -->
+<!-- merged from docs/10-ai-core/training-architecture.md -->
 
-# emergency stop
+# training architecture
 
 ## Purpose
 
-Specification for **emergency stop** within the 18-risk-engine domain.
+Specification for **training architecture** within the 10-ai-core domain.
 
 ## Scope
 
@@ -436,27 +492,51 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/risk-gates.md -->
+<!-- merged from docs/10-ai-core/model-versioning.md -->
 
-# Risk Gates
+# Model Versioning
 
-## Data Quality Gate
+## Purpose
 
-```text
-data_health < threshold  →  NO TRADE
-```
+Promoted and candidate models are **immutable artifacts**. Updates create a new version; they do not overwrite the old one in place.
 
-## AI Health Gate
+## Layout (candidate)
 
 ```text
-model calibration degraded  →  disable model / DENY signals from it
+model/
+├── model-000001/
+├── model-000002/
+├── model-000003/
 ```
 
-## Discovery Health Gate
+Each `model-XXXXXX/` is a complete, self-describing snapshot.
 
-Thousands of unstable discoveries → **discovery circuit breaker**.
+## Required Metadata (per model version)
 
-Gates are independent of AI confidence.
+```text
+training dataset          # dataset_id / manifest
+feature version           # feature_set_id + feature_definition_version
+code version              # git commit / package versions
+hyperparameters
+random seed
+validation results        # gate outcomes, metrics, split ids
+training period           # time range used to fit
+symbols
+timeframes
+market regimes            # regimes present / conditioned on
+parent model              # prior version id if derived / finetuned
+model_id
+model_version
+created_at
+status                    # candidate | shadow | promoted | retired
+```
+
+## Rules
+
+- Production never mutates files inside a promoted `model-XXXXXX/` directory.
+- Online learning writes only to **shadow/candidate** versions, then Promotion may select a new immutable id.
+- Rollback = point live routing at a previous `model_version`, not edit weights in place.
+- Reproducibility requires the full metadata set above; missing fields ⇒ non-promotable.
 
 ## Acceptance Criteria
 
@@ -476,13 +556,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/model-risk.md -->
+<!-- merged from docs/10-ai-core/inference-architecture.md -->
 
-# model risk
+# inference architecture
 
 ## Purpose
 
-Specification for **model risk** within the 18-risk-engine domain.
+Specification for **inference architecture** within the 10-ai-core domain.
 
 ## Scope
 
@@ -514,13 +594,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/causal-cluster-risk.md -->
+<!-- merged from docs/10-ai-core/model-governance.md -->
 
-# causal cluster risk
+# model governance
 
 ## Purpose
 
-Specification for **causal cluster risk** within the 18-risk-engine domain.
+Specification for **model governance** within the 10-ai-core domain.
 
 ## Scope
 
@@ -533,6 +613,78 @@ TBD — refined from Master Blueprint.
 ## Open Questions
 
 TBD
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/10-ai-core/model-retirement.md -->
+
+# model retirement
+
+## Purpose
+
+Specification for **model retirement** within the 10-ai-core domain.
+
+## Scope
+
+Phase 0 — Documentation First.
+
+## Requirements
+
+TBD — refined from Master Blueprint.
+
+## Open Questions
+
+TBD
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/10-ai-core/ensemble.md -->
+
+# Ensemble
+
+## Dynamic weighting (direction)
+
+Specialists (trend, momentum, volatility, pattern, microstructure, discovery, …) weighted by:
+
+```text
+recent OOS performance, regime performance, calibration, confidence, stability
+```
+
+## Constraint
+
+Weight updates are themselves **validated** (shadow / holdout) — dynamic weights must not freely overfit.
 
 ## Acceptance Criteria
 

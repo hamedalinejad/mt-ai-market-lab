@@ -1,68 +1,20 @@
 ---
-id: DOC-PATH-18-RISK-ENGINE-RISK-ARCHITECTURE-MD
-title: Risk Architecture
-status: approved
-version: 0.6
+id: DOC-MERGED
+title: operations
+status: reviewed
 phase: 0
-domain: 18-risk-engine
-updated: 2026-09-04
 ---
 
-# Risk Absolute Authority (BUG-TRD-P0-002)
-
-```text
-Prediction → Signal → Strategy → Risk → Execution
-```
-
-Risk returns `ALLOW | REDUCE | DENY | HALT`.
-
-**AI must never override Risk.** Even 99% model confidence cannot force ALLOW past Risk.
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
+# operations
 
 
-## Domain Acceptance Criteria
+<!-- merged from docs/28-operations/environment.md -->
 
-```text
-AC-RISK-01
-Given model confidence=0.99 and daily_loss limit breached
-When Risk.evaluate runs
-Then decision must be DENY or HALT, never ALLOW forced by AI
-
-AC-RISK-02
-Given Risk service unavailable
-When order path is requested
-Then default is DENY/HALT (fail-safe)
-
-AC-RISK-03
-Given risk_decision_id missing on intent
-When Execution.submit is called
-Then submit is rejected
-```
-
-
-<!-- merged from docs/18-risk-engine/correlation-risk.md -->
-
-# correlation risk
+# environment
 
 ## Purpose
 
-Specification for **correlation risk** within the 18-risk-engine domain.
+Specification for **environment** within the 28-operations domain.
 
 ## Scope
 
@@ -94,13 +46,42 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/exposure-control.md -->
+<!-- merged from docs/28-operations/version-compatibility.md -->
 
-# exposure control
+# Version Compatibility Matrix
+
+Track tested combinations of:
+
+```text
+Python | MetaTrader5 package | MT5 Terminal
+DuckDB | SQLite | NumPy | Pandas/Polars | …
+```
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/28-operations/troubleshooting.md -->
+
+# troubleshooting
 
 ## Purpose
 
-Specification for **exposure control** within the 18-risk-engine domain.
+Specification for **troubleshooting** within the 28-operations domain.
 
 ## Scope
 
@@ -132,13 +113,81 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/correlated-risk-budgeting.md -->
+<!-- merged from docs/28-operations/environment-validation.md -->
 
-# correlated risk budgeting
+# Environment Validation
+
+Startup reports:
+
+```text
+Python OK | MT5 OK | Database OK | Disk OK | RAM OK | Model OK | Data OK
+```
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/28-operations/shutdown.md -->
+
+# Shutdown
+
+## Normative Sequence
+
+```text
+stop live ingestion
+flush buffers
+commit DB
+checkpoint
+persist sync state
+persist model state (shadow/runtime pointers)
+persist runtime state
+close MT5
+```
+
+## Rules
+
+- Dirty shutdown is recovered by Startup Recovery; clean shutdown minimizes recovery work.
+- Never leave partial canonical publishes without rolling back or marking incomplete batches.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/28-operations/maintenance.md -->
+
+# maintenance
 
 ## Purpose
 
-Specification for **correlated risk budgeting** within the 18-risk-engine domain.
+Specification for **maintenance** within the 28-operations domain.
 
 ## Scope
 
@@ -170,13 +219,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/volatility-risk.md -->
+<!-- merged from docs/28-operations/recovery-operations.md -->
 
-# volatility risk
+# recovery operations
 
 ## Purpose
 
-Specification for **volatility risk** within the 18-risk-engine domain.
+Specification for **recovery operations** within the 28-operations domain.
 
 ## Scope
 
@@ -208,13 +257,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/signal-risk.md -->
+<!-- merged from docs/28-operations/synchronization-operations.md -->
 
-# signal risk
+# synchronization operations
 
 ## Purpose
 
-Specification for **signal risk** within the 18-risk-engine domain.
+Specification for **synchronization operations** within the 28-operations domain.
 
 ## Scope
 
@@ -246,13 +295,86 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/strategy-risk.md -->
+<!-- merged from docs/28-operations/retry-policy.md -->
 
-# strategy risk
+# Retry Policy
+
+Not every error is retried.
+
+| Example | Action |
+|---------|--------|
+| connection timeout | retry |
+| invalid symbol | do not retry |
+| corrupt data | quarantine |
+| database locked | backoff |
+| disk full | stop / Safe Mode |
+
+## Exponential Backoff
+
+For MT5, network, external source, storage contention.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/28-operations/installation.md -->
+
+# Installation
+
+Must document:
+
+```text
+Windows
+Python version
+MT5 version
+Broker notes
+Virtual environment
+Dependencies
+Data directory
+First run
+MT5 configuration
+Permissions
+```
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/28-operations/monitoring.md -->
+
+# monitoring
 
 ## Purpose
 
-Specification for **strategy risk** within the 18-risk-engine domain.
+Specification for **monitoring** within the 28-operations domain.
 
 ## Scope
 
@@ -284,25 +406,22 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/position-sizing.md -->
+<!-- merged from docs/28-operations/concurrency-model.md -->
 
-# position sizing
+# Concurrency Model
 
-## Purpose
+Example direction:
 
-Specification for **position sizing** within the 18-risk-engine domain.
+```text
+1 process boundaries (Live vs Training)
+N ingestion workers
+1 storage writer (SQLite single-writer)
+N analysis workers
+1 model manager
+1 discovery worker (budgeted)
+```
 
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+What is thread-safe must be declared per component.
 
 ## Acceptance Criteria
 
@@ -322,25 +441,19 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/execution-risk.md -->
+<!-- merged from docs/28-operations/dependency-policy.md -->
 
-# execution risk
+# Dependency Policy
 
-## Purpose
+For each dependency document:
 
-Specification for **execution risk** within the 18-risk-engine domain.
+```text
+why | version range | license | performance | risk | alternative
+```
 
-## Scope
+Libraries (NumPy/Pandas/Polars/…) are **implementation details**, not Architecture Truth.
 
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+Polars vs Pandas: Benchmark-based for DataFrame-heavy workloads.
 
 ## Acceptance Criteria
 
@@ -360,179 +473,25 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/drawdown-control.md -->
+<!-- merged from docs/28-operations/backup-operations.md -->
 
-# drawdown control
+# Backup Architecture
 
-## Purpose
-
-Specification for **drawdown control** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
-
-## Acceptance Criteria
+## Coverage
 
 ```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
+Database | Raw Data | Canonical Data
+Models | Features | Experiments | Knowledge | Configs
 ```
+
+## Metadata
 
 ```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
+backup_id
+timestamp
+source_version
+checksum
 ```
-
-
-<!-- merged from docs/18-risk-engine/emergency-stop.md -->
-
-# emergency stop
-
-## Purpose
-
-Specification for **emergency stop** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/risk-gates.md -->
-
-# Risk Gates
-
-## Data Quality Gate
-
-```text
-data_health < threshold  →  NO TRADE
-```
-
-## AI Health Gate
-
-```text
-model calibration degraded  →  disable model / DENY signals from it
-```
-
-## Discovery Health Gate
-
-Thousands of unstable discoveries → **discovery circuit breaker**.
-
-Gates are independent of AI confidence.
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/model-risk.md -->
-
-# model risk
-
-## Purpose
-
-Specification for **model risk** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/causal-cluster-risk.md -->
-
-# causal cluster risk
-
-## Purpose
-
-Specification for **causal cluster risk** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
 
 ## Acceptance Criteria
 

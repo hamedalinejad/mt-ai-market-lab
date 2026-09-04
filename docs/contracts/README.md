@@ -33,3 +33,6 @@ When production code for this scope is proposed
 Then it must be rejected until status reaches approved
 ```
 
+
+
+> Domain folders 31–35 removed; contracts here are the only SoT.

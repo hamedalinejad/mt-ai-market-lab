@@ -1,68 +1,20 @@
 ---
-id: DOC-PATH-18-RISK-ENGINE-RISK-ARCHITECTURE-MD
-title: Risk Architecture
-status: approved
-version: 0.6
+id: DOC-MERGED
+title: execution
+status: reviewed
 phase: 0
-domain: 18-risk-engine
-updated: 2026-09-04
 ---
 
-# Risk Absolute Authority (BUG-TRD-P0-002)
-
-```text
-Prediction → Signal → Strategy → Risk → Execution
-```
-
-Risk returns `ALLOW | REDUCE | DENY | HALT`.
-
-**AI must never override Risk.** Even 99% model confidence cannot force ALLOW past Risk.
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
+# execution
 
 
-## Domain Acceptance Criteria
+<!-- merged from docs/19-execution/order-validation.md -->
 
-```text
-AC-RISK-01
-Given model confidence=0.99 and daily_loss limit breached
-When Risk.evaluate runs
-Then decision must be DENY or HALT, never ALLOW forced by AI
-
-AC-RISK-02
-Given Risk service unavailable
-When order path is requested
-Then default is DENY/HALT (fail-safe)
-
-AC-RISK-03
-Given risk_decision_id missing on intent
-When Execution.submit is called
-Then submit is rejected
-```
-
-
-<!-- merged from docs/18-risk-engine/correlation-risk.md -->
-
-# correlation risk
+# order validation
 
 ## Purpose
 
-Specification for **correlation risk** within the 18-risk-engine domain.
+Specification for **order validation** within the 19-execution domain.
 
 ## Scope
 
@@ -94,13 +46,157 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/exposure-control.md -->
+<!-- merged from docs/19-execution/account-state.md -->
 
-# exposure control
+# Account State
+
+Track and reconcile: balance, equity, margin, free margin, positions, pending orders — paper books and live MT5 state.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/19-execution/paper-trading.md -->
+
+# Paper Trading
 
 ## Purpose
 
-Specification for **exposure control** within the 18-risk-engine domain.
+Paper Trading must mirror Live, except broker submission.
+
+## Same as Live
+
+```text
+Signal
+Strategy
+Risk
+Execution
+Reconciliation
+Cost
+Slippage
+Spread
+Latency (modeled)
+```
+
+## Difference
+
+```text
+Broker Execution  →  Simulated Execution
+```
+
+## Rules
+
+- Not a toy simulator that bypasses Risk or Trace.
+- Uses real market data path.
+- Simulated fills consume the **dynamic slippage model**.
+- Outcomes feed Error Memory and performance the same way as live (flagged `paper`).
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/19-execution/execution-architecture.md -->
+
+# Execution P0
+
+## Path
+Intent → Risk → submit (paper/live) → reconcile
+
+## Idempotency keys
+intent_id, client_order_id, broker_ticket
+
+## Reconciliation
+Local vs broker: orders, positions, deals, account state.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/19-execution/execution-boundary.md -->
+
+# Execution Boundary
+
+## Allows
+
+- Paper execution
+- Controlled live execution (later phases)
+- Order validation
+- Execution reconciliation
+
+## Forbids
+
+- Direct Prediction → Order
+- Direct Discovery → Order
+- Strategy bypass of Risk
+- Blind resend of orders without reconcile
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/19-execution/exit-model.md -->
+
+# exit model
+
+## Purpose
+
+Specification for **exit model** within the 19-execution domain.
 
 ## Scope
 
@@ -132,13 +228,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/correlated-risk-budgeting.md -->
+<!-- merged from docs/19-execution/take-profit-model.md -->
 
-# correlated risk budgeting
+# take profit model
 
 ## Purpose
 
-Specification for **correlated risk budgeting** within the 18-risk-engine domain.
+Specification for **take profit model** within the 19-execution domain.
 
 ## Scope
 
@@ -170,13 +266,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/volatility-risk.md -->
+<!-- merged from docs/19-execution/stop-loss-model.md -->
 
-# volatility risk
+# stop loss model
 
 ## Purpose
 
-Specification for **volatility risk** within the 18-risk-engine domain.
+Specification for **stop loss model** within the 19-execution domain.
 
 ## Scope
 
@@ -208,13 +304,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/signal-risk.md -->
+<!-- merged from docs/19-execution/entry-model.md -->
 
-# signal risk
+# entry model
 
 ## Purpose
 
-Specification for **signal risk** within the 18-risk-engine domain.
+Specification for **entry model** within the 19-execution domain.
 
 ## Scope
 
@@ -246,13 +342,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/strategy-risk.md -->
+<!-- merged from docs/19-execution/live-trading.md -->
 
-# strategy risk
+# live trading
 
 ## Purpose
 
-Specification for **strategy risk** within the 18-risk-engine domain.
+Specification for **live trading** within the 19-execution domain.
 
 ## Scope
 
@@ -284,13 +380,143 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/position-sizing.md -->
+<!-- merged from docs/19-execution/reconciliation.md -->
 
-# position sizing
+# Execution Reconciliation
 
 ## Purpose
 
-Specification for **position sizing** within the 18-risk-engine domain.
+**P0 after every execution attempt** (paper or live). Network loss after `order_send()` must not create duplicate trades.
+
+## Reconcile Path
+
+```text
+Local Intent
+      ↓
+MT5 Order
+      ↓
+Broker Result
+      ↓
+Positions
+      ↓
+Deals
+      ↓
+Local State
+```
+
+## MT5 API surfaces (reference)
+
+- `order_send`
+- `orders_get`
+- `positions_get`
+- `history_orders_get`
+- `history_deals_get`
+
+## Required identifiers
+
+```text
+intent_id
+client_order_id
+broker_ticket
+execution_state
+```
+
+## Required behavior on uncertainty
+
+```text
+timeout / disconnect
+       ↓
+reconcile against orders / positions / deals
+       ↓
+if intent not accepted → may send once under same client_order_id policy
+if intent accepted → bind ticket; do not create a second order
+```
+
+## Rules
+
+- Idempotent execution is mandatory.
+- Paper mode reconciles against the **simulator books** with the same state machine.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/19-execution/order-model.md -->
+
+# Order Model
+
+## Purpose
+
+Idempotent order intent for paper and live.
+
+## Required identifiers
+
+```text
+intent_id
+client_order_id
+broker_ticket          # when known
+execution_state
+```
+
+## Execution states (logical)
+
+```text
+INTENT_CREATED
+VALIDATED
+SENT
+ACCEPTED
+REJECTED
+PARTIAL
+FILLED
+CANCELLED
+UNKNOWN_NEEDS_RECONCILE
+RECONCILED
+```
+
+## Rules
+
+- On `UNKNOWN_NEEDS_RECONCILE`, forbid blind resend.
+- Bind `broker_ticket` from positions/orders/deals during reconciliation.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/19-execution/kill-switch.md -->
+
+# kill switch
+
+## Purpose
+
+Specification for **kill switch** within the 19-execution domain.
 
 ## Scope
 
@@ -322,13 +548,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/execution-risk.md -->
+<!-- merged from docs/19-execution/execution-policy.md -->
 
-# execution risk
+# execution policy
 
 ## Purpose
 
-Specification for **execution risk** within the 18-risk-engine domain.
+Specification for **execution policy** within the 19-execution domain.
 
 ## Scope
 
@@ -360,25 +586,38 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/drawdown-control.md -->
+<!-- merged from docs/19-execution/slippage-handling.md -->
 
-# drawdown control
+# Slippage Handling
 
 ## Purpose
 
-Specification for **drawdown control** within the 18-risk-engine domain.
+Slippage is **dynamic**, not a fixed `1 pip`.
 
-## Scope
+## Forbidden as sole model
 
-Phase 0 — Documentation First.
+```text
+slippage = 1 pip
+```
 
-## Requirements
+## Dynamic model inputs (candidate)
 
-TBD — refined from Master Blueprint.
+```text
+spread
+volatility
+liquidity
+session
+symbol
+order size
+market regime
+latency
+```
 
-## Open Questions
+## Rules
 
-TBD
+- Paper and Live validation use the same slippage model family.
+- Stress tests use adverse percentiles of the model, not only the mean.
+- Model parameters are calibrated offline and versioned; live uses promoted version only.
 
 ## Acceptance Criteria
 
@@ -398,141 +637,11 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/emergency-stop.md -->
+<!-- merged from docs/19-execution/order-rejection-requote.md -->
 
-# emergency stop
+# Rejection / Requote / Partial Fill
 
-## Purpose
-
-Specification for **emergency stop** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/risk-gates.md -->
-
-# Risk Gates
-
-## Data Quality Gate
-
-```text
-data_health < threshold  →  NO TRADE
-```
-
-## AI Health Gate
-
-```text
-model calibration degraded  →  disable model / DENY signals from it
-```
-
-## Discovery Health Gate
-
-Thousands of unstable discoveries → **discovery circuit breaker**.
-
-Gates are independent of AI confidence.
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/model-risk.md -->
-
-# model risk
-
-## Purpose
-
-Specification for **model risk** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/causal-cluster-risk.md -->
-
-# causal cluster risk
-
-## Purpose
-
-Specification for **causal cluster risk** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+Execution state machine must handle reject, requote, partial fill, timeout→reconcile. No blind resend without idempotent intent.
 
 ## Acceptance Criteria
 

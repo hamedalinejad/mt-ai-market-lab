@@ -1,22 +1,22 @@
 ---
-id: DOC-PATH-18-RISK-ENGINE-RISK-ARCHITECTURE-MD
-title: Risk Architecture
-status: approved
-version: 0.6
+id: DOC-MERGED
+title: signal
+status: reviewed
 phase: 0
-domain: 18-risk-engine
-updated: 2026-09-04
 ---
 
-# Risk Absolute Authority (BUG-TRD-P0-002)
+# signal
+
+
+<!-- merged from docs/16-signal-engine/signal-confidence.md -->
+
+# Signal Confidence
 
 ```text
-Prediction → Signal → Strategy → Risk → Execution
+raw_model_score → calibrated_probability → decision_score
 ```
 
-Risk returns `ALLOW | REDUCE | DENY | HALT`.
-
-**AI must never override Risk.** Even 99% model confidence cannot force ALLOW past Risk.
+Signal confidence is calibrated and evidence-aware, not a raw model dump.
 
 ## Acceptance Criteria
 
@@ -36,33 +36,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-## Domain Acceptance Criteria
+<!-- merged from docs/16-signal-engine/signal-history.md -->
 
-```text
-AC-RISK-01
-Given model confidence=0.99 and daily_loss limit breached
-When Risk.evaluate runs
-Then decision must be DENY or HALT, never ALLOW forced by AI
-
-AC-RISK-02
-Given Risk service unavailable
-When order path is requested
-Then default is DENY/HALT (fail-safe)
-
-AC-RISK-03
-Given risk_decision_id missing on intent
-When Execution.submit is called
-Then submit is rejected
-```
-
-
-<!-- merged from docs/18-risk-engine/correlation-risk.md -->
-
-# correlation risk
+# signal history
 
 ## Purpose
 
-Specification for **correlation risk** within the 18-risk-engine domain.
+Specification for **signal history** within the 16-signal-engine domain.
 
 ## Scope
 
@@ -94,13 +74,85 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/exposure-control.md -->
+<!-- merged from docs/16-signal-engine/signal-model.md -->
 
-# exposure control
+# Signal Model
 
 ## Purpose
 
-Specification for **exposure control** within the 18-risk-engine domain.
+Signal is an independent entity with lifecycle and trace.
+
+## Core Fields
+
+```text
+Symbol / instrument_id
+Timeframe
+Direction
+Horizon
+Strength
+Confidence
+Prediction References
+Evidence
+Supporting Knowledge
+Contradicting Knowledge
+Expiration
+Status
+Trace
+```
+
+## Lifecycle
+
+```text
+CREATED
+  ↓
+CONFIRMED
+  ↓
+ACTIVE
+  ↓
+UPDATED
+  ↓
+EXPIRED
+  ↓
+RESOLVED
+```
+
+If wrong:
+
+```text
+FAILED
+```
+
+## Rules
+
+- **FAILED signals are not deleted.** They are recorded and linked to Failure Memory and outcome evaluation.
+- EXPIRED / RESOLVED remain in history for learning and audit.
+- Status transitions are explicit and timestamped.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/16-signal-engine/signal-ranking.md -->
+
+# signal ranking
+
+## Purpose
+
+Specification for **signal ranking** within the 16-signal-engine domain.
 
 ## Scope
 
@@ -132,13 +184,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/correlated-risk-budgeting.md -->
+<!-- merged from docs/16-signal-engine/false-signal-analysis.md -->
 
-# correlated risk budgeting
+# false signal analysis
 
 ## Purpose
 
-Specification for **correlated risk budgeting** within the 18-risk-engine domain.
+Specification for **false signal analysis** within the 16-signal-engine domain.
 
 ## Scope
 
@@ -170,13 +222,98 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/volatility-risk.md -->
+<!-- merged from docs/16-signal-engine/signal-vs-strategy.md -->
 
-# volatility risk
+# Signal ≠ Strategy (BUG-TRD-P0-001)
+
+| Layer | Meaning |
+|-------|---------|
+| **Signal** | What was observed / inferred and with what confidence |
+| **Strategy** | What action policy is proposed given signals + context |
+
+Must not merge into one object. Strategy consumes signals; signals do not embed order instructions.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/16-signal-engine/signal-deduplication.md -->
+
+# Signal Deduplication
+
+Fingerprint (example):
+
+```text
+symbol | timeframe | direction | strategy | source | generation window
+```
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/16-signal-engine/signal-expiration.md -->
+
+# Signal Expiration
+
+Expiration is **market-aware**, not a fixed 10 minutes for all:
+
+```text
+timeframe | signal type | regime | event | strategy
+```
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/16-signal-engine/signal-generation.md -->
+
+# signal generation
 
 ## Purpose
 
-Specification for **volatility risk** within the 18-risk-engine domain.
+Specification for **signal generation** within the 16-signal-engine domain.
 
 ## Scope
 
@@ -208,13 +345,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/signal-risk.md -->
+<!-- merged from docs/16-signal-engine/signal-confirmation.md -->
 
-# signal risk
+# signal confirmation
 
 ## Purpose
 
-Specification for **signal risk** within the 18-risk-engine domain.
+Specification for **signal confirmation** within the 16-signal-engine domain.
 
 ## Scope
 
@@ -246,13 +383,74 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/strategy-risk.md -->
+<!-- merged from docs/16-signal-engine/signal-trace.md -->
 
-# strategy risk
+# Signal Trace
 
 ## Purpose
 
-Specification for **strategy risk** within the 18-risk-engine domain.
+End-to-end answer to **why** this signal exists.
+
+## Required Trace Fields (material signals)
+
+```text
+Symbol / instrument_id
+Timeframe
+Timestamp
+Candle IDs
+Features (feature_set_id + version + snapshot)
+Indicators
+Pattern refs
+Model + Model Version
+Prediction + Confidence / probabilities
+Discovery refs (if any)
+Knowledge refs
+Strategy ref
+Risk Decision (ALLOW/DENY/REDUCE/…)
+```
+
+Plus:
+
+```text
+Data Snapshot
+Market State
+Contradictions
+Error Memory Matches
+Confidence Decomposition
+Decision Path
+```
+
+## Rules
+
+- Material Signal without Trace is non-compliant.
+- FAILED signals retain Trace; they are not deleted.
+- Trace links into the Knowledge graph (typed edges).
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+
+
+<!-- merged from docs/16-signal-engine/signal-strength.md -->
+
+# signal strength
+
+## Purpose
+
+Specification for **signal strength** within the 16-signal-engine domain.
 
 ## Scope
 
@@ -284,13 +482,13 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/position-sizing.md -->
+<!-- merged from docs/16-signal-engine/signal-confluence.md -->
 
-# position sizing
+# signal confluence
 
 ## Purpose
 
-Specification for **position sizing** within the 18-risk-engine domain.
+Specification for **signal confluence** within the 16-signal-engine domain.
 
 ## Scope
 
@@ -322,217 +520,45 @@ Then it must be rejected until status reaches approved
 ```
 
 
-<!-- merged from docs/18-risk-engine/execution-risk.md -->
+<!-- merged from docs/16-signal-engine/signal-architecture.md -->
 
-# execution risk
-
-## Purpose
-
-Specification for **execution risk** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/drawdown-control.md -->
-
-# drawdown control
+# Signal Architecture
 
 ## Purpose
 
-Specification for **drawdown control** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
-
-## Acceptance Criteria
+Keep **Signal** independent from **Prediction**.
 
 ```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
+Prediction ≠ Decision
 ```
+
+## Assembly Path
 
 ```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
+Prediction
++
+Analysis
++
+Discovery
++
+Context
++
+Knowledge
+       ↓
+Signal Candidate
+       ↓
+Signal Validation
+       ↓
+Signal Confidence
+       ↓
+Signal
 ```
 
+## Rules
 
-<!-- merged from docs/18-risk-engine/emergency-stop.md -->
-
-# emergency stop
-
-## Purpose
-
-Specification for **emergency stop** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/risk-gates.md -->
-
-# Risk Gates
-
-## Data Quality Gate
-
-```text
-data_health < threshold  →  NO TRADE
-```
-
-## AI Health Gate
-
-```text
-model calibration degraded  →  disable model / DENY signals from it
-```
-
-## Discovery Health Gate
-
-Thousands of unstable discoveries → **discovery circuit breaker**.
-
-Gates are independent of AI confidence.
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/model-risk.md -->
-
-# model risk
-
-## Purpose
-
-Specification for **model risk** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
-
-## Acceptance Criteria
-
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
-
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
-
-
-<!-- merged from docs/18-risk-engine/causal-cluster-risk.md -->
-
-# causal cluster risk
-
-## Purpose
-
-Specification for **causal cluster risk** within the 18-risk-engine domain.
-
-## Scope
-
-Phase 0 — Documentation First.
-
-## Requirements
-
-TBD — refined from Master Blueprint.
-
-## Open Questions
-
-TBD
+- A Prediction alone does not create a production Signal.
+- Evidence, knowledge refs, and Trace are mandatory for material signals.
+- Risk Engine may veto after Signal creation; Execution remains further downstream.
 
 ## Acceptance Criteria
 
