@@ -1,52 +1,35 @@
 ---
 id: DOC-CONTRACT-DATA-discovery-candidate
-title: Data Contract — discovery-candidate
+title: Data Contract — Discovery Candidate
 status: reviewed
-version: 0.7
+version: 0.8
 phase: 0
 domain: contracts
 updated: 2026-09-04
 ---
 
-# Data Contract: discovery-candidate
+# Discovery Candidate (BUG-DISC-P0-001)
 
-## Purpose
-Binding schema for **discovery-candidate**.
+```text
+candidate_id
+grammar_version
+expression_ast
+human_readable_expression
+complexity
+novelty
+equivalence_class
+search_run_id
+dataset_snapshot_id
+feature_inputs
+parameters
+evaluation_summary
+validation_status
+promotion_status
+lineage
+multiplicity_family_id
+hypothesis_count
+effective_search_count
+status
+```
 
-## Identity
-See domain + identity layers (logical / source / physical).
-
-## Fields
-### Required
-Entity-specific required fields (see prior architecture docs; must be non-null).
-
-### Optional
-Entity-specific optional fields.
-
-## Types / Units / Timezone
-Timestamps as UTC fields per Time Model. Prices per price representation policy.
-
-## Validity interval
-Gated by quality_status and session rules where applicable.
-
-## Provenance
-source + source identity retained.
-
-## Version
-schema_version; major on identity/invariant breaks.
-
-## Nullability
-Required non-null; optional nullable.
-
-## Invariants
-Entity-specific invariants enforced at quality gate.
-
-## Examples
-### Valid
-Valid discovery-candidate instance satisfying invariants.
-
-### Invalid
-Violates invariants or missing required fields.
-
-## Compatibility policy
-Forward-compatible optional fields; no silent required-field removal.
+Discovery **must not** emit live Signals directly (see pipeline doc).

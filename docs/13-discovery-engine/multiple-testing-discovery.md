@@ -1,21 +1,25 @@
 ---
 id: DOC-DISC-023
-title: Discovery Multiple Testing Accounting
+title: Discovery Multiple Testing
 status: reviewed
-version: 0.2
+version: 0.3
 phase: 0
 domain: 13-discovery-engine
-related: [DOC-VAL-014]
+updated: 2026-09-04
 ---
 
-# Multiple Testing (per search family)
+# Multiple-Testing Correction (BUG-DISC-P0-004)
 
-Every search run records:
+Not a name-only field. Each search family records:
 
 ```text
-multiplicity_family_id
-hypothesis_count
+search_family / multiplicity_family_id
+family_size_estimate
+test_count
+correction_method
+holdout_discipline
+archive_policy
 effective_search_count
 ```
 
-Promotion path consumes these in Validation multiple-testing control. Missing metadata ⇒ non-promotable.
+Promotion without these metadata ⇒ denied.

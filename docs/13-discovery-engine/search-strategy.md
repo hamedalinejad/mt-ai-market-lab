@@ -1,27 +1,26 @@
 ---
 id: DOC-DISC-017
-title: Search Strategy
+title: Search Strategy & Budget
 status: reviewed
-version: 0.4
+version: 0.5
 phase: 0
 domain: 13-discovery-engine
+updated: 2026-09-04
 ---
 
-# Search Budget (binding per run)
+# Enforceable Search Budget (BUG-DISC-P0-007)
+
+Recorded **before** run and replayable:
 
 ```text
-max_runtime
-max_memory
-max_candidates
-max_depth
+wall_clock
+CPU
+RAM
+candidate_count
+depth
+evaluation_count
 max_nodes
 max_experiments
 ```
 
-Live discovery: stricter subset. Research: higher but still capped.
-
-## Cache
-Evaluated expression hashes skipped on re-run unless space/data pins change.
-
-## Algebraic equivalence
-Normalize AST (e.g. `A/B` ≡ `A * inv(B)` under registered rules) → single discovery id family.
+Runtime enforcer stops search when any budget trips.

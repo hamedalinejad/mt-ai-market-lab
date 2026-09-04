@@ -1,29 +1,16 @@
 ---
 id: DOC-DISC-006
-title: Discovery Space / Search Grammar
+title: Discovery Space
 status: reviewed
-version: 0.4
+version: 0.5
 phase: 0
 domain: 13-discovery-engine
-updated: 2026-09-03
+updated: 2026-09-04
 ---
 
-# Search Grammar (machine-readable target)
+# Discovery Space
 
-Versioned grammar document (`space_version`) enumerates:
+Operator families: variables, operators, constants, windows, conditionals, comparators, boolean, thresholds, aggregation, cross-timeframe, cross-asset.
 
-```text
-variables
-operators
-constants
-window functions
-conditionals
-comparators
-boolean operators
-thresholds
-aggregation
-cross-timeframe
-cross-asset
-```
-
-Implementations load grammar as data (JSON/YAML schema later); engines must not hard-code ad-hoc operator sets outside `space_version`.
+**Formal DSL:** [search-dsl.md](search-dsl.md)  
+**Units:** [unit-semantics.md](unit-semantics.md)
