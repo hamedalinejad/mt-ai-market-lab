@@ -2,13 +2,9 @@
 id: DOC-31-README
 title: Data Contracts Index
 status: reviewed
-version: 0.3
-phase: 0
-domain: 31-data-contracts
+version: 0.4
 ---
 
-# Data Contracts Index
+# Index only → `docs/contracts/data/`
 
-**Source of Truth:** [`docs/contracts/data/`](../contracts/data/)
-
-This folder does not own schemas.
+Do not duplicate field lists here. Link all entity contracts from the contracts tree.

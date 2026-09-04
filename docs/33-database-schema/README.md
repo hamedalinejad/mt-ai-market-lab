@@ -1,12 +1,13 @@
 ---
 id: DOC-33-README
 title: Database Schema Domain
-status: draft
-version: 0.2
-phase: 0
-domain: 33-database-schema
+status: reviewed
+version: 0.3
 ---
 
-# Database Schema
+# KEEP — two layers
 
-See [sqlite-schema.md](sqlite-schema.md). Parquet partition layout remains under storage domain; SQLite owns control-plane state.
+1. Domain narrative (this folder)  
+2. Binding schema under `docs/contracts/schemas/` + migration-contract.md  
+
+Do not delete; avoid duplicate authority.
