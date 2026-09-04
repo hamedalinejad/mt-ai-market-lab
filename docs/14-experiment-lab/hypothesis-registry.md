@@ -1,5 +1,5 @@
 ---
-id: DOC-EXPL-005
+id: DOC-PATH-14-EXPERIMENT-LAB-HYPOTHESIS-REGISTRY-MD
 title: Hypothesis Registry
 status: draft
 version: 0.2

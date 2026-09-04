@@ -1,5 +1,5 @@
 ---
-id: DOC-KNOW-016
+id: DOC-PATH-20-KNOWLEDGE-BASE-UNCERTAIN-KNOWLEDGE-MD
 title: uncertain knowledge
 status: draft
 version: 0.1

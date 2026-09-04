@@ -1,5 +1,5 @@
 ---
-id: DOC-MT5-003
+id: DOC-PATH-02-METATRADER-BROKER-METADATA-MD
 title: Broker Metadata
 status: draft
 version: 0.1

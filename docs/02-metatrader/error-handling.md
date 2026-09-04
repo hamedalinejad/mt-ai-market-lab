@@ -1,5 +1,5 @@
 ---
-id: DOC-MT5-007
+id: DOC-PATH-02-METATRADER-ERROR-HANDLING-MD
 title: Error Handling
 status: draft
 version: 0.1

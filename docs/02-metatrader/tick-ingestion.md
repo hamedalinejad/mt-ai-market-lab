@@ -1,5 +1,5 @@
 ---
-id: DOC-MT5-016
+id: DOC-PATH-02-METATRADER-TICK-INGESTION-MD
 title: Tick Ingestion
 status: draft
 version: 0.2
@@ -34,3 +34,21 @@ MT5 tick API → Raw Tick Store → Normalize (UTC, instrument_id)
 - Tick ingestion is optional per instrument (resource-aware).
 - Canonical ticks never required for pure M1-based pipelines.
 - Bar building from ticks uses versioned definition if used as source of truth for that instrument.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

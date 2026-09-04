@@ -1,5 +1,5 @@
 ---
-id: DOC-EXPL-004
+id: DOC-PATH-14-EXPERIMENT-LAB-EXPERIMENT-REGISTRY-MD
 title: Experiment Registry
 status: draft
 version: 0.2

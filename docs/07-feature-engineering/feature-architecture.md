@@ -1,5 +1,5 @@
 ---
-id: DOC-FEAT-001
+id: DOC-PATH-07-FEATURE-ENGINEERING-FEATURE-ARCHITECTURE-MD
 title: Feature Architecture
 status: reviewed
 version: 0.4

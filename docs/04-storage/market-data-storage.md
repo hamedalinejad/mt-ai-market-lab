@@ -1,5 +1,5 @@
 ---
-id: DOC-STOR-009
+id: DOC-PATH-04-STORAGE-MARKET-DATA-STORAGE-MD
 title: Market Data Storage
 status: draft
 version: 0.2
@@ -121,3 +121,21 @@ Before canonical publish:
 
 - Store mid price derived columns or compute on read?
 - Separate “broker session calendar” table vs embed in quality layer
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

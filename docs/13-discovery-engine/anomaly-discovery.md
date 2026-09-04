@@ -25,3 +25,21 @@ Bad ticks / price spikes must block or gate Signal generation.
 | **Market anomaly** | EURUSD moves 100 pips on real news |
 
 Data anomalies → quarantine / quality gate. Market anomalies → context for models/risk, not automatic discard of market truth.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

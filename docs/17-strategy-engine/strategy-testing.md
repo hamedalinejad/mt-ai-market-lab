@@ -1,5 +1,5 @@
 ---
-id: DOC-STRAT-012
+id: DOC-PATH-17-STRATEGY-ENGINE-STRATEGY-TESTING-MD
 title: strategy testing
 status: draft
 version: 0.1

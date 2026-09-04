@@ -1,5 +1,5 @@
 ---
-id: DOC-VAL-001
+id: DOC-PATH-15-VALIDATION-ADVERSARIAL-VALIDATION-MD
 title: Adversarial Validation
 status: draft
 version: 0.2
@@ -33,3 +33,21 @@ Actively try to break the Candidate before Promotion.
 
 - Soft Candidates that fail adversarial suite do not Promote.
 - Attacks and outcomes are logged for audit.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

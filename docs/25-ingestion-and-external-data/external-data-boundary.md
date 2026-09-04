@@ -1,5 +1,5 @@
 ---
-id: DOC-ING-002
+id: DOC-PATH-25-INGESTION-AND-EXTERNAL-DATA-EXTERNAL-DATA-BOUNDARY-MD
 title: External Data Boundary
 status: draft
 version: 0.2

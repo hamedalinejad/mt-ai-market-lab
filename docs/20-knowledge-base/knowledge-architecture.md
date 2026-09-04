@@ -1,5 +1,5 @@
 ---
-id: DOC-KNOW-001
+id: DOC-PATH-20-KNOWLEDGE-BASE-KNOWLEDGE-ARCHITECTURE-MD
 title: Knowledge Architecture
 status: draft
 version: 0.2

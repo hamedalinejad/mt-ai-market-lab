@@ -1,5 +1,5 @@
 ---
-id: DOC-MT5-017
+id: DOC-PATH-02-METATRADER-TERMINAL-STATE-MD
 title: Terminal State
 status: draft
 version: 0.1

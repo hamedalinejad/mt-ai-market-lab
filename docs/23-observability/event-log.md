@@ -1,5 +1,5 @@
 ---
-id: DOC-OBS-002
+id: DOC-PATH-23-OBSERVABILITY-EVENT-LOG-MD
 title: Event Log
 status: draft
 version: 0.2

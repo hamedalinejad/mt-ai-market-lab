@@ -1,5 +1,5 @@
 ---
-id: DOC-EXPL-013
+id: DOC-PATH-14-EXPERIMENT-LAB-RESULT-RECORDING-MD
 title: result recording
 status: draft
 version: 0.1

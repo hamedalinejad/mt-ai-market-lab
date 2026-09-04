@@ -1,5 +1,5 @@
 ---
-id: DOC-LEARN-015
+id: DOC-PATH-11-LEARNING-AND-SELF-CORRECTION-OUTCOME-FEEDBACK-MD
 title: outcome feedback
 status: draft
 version: 0.1

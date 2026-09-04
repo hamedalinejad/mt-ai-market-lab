@@ -1,5 +1,5 @@
 ---
-id: DOC-RES-009
+id: DOC-PATH-22-RESOURCE-MANAGEMENT-SCHEDULING-MD
 title: scheduling
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-OBS-003
+id: DOC-PATH-23-OBSERVABILITY-NOTIFICATION-ENGINE-MD
 title: Notification Engine
 status: draft
 version: 0.2

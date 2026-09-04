@@ -1,5 +1,5 @@
 ---
-id: DOC-STOR-016
+id: DOC-PATH-04-STORAGE-STORAGE-REQUIREMENTS-MD
 title: Storage Requirements
 status: draft
 version: 0.2

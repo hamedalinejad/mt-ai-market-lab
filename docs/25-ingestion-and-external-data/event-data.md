@@ -1,5 +1,5 @@
 ---
-id: DOC-ING-003
+id: DOC-PATH-25-INGESTION-AND-EXTERNAL-DATA-EVENT-DATA-MD
 title: Event / News Data
 status: draft
 version: 0.2

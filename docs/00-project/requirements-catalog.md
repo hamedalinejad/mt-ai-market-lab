@@ -28,3 +28,21 @@ Connection lifecycle, Terminal, Account context, Symbol discovery/selection, Tic
 See domain contracts and prior P0 fixes; feature fields must include feature_id, version, inputs, operator, window, lag, decision_time, availability_time, units, null/NaN/clip/normalization policies, provenance; online/offline parity; no future normalization.
 
 Continuous learning ≠ continuous promotion. Failure Memory is an asset. Discovery layers: Search → Scientific evaluation → Knowledge promotion. Negative knowledge required. Risk outputs ALLOW|REDUCE|DENY|HALT. Execution idempotent and reconcilable.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

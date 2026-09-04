@@ -1,5 +1,5 @@
 ---
-id: DOC-FEAT-016
+id: DOC-PATH-07-FEATURE-ENGINEERING-STRUCTURAL-FEATURES-MD
 title: structural features
 status: draft
 version: 0.1

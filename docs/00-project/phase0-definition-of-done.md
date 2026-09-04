@@ -38,4 +38,22 @@ Until then: Documentation First continues; **Trading disabled; no production cod
 7. Signal + RiskDecision + Order + Execution reconciliation  
 8. Validation pipeline + Leakage + Multiple testing  
 9. Safety / Safe Mode / Resource budgets  
-10. Testing architecture acceptance  
+10. Testing architecture acceptance
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

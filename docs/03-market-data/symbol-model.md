@@ -44,3 +44,21 @@ Symbols enter the lab only through **symbol selection** configuration + discover
 
 - Never key long-term storage partitions only by mutable display name without catalog mapping to `instrument_id`.
 - `canonical_name` is for analytics joins; storage paths may use broker `name` for operator clarity if catalog maps correctly.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

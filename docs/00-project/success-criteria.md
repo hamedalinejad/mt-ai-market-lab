@@ -1,5 +1,5 @@
 ---
-id: DOC-PROJ-010
+id: DOC-PATH-00-PROJECT-SUCCESS-CRITERIA-MD
 title: Success Criteria
 status: draft
 version: 0.1

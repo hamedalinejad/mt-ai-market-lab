@@ -1,5 +1,5 @@
 ---
-id: DOC-LEARN-001
+id: DOC-PATH-11-LEARNING-AND-SELF-CORRECTION-LEARNING-LOOP-MD
 title: Learning Loop
 status: draft
 version: 0.2

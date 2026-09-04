@@ -1,5 +1,5 @@
 ---
-id: DOC-OBS-001
+id: DOC-PATH-23-OBSERVABILITY-EVENT-MODEL-MD
 title: Event Model
 status: reviewed
 version: 0.5

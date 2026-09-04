@@ -1,5 +1,5 @@
 ---
-id: DOC-AI-014
+id: DOC-PATH-10-AI-CORE-MODEL-VERSIONING-MD
 title: Model Versioning
 status: draft
 version: 0.2
@@ -54,3 +54,21 @@ status                    # candidate | shadow | promoted | retired
 - Online learning writes only to **shadow/candidate** versions, then Promotion may select a new immutable id.
 - Rollback = point live routing at a previous `model_version`, not edit weights in place.
 - Reproducibility requires the full metadata set above; missing fields ⇒ non-promotable.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

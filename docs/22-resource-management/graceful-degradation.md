@@ -1,5 +1,5 @@
 ---
-id: DOC-RES-010
+id: DOC-PATH-22-RESOURCE-MANAGEMENT-GRACEFUL-DEGRADATION-MD
 title: Graceful Degradation
 status: draft
 version: 0.2

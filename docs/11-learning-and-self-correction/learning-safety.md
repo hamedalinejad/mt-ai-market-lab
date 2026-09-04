@@ -1,5 +1,5 @@
 ---
-id: DOC-LEARN-015
+id: DOC-PATH-11-LEARNING-AND-SELF-CORRECTION-LEARNING-SAFETY-MD
 title: Learning Safety
 status: draft
 version: 0.2

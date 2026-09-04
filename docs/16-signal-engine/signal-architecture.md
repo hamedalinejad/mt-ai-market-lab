@@ -1,5 +1,5 @@
 ---
-id: DOC-SIG-001
+id: DOC-PATH-16-SIGNAL-ENGINE-SIGNAL-ARCHITECTURE-MD
 title: Signal Architecture
 status: draft
 version: 0.2
@@ -48,3 +48,21 @@ Signal
 - A Prediction alone does not create a production Signal.
 - Evidence, knowledge refs, and Trace are mandatory for material signals.
 - Risk Engine may veto after Signal creation; Execution remains further downstream.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

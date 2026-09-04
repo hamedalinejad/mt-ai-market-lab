@@ -63,3 +63,21 @@ Re-running sync for an overlapping range must not duplicate canonical identities
 - Partial failure is recovery-safe: cursors only advance on verified persist.
 - Expected gaps do not force error status if classified and accepted.
 - Broker-time policy version is stored on sync_state / sync_run.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

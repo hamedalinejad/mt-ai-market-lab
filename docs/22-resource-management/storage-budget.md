@@ -1,5 +1,5 @@
 ---
-id: DOC-RES-010
+id: DOC-PATH-22-RESOURCE-MANAGEMENT-STORAGE-BUDGET-MD
 title: storage budget
 status: draft
 version: 0.1

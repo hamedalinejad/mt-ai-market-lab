@@ -22,3 +22,21 @@ Hold out data not used for search or fitting.
 - Search/Discovery must not touch final holdout.
 - Nested design: inner optimization vs outer OOS.
 - Report OOS with multiplicity context when Candidate was search-selected.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

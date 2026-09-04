@@ -34,3 +34,21 @@ MT5 rates API → Raw Bar Store → Normalize → Quality → Canonical Bars
 
 - Prefer one raw source of truth (M1) + derivation over N independent TF histories.
 - When source-native higher TF is stored, keep `origin=source_native` and do not overwrite derived partitions without explicit job.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

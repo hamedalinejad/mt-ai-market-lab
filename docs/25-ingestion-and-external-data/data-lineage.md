@@ -1,5 +1,5 @@
 ---
-id: DOC-ING-001
+id: DOC-PATH-25-INGESTION-AND-EXTERNAL-DATA-DATA-LINEAGE-MD
 title: Data Lineage
 status: draft
 version: 0.2

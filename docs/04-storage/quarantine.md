@@ -1,5 +1,5 @@
 ---
-id: DOC-STOR-019
+id: DOC-PATH-04-STORAGE-QUARANTINE-MD
 title: Quarantine Layer
 status: draft
 version: 0.2
@@ -20,3 +20,21 @@ corrupt datasets | invalid discoveries | failed models
 ```
 
 Not deleted; not fed to promotable AI paths until cleared.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

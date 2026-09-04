@@ -1,5 +1,5 @@
 ---
-id: DOC-PRED-001
+id: DOC-PATH-12-PREDICTION-PREDICTION-ARCHITECTURE-MD
 title: Prediction Architecture
 status: draft
 version: 0.2

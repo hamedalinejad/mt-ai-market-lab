@@ -1,5 +1,5 @@
 ---
-id: DOC-ARCH-010
+id: DOC-PATH-01-SYSTEM-ARCHITECTURE-LIVE-MODE-FLOW-MD
 title: Live Mode Flow
 status: draft
 version: 0.1

@@ -35,3 +35,21 @@ Only timeframes that the **source actually provides** or that the lab can **cano
 
 - Unknown codes rejected at schema validation.
 - MT5 enum mapping lives in the adapter, not scattered in engines.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

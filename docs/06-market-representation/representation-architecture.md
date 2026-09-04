@@ -1,5 +1,5 @@
 ---
-id: DOC-REPR-001
+id: DOC-PATH-06-MARKET-REPRESENTATION-REPRESENTATION-ARCHITECTURE-MD
 title: Representation Architecture
 status: draft
 version: 0.2

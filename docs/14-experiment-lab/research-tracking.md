@@ -1,5 +1,5 @@
 ---
-id: DOC-EXPL-012
+id: DOC-PATH-14-EXPERIMENT-LAB-RESEARCH-TRACKING-MD
 title: research tracking
 status: draft
 version: 0.1

@@ -1,5 +1,5 @@
 ---
-id: DOC-STRAT-001
+id: DOC-PATH-17-STRATEGY-ENGINE-STRATEGY-ARCHITECTURE-MD
 title: Strategy Architecture
 status: draft
 version: 0.2

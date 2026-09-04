@@ -1,5 +1,5 @@
 ---
-id: DOC-OBS-005
+id: DOC-PATH-23-OBSERVABILITY-LOGGING-MD
 title: logging
 status: draft
 version: 0.1

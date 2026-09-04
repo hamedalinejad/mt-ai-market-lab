@@ -44,3 +44,21 @@ Changing any component requires a **new cost_bundle version**; prior results rem
 - No promotional claim from a backtest missing cost bundle metadata.
 - Paper and Live evaluation report realized costs against the same model family where applicable.
 - Slippage is dynamic (see execution slippage handling), not a fixed constant alone.
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

@@ -1,5 +1,5 @@
 ---
-id: DOC-DATA-026
+id: DOC-PATH-03-MARKET-DATA-VALIDATION-RULES-MD
 title: validation rules
 status: draft
 version: 0.1

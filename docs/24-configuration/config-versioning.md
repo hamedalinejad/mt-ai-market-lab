@@ -1,5 +1,5 @@
 ---
-id: DOC-CFG-001
+id: DOC-PATH-24-CONFIGURATION-CONFIG-VERSIONING-MD
 title: Config Versioning
 status: draft
 version: 0.2

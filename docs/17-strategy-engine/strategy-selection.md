@@ -1,5 +1,5 @@
 ---
-id: DOC-STRAT-011
+id: DOC-PATH-17-STRATEGY-ENGINE-STRATEGY-SELECTION-MD
 title: strategy selection
 status: draft
 version: 0.1

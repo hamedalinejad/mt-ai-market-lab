@@ -39,3 +39,21 @@ Continuity rules differ (max idle duration while session open). Thresholds are c
 
 - Detection without calendar is incomplete (will false-positive weekends).
 - Results written as Gap entities; counts rolled into `sync_state.gap_count` (unexpected vs total may be separate metrics).
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

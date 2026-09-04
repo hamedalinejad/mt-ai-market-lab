@@ -1,5 +1,5 @@
 ---
-id: DOC-PROJ-011
+id: DOC-PATH-00-PROJECT-VISION-MD
 title: Vision
 status: draft
 version: 0.1
@@ -36,3 +36,21 @@ Create an intelligent market laboratory that can:
 19. Produce explainable signals
 20. Support Paper Trading and later Controlled Live Trading
 21. Run everything with resource management suitable for a laptop
+
+## Acceptance Criteria
+
+```text
+AC-01
+Given this document is binding for its domain
+When an implementer builds against it
+Then behavior must satisfy the stated invariants and contracts herein
+And violations fail validation or static gates before promotion
+```
+
+```text
+AC-02
+Given status is not approved
+When production code for this scope is proposed
+Then it must be rejected until status reaches approved
+```
+

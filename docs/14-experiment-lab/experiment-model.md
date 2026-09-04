@@ -1,5 +1,5 @@
 ---
-id: DOC-EXPL-003
+id: DOC-PATH-14-EXPERIMENT-LAB-EXPERIMENT-MODEL-MD
 title: Experiment Model
 status: reviewed
 version: 0.4
