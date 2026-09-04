@@ -1,5 +1,5 @@
 ---
-id: DOC-MT5-005
+id: DOC-MT5-README
 title: MetaTrader Integration Overview
 status: draft
 version: 0.1
