@@ -1,7 +1,7 @@
 ---
 id: DOC-RUN-009
 title: Safe Mode Operational Contract
-status: reviewed
+status: approved
 version: 0.6
 phase: 0
 domain: 21-runtime-modes

@@ -1,7 +1,7 @@
 ---
 id: DOC-VAL-029
 title: Deterministic Replay Equality Policy
-status: reviewed
+status: approved
 version: 0.2
 phase: 0
 domain: 15-validation

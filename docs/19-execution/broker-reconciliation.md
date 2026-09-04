@@ -1,7 +1,7 @@
 ---
 id: DOC-EXEC-020
 title: Broker Reconciliation
-status: reviewed
+status: approved
 version: 0.2
 phase: 0
 domain: 19-execution

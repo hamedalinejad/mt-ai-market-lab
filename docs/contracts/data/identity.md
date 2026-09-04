@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-DATA-identity
 title: Logical vs Source Identity
-status: reviewed
+status: approved
 version: 0.3
 phase: 0
 domain: contracts

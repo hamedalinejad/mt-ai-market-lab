@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mt-ai-market-lab/schemas/candle.json",
+  "title": "Candle",
+  "type": "object",
+  "required": ["instrument_id", "timeframe", "open_time_utc", "close_time_utc", "open", "high", "low", "close", "quality_status", "origin", "source"],
+  "properties": {
+    "instrument_id": { "type": "string" },
+    "timeframe": { "type": "string" },
+    "open_time_utc": { "type": "string" },
+    "close_time_utc": { "type": "string" },
+    "open": { "type": "number" },
+    "high": { "type": "number" },
+    "low": { "type": "number" },
+    "close": { "type": "number" },
+    "quality_status": { "type": "string" },
+    "origin": { "enum": ["source_native", "derived"] },
+    "source": { "type": "string" }
+  }
+}

@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-DATA-quote
 title: Data Contract — Quote
-status: reviewed
+status: approved
 version: 0.7
 phase: 0
 domain: contracts

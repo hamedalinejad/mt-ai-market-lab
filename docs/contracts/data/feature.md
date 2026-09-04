@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-DATA-feature
 title: Data Contract — feature
-status: reviewed
+status: approved
 version: 0.7
 phase: 0
 domain: contracts

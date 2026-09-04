@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-DATA-signal
 title: Data Contract — signal
-status: reviewed
+status: approved
 version: 0.7
 phase: 0
 domain: contracts

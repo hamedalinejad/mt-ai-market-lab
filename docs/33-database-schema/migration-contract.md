@@ -1,7 +1,7 @@
 ---
 id: DOC-DB-002
 title: Database Migration Contract
-status: reviewed
+status: approved
 version: 0.2
 phase: 0
 domain: 33-database-schema

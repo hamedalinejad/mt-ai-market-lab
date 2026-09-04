@@ -1,0 +1,13 @@
+name: docs-gates
+on:
+  push:
+    paths: ['docs/**', '.github/workflows/docs-gates.yml']
+  pull_request:
+    paths: ['docs/**']
+jobs:
+  static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run static documentation gates
+        run: bash docs/30-testing/scripts/check_static_gates.sh

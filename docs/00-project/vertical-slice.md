@@ -1,7 +1,7 @@
 ---
 id: DOC-PROJ-021
 title: Vertical Slice Before Advanced AI
-status: reviewed
+status: approved
 version: 0.2
 phase: 0
 domain: 00-project

@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-DATA-candle
 title: Data Contract — Candle
-status: reviewed
+status: approved
 version: 0.7
 phase: 0
 domain: contracts
@@ -47,3 +47,22 @@ When production code for this scope is proposed
 Then it must be rejected until status reaches approved
 ```
 
+
+## Domain Acceptance Criteria
+
+```text
+AC-CANDLE-01
+Given high < low
+When OHLC validation runs
+Then candle must not publish as quality=ok
+
+AC-CANDLE-02
+Given decision_point=bar_close
+When feature uses CANDLE_PARTIAL
+Then validation hard-fails for promotable path
+
+AC-CANDLE-03
+Given origin=derived and incomplete M1 constituents
+When aggregate is built
+Then state must not be CANDLE_CLOSED
+```

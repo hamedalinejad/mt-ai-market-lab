@@ -1,7 +1,7 @@
 ---
 id: DOC-STOR-027
 title: Atomic Publish
-status: reviewed
+status: approved
 version: 0.2
 phase: 0
 domain: 04-storage

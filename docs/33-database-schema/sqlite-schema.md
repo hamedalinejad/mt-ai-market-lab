@@ -1,7 +1,7 @@
 ---
 id: DOC-DB-001
 title: SQLite Logical Schema
-status: reviewed
+status: approved
 version: 0.7
 phase: 0
 domain: 33-database-schema

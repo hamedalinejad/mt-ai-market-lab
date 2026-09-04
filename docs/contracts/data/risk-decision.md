@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-DATA-risk-decision
 title: Data Contract — risk-decision
-status: reviewed
+status: approved
 version: 0.7
 phase: 0
 domain: contracts

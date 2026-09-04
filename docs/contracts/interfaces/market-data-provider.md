@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-IF-market-data-provider
 title: Interface — market-data-provider
-status: reviewed
+status: approved
 version: 0.6
 phase: 0
 domain: contracts
@@ -63,3 +63,17 @@ When production code for this scope is proposed
 Then it must be rejected until status reaches approved
 ```
 
+
+## Domain Acceptance Criteria
+
+```text
+AC-MDP-01
+Given code outside adapter packages imports MetaTrader5
+When static gate runs
+Then CI fails
+
+AC-MDP-02
+Given get_candles returns data
+When caller receives objects
+Then types are Canonical Candle, not raw MT5 tuples
+```

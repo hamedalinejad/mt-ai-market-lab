@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-DATA-time
 title: Time Fields Contract
-status: reviewed
+status: approved
 version: 0.7
 phase: 0
 domain: contracts

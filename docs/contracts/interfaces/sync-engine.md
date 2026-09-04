@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-IF-sync-engine
 title: Interface — sync-engine
-status: reviewed
+status: approved
 version: 0.6
 phase: 0
 domain: contracts

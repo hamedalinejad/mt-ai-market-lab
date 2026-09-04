@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-DATA-order-intent
 title: Data Contract — Order Intent
-status: reviewed
+status: approved
 version: 0.8
 phase: 0
 domain: contracts

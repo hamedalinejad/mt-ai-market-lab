@@ -1,7 +1,7 @@
 ---
 id: DOC-SYNC-015
 title: Cursor Safety Transaction Protocol
-status: reviewed
+status: approved
 version: 0.7
 phase: 0
 ---
@@ -31,3 +31,22 @@ When production code for this scope is proposed
 Then it must be rejected until status reaches approved
 ```
 
+
+## Domain Acceptance Criteria
+
+```text
+AC-SYNC-01
+Given DOWNLOAD succeeds but PUBLISH fails
+When process crashes
+Then last_persisted must remain at previous committed cursor
+
+AC-SYNC-02
+Given atomic publish completes
+When cursor advances
+Then last_persisted equals published watermark
+
+AC-SYNC-03
+Given operator attempts cursor advance before publish
+When static/runtime gate runs
+Then operation is rejected
+```

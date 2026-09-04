@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-DATA-prediction
 title: Data Contract — Prediction
-status: reviewed
+status: approved
 version: 0.8
 phase: 0
 domain: contracts

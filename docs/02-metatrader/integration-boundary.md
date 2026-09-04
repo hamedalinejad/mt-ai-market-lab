@@ -1,7 +1,7 @@
 ---
 id: DOC-MT5-009
 title: Integration Boundary
-status: reviewed
+status: approved
 version: 0.4
 phase: 0
 domain: 02-metatrader

@@ -1,7 +1,7 @@
 ---
 id: DOC-STOR-014
 title: Storage Architecture
-status: reviewed
+status: approved
 version: 0.5
 phase: 0
 domain: 04-storage

@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-DATA-tick
 title: Data Contract — Tick
-status: reviewed
+status: approved
 version: 0.7
 phase: 0
 domain: contracts
@@ -54,3 +54,22 @@ When production code for this scope is proposed
 Then it must be rejected until status reaches approved
 ```
 
+
+## Domain Acceptance Criteria
+
+```text
+AC-TICK-01
+Given a tick with bid=1.10 and ask=1.09
+When quality gate runs
+Then quality_status must not be ok (ask < bid)
+
+AC-TICK-02
+Given two ticks with same logical identity
+When canonical upsert runs
+Then exactly one canonical row remains (dedupe)
+
+AC-TICK-03
+Given event_time_utc > ingestion_time_utc
+When validation runs
+Then the batch is quarantined or rejected
+```

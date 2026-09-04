@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-IF-storage
 title: Interface — storage
-status: reviewed
+status: approved
 version: 0.6
 phase: 0
 domain: contracts

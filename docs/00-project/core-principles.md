@@ -1,7 +1,7 @@
 ---
 id: DOC-PROJ-030
 title: Core Principles — Single Constitution
-status: reviewed
+status: approved
 version: 1.0
 phase: 0
 domain: 00-project

@@ -1,7 +1,7 @@
 ---
 id: DOC-CONTRACT-DATA-label
 title: Data Contract — Label
-status: reviewed
+status: approved
 version: 0.8
 phase: 0
 domain: contracts

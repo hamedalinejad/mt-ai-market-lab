@@ -1,7 +1,7 @@
 ---
 id: DOC-SYNC-004
 title: Gap Classification
-status: reviewed
+status: approved
 version: 0.7
 phase: 0
 ---
