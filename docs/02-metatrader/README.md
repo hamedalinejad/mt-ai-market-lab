@@ -1,5 +1,5 @@
 ---
-id: DOC-MT5-001
+id: DOC-MT5-005
 title: MetaTrader Integration Overview
 status: draft
 version: 0.1
