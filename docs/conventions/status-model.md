@@ -1,36 +1,30 @@
 ---
 id: DOC-CONV-005
 title: Document Status Model
-status: reviewed
-version: 0.4
+status: approved
+version: 0.5
 phase: 0
 domain: conventions
 updated: 2026-09-04
+depends_on: ['DOC-PROJ-050']
+related: ['DOC-CONV-011']
 ---
 
-# Status Lifecycle (BUG-REPO-P0-001)
+# Status Lifecycle
 
 ```text
 draft → reviewed → approved → implemented → verified → deprecated
 ```
 
-**P0 coding starts only after `approved`.**  
-File existence ≠ specification complete.
+## Approval rule (from Implementation Baseline)
 
-## Acceptance Criteria
+`approved` requires complete normative content for the claimed scope:
 
-```text
-AC-01
-Given this document is binding for its domain
-When an implementer builds against it
-Then behavior must satisfy the stated invariants and contracts herein
-And violations fail validation or static gates before promotion
-```
+- requirements, invariants, interfaces, domain ACs, resolvable dependencies;
+- **no TBD/TODO** as open design for that scope.
 
-```text
-AC-02
-Given status is not approved
-When production code for this scope is proposed
-Then it must be rejected until status reaches approved
-```
+Otherwise keep `reviewed` or `draft`.
 
+**Coding** for a slice starts only when that slice’s **binding** docs are `approved` (see `implementation-baseline.md`).
+
+Narrative domain indexes may stay `reviewed` indefinitely.

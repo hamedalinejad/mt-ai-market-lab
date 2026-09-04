@@ -2,12 +2,12 @@
 id: DOC-0002
 title: Documentation Index
 status: reviewed
-version: 0.8
+version: 0.9
 ---
 
 # INDEX
 
-**Count:** 215
+**Count:** 218
 
 - `00-project/README.md`
 - `00-project/REQUIREMENTS.md`
@@ -15,6 +15,7 @@ version: 0.8
 - `00-project/constraints.md`
 - `00-project/core-principles.md`
 - `00-project/goals.md`
+- `00-project/implementation-baseline.md`
 - `00-project/missing-requirements.md`
 - `00-project/phase0-definition-of-done.md`
 - `00-project/scope.md`
@@ -105,6 +106,7 @@ version: 0.8
 - `21-runtime-modes/safe-mode.md`
 - `22-resource-management/README.md`
 - `23-observability/README.md`
+- `23-observability/health-watchdog.md`
 - `23-observability/logging-standard.md`
 - `23-observability/observability-architecture.md`
 - `24-configuration/README.md`
@@ -203,6 +205,7 @@ version: 0.8
 - `conventions/folder-readme-policy.md`
 - `conventions/frontmatter-standard.md`
 - `conventions/id-scheme.md`
+- `conventions/invariant-precedence.md`
 - `conventions/naming-conventions.md`
 - `conventions/narrative-vs-binding.md`
 - `conventions/open-questions.md`

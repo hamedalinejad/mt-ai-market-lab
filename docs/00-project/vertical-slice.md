@@ -62,3 +62,4 @@ When they implement only approved package surfaces
 Then that work is authorized under Documentation First exception for this slice only
 ```
 
+Governing baseline: [implementation-baseline.md](implementation-baseline.md)

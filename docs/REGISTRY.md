@@ -2,12 +2,11 @@
 id: DOC-0003
 title: Registry
 status: reviewed
-version: 1.0
+version: 1.1
 ---
 
 # Registry
-**Files:** 215
-**Duplicate IDs:** 0
+**Files:** 218
 
 | ID | Status | Title | Path |
 |----|--------|-------|------|
@@ -17,6 +16,7 @@ version: 1.0
 | `DOC-PROJ-003` | draft | Constraints | `docs/00-project/constraints.md` |
 | `DOC-PROJ-030` | approved | Core Principles — Single Constitution | `docs/00-project/core-principles.md` |
 | `DOC-PROJ-004` | draft | Goals | `docs/00-project/goals.md` |
+| `DOC-PROJ-050` | approved | Implementation Baseline — Executive Decision | `docs/00-project/implementation-baseline.md` |
 | `DOC-PROJ-040` | reviewed | Missing Requirements Catalog | `docs/00-project/missing-requirements.md` |
 | `DOC-PROJ-013` | draft | Phase 0 Definition of Done | `docs/00-project/phase0-definition-of-done.md` |
 | `DOC-PROJ-009` | draft | Scope | `docs/00-project/scope.md` |
@@ -107,6 +107,7 @@ version: 1.0
 | `DOC-RUN-009` | approved | Safe Mode Operational Contract | `docs/21-runtime-modes/safe-mode.md` |
 | `DOC-README-22-resource-management` | reviewed | 22-resource-management Index | `docs/22-resource-management/README.md` |
 | `DOC-OBS-README` | reviewed | Observability | `docs/23-observability/README.md` |
+| `DOC-OBS-005` | reviewed | Health Watchdog | `docs/23-observability/health-watchdog.md` |
 | `DOC-OBS-LOG` | reviewed | Logging Standard | `docs/23-observability/logging-standard.md` |
 | `DOC-OBS-008` | draft | observability architecture | `docs/23-observability/observability-architecture.md` |
 | `DOC-README-24-configuration` | reviewed | 24-configuration Index | `docs/24-configuration/README.md` |
@@ -205,11 +206,12 @@ version: 1.0
 | `DOC-CONV-009` | reviewed | Folder README Policy | `docs/conventions/folder-readme-policy.md` |
 | `DOC-CONV-0004` | draft | Frontmatter Standard | `docs/conventions/frontmatter-standard.md` |
 | `DOC-CONV-012` | reviewed | Document ID Scheme | `docs/conventions/id-scheme.md` |
+| `DOC-CONV-013` | approved | Invariant Precedence | `docs/conventions/invariant-precedence.md` |
 | `DOC-CONV-0005` | draft | Naming Conventions | `docs/conventions/naming-conventions.md` |
 | `DOC-CONV-011` | reviewed | Narrative vs Binding | `docs/conventions/narrative-vs-binding.md` |
 | `DOC-CONV-007` | reviewed | Open Question Ownership | `docs/conventions/open-questions.md` |
-| `DOC-CONV-005` | reviewed | Document Status Model | `docs/conventions/status-model.md` |
-| `DOC-CONV-010` | reviewed | Technology Decision State | `docs/conventions/technology-decision-state.md` |
+| `DOC-CONV-005` | approved | Document Status Model | `docs/conventions/status-model.md` |
+| `DOC-CONV-010` | approved | Technology Decision State | `docs/conventions/technology-decision-state.md` |
 | `DOC-CONV-003` | reviewed | Versioning | `docs/conventions/versioning.md` |
 | `ADR-0001` | accepted | Documentation First | `docs/decisions/ADR-0001-documentation-first.md` |
 | `ADR-0002` | accepted | No Code in Phase Zero | `docs/decisions/ADR-0002-no-code-in-phase-zero.md` |
