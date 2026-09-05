@@ -69,9 +69,9 @@ status=approved  ≠  specification=complete   # INVALID reasoning
 
 **Prohibited in an approved binding document:**
 
-- TBD / TODO as open design for that scope;
+- open design gaps (prohibited in approved binding docs) for that scope;
 - unresolved contradictory semantics;
-- placeholder schemas presented as final.
+- incomplete schemas presented as final (prohibited).
 
 Narrative or partial docs must remain `draft` or `reviewed`, not `approved`.
 
@@ -127,7 +127,7 @@ Then it must be rejected
 
 AC-BASELINE-02
 Given a document marked approved
-When it still contains TBD for its claimed binding scope
+When it still contains open design gaps (prohibited placeholders) for its claimed binding scope
 Then status must be corrected downward until complete
 
 AC-BASELINE-03

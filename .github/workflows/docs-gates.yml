@@ -12,7 +12,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Sync Registry/Index
+        run: python tools/sync_registry.py
+      - name: Fail if generated files drifted
+        run: |
+          git diff --exit-code docs/REGISTRY.md docs/INDEX.md || (echo "Run: python tools/sync_registry.py" && exit 1)
       - name: Static documentation gates
         run: bash docs/30-testing/scripts/check_static_gates.sh
-      - name: Validate document IDs
+      - name: Validate document IDs and approved placeholders
         run: python tools/validate_docs.py

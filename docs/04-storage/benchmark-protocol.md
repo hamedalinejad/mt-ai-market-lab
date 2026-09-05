@@ -20,7 +20,7 @@ tick-heavy
 
 Metrics: append, range read, random read, compression ratio, disk, concurrent read, recovery time.
 
-**Results table:** TBD after measurement — do not invent numbers in docs.
+**Results table:** empty until measured (must not invent numbers) — do not invent numbers in docs.
 
 ## Acceptance Criteria
 

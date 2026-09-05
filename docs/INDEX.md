@@ -2,15 +2,19 @@
 id: DOC-0002
 title: Documentation Index
 status: reviewed
-version: 0.9
+version: 1.0
+phase: 0
 ---
 
 # INDEX
 
-**Count:** 218
+**Count:** 228
+
+## Paths
 
 - `00-project/README.md`
 - `00-project/REQUIREMENTS.md`
+- `00-project/architectural-constitution.md`
 - `00-project/architecture-planes-summary.md`
 - `00-project/constraints.md`
 - `00-project/core-principles.md`
@@ -18,15 +22,19 @@ version: 0.9
 - `00-project/implementation-baseline.md`
 - `00-project/missing-requirements.md`
 - `00-project/phase0-definition-of-done.md`
+- `00-project/problem-status-matrix.md`
 - `00-project/scope.md`
+- `00-project/system-identity.md`
 - `00-project/vertical-slice.md`
 - `01-system-architecture/README.md`
 - `01-system-architecture/architecture-planes.md`
+- `01-system-architecture/layered-architecture.md`
 - `02-metatrader/README.md`
 - `02-metatrader/chart-management.md`
 - `02-metatrader/integration-boundary.md`
 - `03-market-data/README.md`
 - `03-market-data/candle-close-semantics.md`
+- `03-market-data/data-quality-state.md`
 - `03-market-data/instrument-model.md`
 - `03-market-data/timestamp-model.md`
 - `03-market-data/volume-model.md`
@@ -61,8 +69,10 @@ version: 0.9
 - `07-feature-engineering/README.md`
 - `08-trading-knowledge/README.md`
 - `09-analysis-engine/README.md`
+- `09-analysis-engine/cross-market-intelligence.md`
 - `10-ai-core/README.md`
 - `10-ai-core/drift-detection.md`
+- `10-ai-core/error-memory.md`
 - `10-ai-core/model-lifecycle.md`
 - `10-ai-core/model-registry.md`
 - `10-ai-core/online-learning.md`
@@ -75,6 +85,7 @@ version: 0.9
 - `13-discovery-engine/discovery-pipeline.md`
 - `13-discovery-engine/discovery-space.md`
 - `13-discovery-engine/equivalence-engine.md`
+- `13-discovery-engine/multiple-testing-and-equivalence.md`
 - `13-discovery-engine/multiple-testing-discovery.md`
 - `13-discovery-engine/novelty-detection.md`
 - `13-discovery-engine/search-dsl.md`
@@ -150,6 +161,7 @@ version: 0.9
 - `contracts/data/failure.md`
 - `contracts/data/feature-snapshot.md`
 - `contracts/data/feature.md`
+- `contracts/data/identity-and-provenance.md`
 - `contracts/data/identity.md`
 - `contracts/data/instrument.md`
 - `contracts/data/knowledge.md`
@@ -165,6 +177,7 @@ version: 0.9
 - `contracts/data/strategy.md`
 - `contracts/data/tick.md`
 - `contracts/data/time-fields.md`
+- `contracts/data/timeframe-policy.md`
 - `contracts/data/timeframe.md`
 - `contracts/errors/error-taxonomy.md`
 - `contracts/errors/retry-policy.md`
